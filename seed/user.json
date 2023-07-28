@@ -1,0 +1,38 @@
+[
+    {
+        "userId" : 1,
+        "firstname": "John",
+        "surname": "Doe",
+        "email": "johndoe@example.com",
+        "phone": "1234567890",
+        "password": "password123",
+        "role": "user"
+    },
+    {
+        "userId" : 2,
+        "firstname": "Jane",
+        "surname": "Doe",
+        "email": "janedoe@example.com",
+        "phone": "0987654321",
+        "password": "password456",
+        "role": "admin"
+    },
+    {
+        "userId" : 3,
+        "firstname": "Bob",
+        "surname": "Smith",
+        "email": "bobsmith@example.com",
+        "phone": "5555555555",
+        "password": "password789",
+        "role": "seller"
+    },
+    {
+        "userId" : 4,
+        "firstname": "June",
+        "surname": "Jones",
+        "email": "junejones@example.com",
+        "phone": "77777777777",
+        "password": "password789",
+        "role": "seller"
+    }
+]

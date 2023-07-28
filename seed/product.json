@@ -1,0 +1,23 @@
+[
+	{
+		"productName": "Product 1",
+		"productDescription": "Description for Product 1",
+		"price": 10.99,
+		"primaryImageUrl": "https://example.com/product1.jpg",
+		"sellerId": 1
+	},
+	{
+		"productName": "Product 2",
+		"productDescription": "Description for Product 2",
+		"price": 19.99,
+		"primaryImageUrl": "https://example.com/product2.jpg",
+		"sellerId": 1
+	},
+	{
+		"productName": "Product 3",
+		"productDescription": "Description for Product 3",
+		"price": 5.99,
+		"primaryImageUrl": "https://example.com/product3.jpg",
+		"sellerId": 2
+	}
+]

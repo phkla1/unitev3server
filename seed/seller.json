@@ -1,0 +1,14 @@
+[
+    {
+        "userId": 1,
+        "businessName": "Bob's Electronics",
+        "businessEmail": "bobselectronics@example.com",
+        "businessPhone": "5555555555"
+    },
+    {
+        "userId": 2,
+        "businessName": "Jane's Clothing",
+        "businessEmail": "janesclothing@example.com",
+        "businessPhone": "5555555555"
+    }
+]
