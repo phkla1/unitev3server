@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "lawani",
+    "password": "password",
+    "database": "unitev3",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "lawani",
+    "password": "password",
+    "database": "unitev3",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "lawani",
+    "password": "password",
+    "database": "unitev3",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

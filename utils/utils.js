@@ -48,14 +48,36 @@ function logTransaction(level, userId, logData, res) {
 }
 
 //generate a jwt token with userId, email, role, and active
-function generateJWT(userId, email, role, active) {
-	const token = jwt.sign({
+function generateJWT(userId, email, role, active, firstname, surname, referralCode, phone) {
+	let signOptions = {
+		algorithm: "RS256",
+		expiresIn: parseInt(process.env.TOKENVALIDITYSECONDS),
+		issuer: process.env.UNITESERVERNAME
+	};
+	const data = {
 		userId,
 		email,
 		role,
-		active
-	}, process.env.JWTSECRET, { expiresIn: '1d' });
-	return of(token);
+		active,
+		firstname,
+		surname,
+		referralCode,
+		internationalPhone : phone
+	}
+	return of(jwt.sign(data, process.env.USERPRIVKEY, signOptions));
+}
+
+function isTokenValid(token, callback) {
+	let verifyOptions = {
+		algorithm: ["RS256"],
+		expiresIn: parseInt(process.env.TOKENVALIDITYSECONDS),
+		issuer: process.env.UNITESERVERNAME
+	};
+	jwt.verify(token, process.env.USERPUBKEY, verifyOptions, callback);
+}
+
+function decodeToken(token) {
+	return jwt.decode(token);
 }
 
 //a function that will take a base64 string representing an image and save it in cloudinary, returning the URL
@@ -209,8 +231,15 @@ function generateLongRandomString() {
 	return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 }
 
+function generateReferralCode() {
+	let randChar = String.fromCharCode(65+Math.floor(Math.random() * 26)) + String.fromCharCode(65+Math.floor(Math.random() * 26));
+	let rndNo = Math.random().toString(10).substring(3,7);
+	return randChar.toUpperCase() + rndNo.toString();
+}
+
 module.exports = {
 	sendEmail, generateJWT, logTransaction, saveImageToCloudinary$,
 	scanImage, validateEmail, generateEmailContent, timeNow,
-	generateLongRandomString
+	generateLongRandomString, isTokenValid, decodeToken,
+	generateReferralCode
 }

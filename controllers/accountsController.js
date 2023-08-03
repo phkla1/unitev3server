@@ -11,24 +11,28 @@ const utils = require('../utils/utils');
 function registerUserStep1(req, res, next) {
 	//validate the request body
 	if(req.body.phone && req.body.email && req.body.firstname && req.body.surname && req.body.role) {
-		let userId, verificationId;
+		let userId, verificationId, referralCode;
+		//if role is "user" then generate a random alphanumerical referral code
+		if(req.body.role === 'user') {
+			referralCode = utils.generateReferralCode();
+		}
 		const newUser = {
 			phone : req.body.phone,
 			email : req.body.email,
 			firstname : req.body.firstname,
 			surname : req.body.surname,
 			role : req.body.role,
+			referralCode : referralCode,
 			active : false
 		};
 		//register the user
 		from(User.create(newUser)).pipe(
 			catchError((error) => {
-				console.error('Unable to create user : ', error);
-				res.sendStatus(500);
+				res.status(500).send('Unable to create user');
+				return EMPTY;
 			}),
 			switchMap((user) => {
-				console.log('User created successfully!', user);
-				userId = user.userId;
+				userId = user.dataValues.userId;
 				//generate 5-digit random number
 				const verificationCode = Math.floor(10000 + Math.random() * 90000);	
 				return from(Verification.create({userId : userId, verificationMessage : verificationCode, type : 'REGISTRATION'}));
@@ -62,6 +66,7 @@ function registerUserStep1(req, res, next) {
 
 //complete the registration process by confirming the user's email address. The function will receive the userId, verificationId, and verification code
 function registerUserStep2(req, res, next) {
+	let user;
 	//validate the request body
 	if(req.body.userId && req.body.verificationId && req.body.verificationMessage) {
 		//check if the verification code is valid
@@ -69,7 +74,8 @@ function registerUserStep2(req, res, next) {
 			catchError((error) => {
 				console.error('Unable to find verification code : ', error);
 				//send only if headers not set
-				if(!res.headersSent) res.sendStatus(500);
+				res.status(500).send('Unable to verify account');
+				return EMPTY;
 			}),
 			switchMap((verification) => {
 				if(verification) {
@@ -85,8 +91,10 @@ function registerUserStep2(req, res, next) {
 				console.error('Unable to update user : ', error);
 				//send only if headers not set
 				if(!res.headersSent) res.sendStatus(500);
+				return EMPTY;
 			}),
-			map((user) => {
+			map((newUser) => {
+				user = newUser;
 				//delete the verification code
 				return from(Verification.destroy({where : {verificationId : req.body.verificationId}}));
 			}),
@@ -94,6 +102,7 @@ function registerUserStep2(req, res, next) {
 				console.error('Unable to delete verification code : ', error);
 				//send only if headers not set
 				if(!res.headersSent) res.sendStatus(500);
+				return EMPTY;
 			}),
 			switchMap((deletedVerification) => {
 				if(deletedVerification) {
@@ -109,6 +118,7 @@ function registerUserStep2(req, res, next) {
 			catchError((error) => {
 				console.error('Unable to generate JWT token: ', error);
 				if(!res.headersSent) res.sendStatus(500);
+				return EMPTY;
 			})
 		).subscribe({
 			next : (token) => {
@@ -140,7 +150,7 @@ function startLogin(req, res, next) {
 						return from(Verification.create({userId : user.userId, verificationMessage : verificationCode, type : 'LOGIN'}));
 					}
 					else {
-						res.sendStatus(404);
+						res.status(404).send('Problem with email');
 						return EMPTY;
 					}
 				}),
@@ -182,7 +192,7 @@ function startLogin(req, res, next) {
 
 function completeLogin(req, res, next) {
 	//get the userId and validation code, confirm that the userId is valid using the User model, and then confirm that the validation code is valid using the Verification model
-	let role;
+	let userRecord;
 	if(req.body.userId && req.body.verificationMessage) {
 		//check if the user exists
 		from(User.findOne({where : {userId : req.body.userId}}))
@@ -190,7 +200,7 @@ function completeLogin(req, res, next) {
 			switchMap((user) => {
 				if(user) {
 					//store role
-					role = user.role;
+					userRecord = user.dataValues;
 					//check if the validation code is valid
 					return from(Verification.findOne({where : {
 						userId : req.body.userId, verificationMessage : req.body.verificationMessage, 
@@ -231,7 +241,8 @@ function completeLogin(req, res, next) {
 			switchMap((deletedVerification) => {
 				if(deletedVerification) {
 					//generate jwt token for session
-					return from(utils.generateJWT(req.body.userId));
+					console.log("GENERATING JWT FROM:", userRecord)
+					return from(utils.generateJWT(userRecord.userId, userRecord.email, userRecord.role, true, userRecord.firstname, userRecord.surname, userRecord.referralCode, userRecord.phone));
 				}
 				else {
 					if(!res.headersSent) res.sendStatus(500);
@@ -246,7 +257,7 @@ function completeLogin(req, res, next) {
 			next : (token) => {
 				if(token) {
 					//send the token back to the client
-					if(!res.headersSent) res.send({token, role});
+					if(!res.headersSent) res.send({token});
 				}
 				else {
 					console.log('NO TOKEN:', token);

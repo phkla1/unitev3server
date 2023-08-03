@@ -11,6 +11,11 @@ const User = dbConnection.define('user', {
 	},
 	surname: {
 		type: Sequelize.STRING,
+		allowNull: false,
+		unique: true
+	},
+	referralCode : {
+		type: Sequelize.STRING,
 		allowNull: false
 	},
 	email: {
