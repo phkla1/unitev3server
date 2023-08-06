@@ -9,24 +9,6 @@ app.use(compression());
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 const { dbConnection } = require('./models/db');
-const { generateJWT, isTokenValid, decodeToken } = require('./utils/utils');
-
-// Middleware to check if the JWT is valid
-function checkToken(req, res, next) {
-    const token = req.headers.authorization;
-    if (token) {
-        isTokenValid(token, (err, decodedToken) => {
-            if (err) {
-                res.sendStatus(401);
-            } else {
-                req.token = decodedToken;
-                next();
-            }
-        });
-    } else {
-        res.sendStatus(401);
-    }
-}
 
 dbConnection.sync().then(() => {
 	console.log('DB tables created successfully!');
@@ -63,13 +45,13 @@ const accountsRoutes = require('./routes/accountsRoutes');
 app.use('/accounts', accountsRoutes);
 
 const sellersRoutes = require('./routes/sellerRoutes');
-app.use('/sellers', checkToken, sellersRoutes);
+app.use('/sellers',  sellersRoutes);
 
 const productsRoutes = require('./routes/productsRoutes');
-app.use('/products', checkToken, productsRoutes);
+app.use('/products',  productsRoutes);
 
 const ordersRoutes = require('./routes/ordersRoutes');
-app.use('/orders', checkToken, ordersRoutes);
+app.use('/orders',  ordersRoutes);
 
 const url = `${process.env.PORT || 3000}`;
 app.listen(url, () => {

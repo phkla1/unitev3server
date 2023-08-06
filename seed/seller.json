@@ -1,12 +1,12 @@
 [
     {
-        "userId": 1,
+        "userId": 3,
         "businessName": "Bob's Electronics",
         "businessEmail": "bobselectronics@example.com",
         "businessPhone": "5555555555"
     },
     {
-        "userId": 2,
+        "userId": 4,
         "businessName": "Jane's Clothing",
         "businessEmail": "janesclothing@example.com",
         "businessPhone": "5555555555"

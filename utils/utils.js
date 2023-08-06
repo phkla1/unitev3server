@@ -237,9 +237,25 @@ function generateReferralCode() {
 	return randChar.toUpperCase() + rndNo.toString();
 }
 
+function checkToken(req, res, next) {
+    const token = req.headers.authorization;
+    if (token) {
+        isTokenValid(token, (err, decodedToken) => {
+            if (err) {
+                res.sendStatus(401);
+            } else {
+                req.token = decodedToken;
+                next();
+            }
+        });
+    } else {
+        res.sendStatus(401);
+    }
+}
+
 module.exports = {
 	sendEmail, generateJWT, logTransaction, saveImageToCloudinary$,
 	scanImage, validateEmail, generateEmailContent, timeNow,
 	generateLongRandomString, isTokenValid, decodeToken,
-	generateReferralCode
+	generateReferralCode, checkToken
 }
