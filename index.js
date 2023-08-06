@@ -12,31 +12,22 @@ const { dbConnection } = require('./models/db');
 
 dbConnection.sync().then(() => {
 	console.log('DB tables created successfully!');
-	/*
     // Seed the database with users, sellers, and products
     const { User } = require('./models/account.model');
     const { Seller } = require('./models/account.model');
-    const { Product } = require('./models/product.model');
     const userSeed = require('./seed/user.json');
     const sellerSeed = require('./seed/seller.json');
-    const productSeed = require('./seed/product.json');
 
     User.bulkCreate(userSeed).then(() => {
         console.log('Users seeded successfully!');
         Seller.bulkCreate(sellerSeed).then(() => {
             console.log('Sellers seeded successfully!');
-            Product.bulkCreate(productSeed).then(() => {
-                console.log('Products seeded successfully!');
-            }).catch((error) => {
-                console.error('Unable to seed products: ', error);
-            });
         }).catch((error) => {
             console.error('Unable to seed sellers: ', error);
         });
     }).catch((error) => {
         console.error('Unable to seed users: ', error);
     });
-	*/
 }).catch((error) => {
 	console.error('Unable to create database: ', error);
 });

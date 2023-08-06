@@ -6,7 +6,8 @@
         "email": "lawani+1@gmail.com",
         "phone": "1234567890",
         "password": "password123",
-        "role": "user"
+        "role": "user",
+        "referralCode" : "AB1234"
     },
     {
         "userId" : 2,
@@ -15,7 +16,8 @@
         "email": "lawani+2@gmail.com",
         "phone": "0987654321",
         "password": "password456",
-        "role": "admin"
+        "role": "admin",
+        "referralCode" : "CD1234"
     },
     {
         "userId" : 3,
@@ -24,7 +26,8 @@
         "email": "lawani+3@gmail.com",
         "phone": "5555555555",
         "password": "password789",
-        "role": "seller"
+        "role": "seller",
+        "referralCode" : "EF1234"
     },
     {
         "userId" : 4,
@@ -33,6 +36,7 @@
         "email": "lawani+4@gmail.com",
         "phone": "77777777777",
         "password": "password789",
-        "role": "seller"
+        "role": "seller",
+        "referralCode" : "GH1234"
     }
 ]
