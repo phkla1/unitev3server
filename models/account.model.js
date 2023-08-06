@@ -12,23 +12,21 @@ const User = dbConnection.define('user', {
 	surname: {
 		type: Sequelize.STRING,
 		allowNull: false,
-		unique: true
 	},
 	referralCode : {
 		type: Sequelize.STRING,
-		allowNull: false
+		allowNull: false,
+		unique: true
 	},
 	email: {
 		type: Sequelize.STRING,
 		allowNull: false,
 		unique: true
 	},
-	businessEmail: {
-		type: Sequelize.STRING
-	},
 	phone: {
 		type: Sequelize.STRING,
-		allowNull: false
+		allowNull: false,
+		unique: true
 	},
 	role: {
 		type: Sequelize.STRING
@@ -40,9 +38,6 @@ const User = dbConnection.define('user', {
 		type: Sequelize.STRING
 	},
 	address: {
-		type: Sequelize.STRING
-	},
-	companyName: {
 		type: Sequelize.STRING
 	},
 	active : {
@@ -78,7 +73,8 @@ const Seller = dbConnection.define('seller', {
     },
     businessPhone: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     }
 });
 
