@@ -9,6 +9,6 @@ accountsRouter
 .post('/complete-registration', accounts.registerUserStep2)
 .post('/complete-login', accounts.completeLogin)
 .post('/start-login', accounts.startLogin)
-.patch('/user/:userId', checkToken, accounts.updateUserProfile)
+.patch('/user/:userId', checkToken, accounts.updateUser)
 
 module.exports = accountsRouter;
