@@ -1,4 +1,6 @@
 const { Product } = require('../models/order.model');
+const { Seller } = require('../models/account.model');
+const  utils  = require('../utils/utils');
 
 // create a new product
 exports.createProduct = async (req, res) => {
@@ -40,16 +42,38 @@ exports.findOneProduct = async (req, res) => {
 // update a product by ID
 exports.updateProduct = async (req, res) => {
 	try {
-		const product = await Product.findByPk(req.params.id);
+		const productId = req.params.id;
+		const product = await Product.findByPk(productId);
+
 		if (!product) {
-			res.status(404).json({ message: 'Product not found' });
-		} else {
-			await product.update(req.body);
-			res.json(product);
+			return res.status(404).json({ message: 'Product not found' });
 		}
-	} catch (err) {
-		console.error(err);
-		res.status(500).json({ message: 'Server error' });
+
+		const token = req.headers.authorization;
+		const userId = utils.decodeToken(token).userId;
+
+		const seller = await Seller.findOne({ where: { userId } });
+
+		if (!seller) {
+			return res.status(401).json({ message: 'Unauthorized' });
+		}
+
+		if (product.sellerId !== seller.sellerId) {
+			return res.status(401).json({ message: 'Unauthorized seller' });
+		}
+		const { productName, productDescription, price, primaryImageUrl } = req.body;
+
+		product.productName = productName || product.productName;
+		product.productDescription = productDescription || product.productDescription;
+		product.price = price || product.price;
+		product.primaryImageUrl = primaryImageUrl || product.primaryImageUrl;
+
+		await product.save();
+
+		return res.json(product);
+	} catch (error) {
+		console.error(error);
+		return res.status(500).json({ message: 'Server error' });
 	}
 };
 
