@@ -1,0 +1,187 @@
+[
+ {
+   "RegionID": "NG-AB",
+   "CountryID": 566,
+   "RegionName": "Abia"
+ },
+ {
+   "RegionID": "NG-AD",
+   "CountryID": 566,
+   "RegionName": "Adamawa"
+ },
+ {
+   "RegionID": "NG-AK",
+   "CountryID": 566,
+   "RegionName": "Akwa Ibom"
+ },
+ {
+   "RegionID": "NG-AN",
+   "CountryID": 566,
+   "RegionName": "Anambra"
+ },
+ {
+   "RegionID": "NG-BA",
+   "CountryID": 566,
+   "RegionName": "Bauchi"
+ },
+ {
+   "RegionID": "NG-BE",
+   "CountryID": 566,
+   "RegionName": "Benue"
+ },
+ {
+   "RegionID": "NG-BO",
+   "CountryID": 566,
+   "RegionName": "Borno"
+ },
+ {
+   "RegionID": "NG-BY",
+   "CountryID": 566,
+   "RegionName": "Bayelsa"
+ },
+ {
+   "RegionID": "NG-CR",
+   "CountryID": 566,
+   "RegionName": "Cross Riv"
+ },
+ {
+   "RegionID": "NG-DE",
+   "CountryID": 566,
+   "RegionName": "Delta"
+ },
+ {
+   "RegionID": "NG-EB",
+   "CountryID": 566,
+   "RegionName": "Ebonyi"
+ },
+ {
+   "RegionID": "NG-ED",
+   "CountryID": 566,
+   "RegionName": "Edo"
+ },
+ {
+   "RegionID": "NG-EK",
+   "CountryID": 566,
+   "RegionName": "Ekiti"
+ },
+ {
+   "RegionID": "NG-EN",
+   "CountryID": 566,
+   "RegionName": "Enugu"
+ },
+ {
+   "RegionID": "NG-FC",
+   "CountryID": 566,
+   "RegionName": "Abuja FCT"
+ },
+ {
+   "RegionID": "NG-GO",
+   "CountryID": 566,
+   "RegionName": "Gombe"
+ },
+ {
+   "RegionID": "NG-IM",
+   "CountryID": 566,
+   "RegionName": "Imo"
+ },
+ {
+   "RegionID": "NG-JI",
+   "CountryID": 566,
+   "RegionName": "Jigawa"
+ },
+ {
+   "RegionID": "NG-KD",
+   "CountryID": 566,
+   "RegionName": "Kaduna"
+ },
+ {
+   "RegionID": "NG-KE",
+   "CountryID": 566,
+   "RegionName": "Kebbi"
+ },
+ {
+   "RegionID": "NG-KN",
+   "CountryID": 566,
+   "RegionName": "Kano"
+ },
+ {
+   "RegionID": "NG-KO",
+   "CountryID": 566,
+   "RegionName": "Kogi"
+ },
+ {
+   "RegionID": "NG-KT",
+   "CountryID": 566,
+   "RegionName": "Katsina"
+ },
+ {
+   "RegionID": "NG-KW",
+   "CountryID": 566,
+   "RegionName": "Kwara"
+ },
+ {
+   "RegionID": "NG-LA",
+   "CountryID": 566,
+   "RegionName": "Lagos"
+ },
+ {
+   "RegionID": "NG-NA",
+   "CountryID": 566,
+   "RegionName": "Nasarawa"
+ },
+ {
+   "RegionID": "NG-NI",
+   "CountryID": 566,
+   "RegionName": "Niger"
+ },
+ {
+   "RegionID": "NG-OG",
+   "CountryID": 566,
+   "RegionName": "Ogun"
+ },
+ {
+   "RegionID": "NG-ON",
+   "CountryID": 566,
+   "RegionName": "Ondo"
+ },
+ {
+   "RegionID": "NG-OS",
+   "CountryID": 566,
+   "RegionName": "Osun"
+ },
+ {
+   "RegionID": "NG-OY",
+   "CountryID": 566,
+   "RegionName": "Oyo"
+ },
+ {
+   "RegionID": "NG-PL",
+   "CountryID": 566,
+   "RegionName": "Plateau"
+ },
+ {
+   "RegionID": "NG-RI",
+   "CountryID": 566,
+   "RegionName": "Rivers"
+ },
+ {
+   "RegionID": "NG-SO",
+   "CountryID": 566,
+   "RegionName": "Sokoto"
+ },
+ {
+   "RegionID": "NG-TA",
+   "CountryID": 566,
+   "RegionName": "Taraba"
+ },
+ {
+   "RegionID": "NG-YO",
+   "CountryID": 566,
+   "RegionName": "Yobe"
+ },
+ {
+   "RegionID": "NG-ZA",
+   "CountryID": 566,
+   "RegionName": "Zamfara"
+ }
+]

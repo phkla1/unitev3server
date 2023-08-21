@@ -4,7 +4,7 @@ const walletsController = require('../controllers/walletsController');
 const { checkToken } = require('../utils/utils');
 
 //get all user wallets
-router.get('/', checkToken, walletsController.getUserWallets);
+router.get('/', walletsController.getUserWallets);
 
 //get wallet by id
 router.get('/:walletId', checkToken, walletsController.getWallet);

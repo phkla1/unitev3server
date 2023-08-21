@@ -51,6 +51,9 @@ apiRouter.use('/orders',  ordersRoutes);
 const walletsRoutes = require('./routes/walletsRoutes');
 apiRouter.use('/wallets',  walletsRoutes);
 
+const locationsRoutes = require('./routes/locationsRoutes');
+apiRouter.use('/locations',  locationsRoutes);
+
 const url = `${process.env.PORT || 3000}`;
 app.listen(url, () => {
 	console.log(`Starting UniteV3 on port ${process.env.PORT || 3000}`);

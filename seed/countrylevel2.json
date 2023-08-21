@@ -1,0 +1,3872 @@
+[
+ {
+   "LocalityID": 100001,
+   "RegionID": "NG-AB",
+   "LocalityName": "Aba North"
+ },
+ {
+   "LocalityID": 100002,
+   "RegionID": "NG-AB",
+   "LocalityName": "Aba South"
+ },
+ {
+   "LocalityID": 100003,
+   "RegionID": "NG-AB",
+   "LocalityName": "Arochukwu"
+ },
+ {
+   "LocalityID": 100004,
+   "RegionID": "NG-AB",
+   "LocalityName": "Bende"
+ },
+ {
+   "LocalityID": 100005,
+   "RegionID": "NG-AB",
+   "LocalityName": "Ikwuano"
+ },
+ {
+   "LocalityID": 100006,
+   "RegionID": "NG-AB",
+   "LocalityName": "Isiala-Ngwa North"
+ },
+ {
+   "LocalityID": 100007,
+   "RegionID": "NG-AB",
+   "LocalityName": "Isiala-Ngwa South"
+ },
+ {
+   "LocalityID": 100008,
+   "RegionID": "NG-AB",
+   "LocalityName": "Isuikwuato"
+ },
+ {
+   "LocalityID": 100009,
+   "RegionID": "NG-AB",
+   "LocalityName": "Obi Ngwa"
+ },
+ {
+   "LocalityID": 100010,
+   "RegionID": "NG-AB",
+   "LocalityName": "Ohafia"
+ },
+ {
+   "LocalityID": 100011,
+   "RegionID": "NG-AB",
+   "LocalityName": "Osisioma Ngwa"
+ },
+ {
+   "LocalityID": 100012,
+   "RegionID": "NG-AB",
+   "LocalityName": "Ugwunagbo"
+ },
+ {
+   "LocalityID": 100013,
+   "RegionID": "NG-AB",
+   "LocalityName": "Ukwa East"
+ },
+ {
+   "LocalityID": 100014,
+   "RegionID": "NG-AB",
+   "LocalityName": "Ukwa West"
+ },
+ {
+   "LocalityID": 100015,
+   "RegionID": "NG-AB",
+   "LocalityName": "Umuahia North"
+ },
+ {
+   "LocalityID": 100016,
+   "RegionID": "NG-AB",
+   "LocalityName": "Umuahia South"
+ },
+ {
+   "LocalityID": 100017,
+   "RegionID": "NG-AB",
+   "LocalityName": "Umu-Nneochi"
+ },
+ {
+   "LocalityID": 100018,
+   "RegionID": "NG-AD",
+   "LocalityName": "Demsa"
+ },
+ {
+   "LocalityID": 100019,
+   "RegionID": "NG-AD",
+   "LocalityName": "Fufore"
+ },
+ {
+   "LocalityID": 100020,
+   "RegionID": "NG-AD",
+   "LocalityName": "Ganye"
+ },
+ {
+   "LocalityID": 100021,
+   "RegionID": "NG-AD",
+   "LocalityName": "Girei"
+ },
+ {
+   "LocalityID": 100022,
+   "RegionID": "NG-AD",
+   "LocalityName": "Gombi"
+ },
+ {
+   "LocalityID": 100023,
+   "RegionID": "NG-AD",
+   "LocalityName": "Guyuk"
+ },
+ {
+   "LocalityID": 100024,
+   "RegionID": "NG-AD",
+   "LocalityName": "Hong"
+ },
+ {
+   "LocalityID": 100025,
+   "RegionID": "NG-AD",
+   "LocalityName": "Jada"
+ },
+ {
+   "LocalityID": 100026,
+   "RegionID": "NG-AD",
+   "LocalityName": "Lamurde"
+ },
+ {
+   "LocalityID": 100027,
+   "RegionID": "NG-AD",
+   "LocalityName": "Madagali"
+ },
+ {
+   "LocalityID": 100028,
+   "RegionID": "NG-AD",
+   "LocalityName": "Maiha"
+ },
+ {
+   "LocalityID": 100029,
+   "RegionID": "NG-AD",
+   "LocalityName": "Mayo-Belwa"
+ },
+ {
+   "LocalityID": 100030,
+   "RegionID": "NG-AD",
+   "LocalityName": "Michika"
+ },
+ {
+   "LocalityID": 100031,
+   "RegionID": "NG-AD",
+   "LocalityName": "Mubi North"
+ },
+ {
+   "LocalityID": 100032,
+   "RegionID": "NG-AD",
+   "LocalityName": "Mubi South"
+ },
+ {
+   "LocalityID": 100033,
+   "RegionID": "NG-AD",
+   "LocalityName": "Numan"
+ },
+ {
+   "LocalityID": 100034,
+   "RegionID": "NG-AD",
+   "LocalityName": "Shelleng"
+ },
+ {
+   "LocalityID": 100035,
+   "RegionID": "NG-AD",
+   "LocalityName": "Song"
+ },
+ {
+   "LocalityID": 100036,
+   "RegionID": "NG-AD",
+   "LocalityName": "Toungo"
+ },
+ {
+   "LocalityID": 100037,
+   "RegionID": "NG-AD",
+   "LocalityName": "Yola North"
+ },
+ {
+   "LocalityID": 100038,
+   "RegionID": "NG-AD",
+   "LocalityName": "Yola South"
+ },
+ {
+   "LocalityID": 100039,
+   "RegionID": "NG-AK",
+   "LocalityName": "Abak"
+ },
+ {
+   "LocalityID": 100040,
+   "RegionID": "NG-AK",
+   "LocalityName": "Eastern Obolo"
+ },
+ {
+   "LocalityID": 100041,
+   "RegionID": "NG-AK",
+   "LocalityName": "Eket"
+ },
+ {
+   "LocalityID": 100042,
+   "RegionID": "NG-AK",
+   "LocalityName": "Esit Eket"
+ },
+ {
+   "LocalityID": 100043,
+   "RegionID": "NG-AK",
+   "LocalityName": "Essien Udim"
+ },
+ {
+   "LocalityID": 100044,
+   "RegionID": "NG-AK",
+   "LocalityName": "Etim Ekpo"
+ },
+ {
+   "LocalityID": 100045,
+   "RegionID": "NG-AK",
+   "LocalityName": "Etinan"
+ },
+ {
+   "LocalityID": 100046,
+   "RegionID": "NG-AK",
+   "LocalityName": "Ibeno"
+ },
+ {
+   "LocalityID": 100047,
+   "RegionID": "NG-AK",
+   "LocalityName": "Ibesikpo Asutan"
+ },
+ {
+   "LocalityID": 100048,
+   "RegionID": "NG-AK",
+   "LocalityName": "Ibiono Ibom"
+ },
+ {
+   "LocalityID": 100049,
+   "RegionID": "NG-AK",
+   "LocalityName": "Ika"
+ },
+ {
+   "LocalityID": 100050,
+   "RegionID": "NG-AK",
+   "LocalityName": "Ikono"
+ },
+ {
+   "LocalityID": 100051,
+   "RegionID": "NG-AK",
+   "LocalityName": "Ikot Abasi"
+ },
+ {
+   "LocalityID": 100052,
+   "RegionID": "NG-AK",
+   "LocalityName": "Ikot Ekpene"
+ },
+ {
+   "LocalityID": 100053,
+   "RegionID": "NG-AK",
+   "LocalityName": "Ini"
+ },
+ {
+   "LocalityID": 100054,
+   "RegionID": "NG-AK",
+   "LocalityName": "Itu"
+ },
+ {
+   "LocalityID": 100055,
+   "RegionID": "NG-AK",
+   "LocalityName": "Mbo"
+ },
+ {
+   "LocalityID": 100056,
+   "RegionID": "NG-AK",
+   "LocalityName": "Mkpat Enin"
+ },
+ {
+   "LocalityID": 100057,
+   "RegionID": "NG-AK",
+   "LocalityName": "Nsit Atai"
+ },
+ {
+   "LocalityID": 100058,
+   "RegionID": "NG-AK",
+   "LocalityName": "Nsit Ibom"
+ },
+ {
+   "LocalityID": 100059,
+   "RegionID": "NG-AK",
+   "LocalityName": "Nsit Ubium"
+ },
+ {
+   "LocalityID": 100060,
+   "RegionID": "NG-AK",
+   "LocalityName": "Obot Akara"
+ },
+ {
+   "LocalityID": 100061,
+   "RegionID": "NG-AK",
+   "LocalityName": "Okobo"
+ },
+ {
+   "LocalityID": 100062,
+   "RegionID": "NG-AK",
+   "LocalityName": "Onna"
+ },
+ {
+   "LocalityID": 100063,
+   "RegionID": "NG-AK",
+   "LocalityName": "Oron"
+ },
+ {
+   "LocalityID": 100064,
+   "RegionID": "NG-AK",
+   "LocalityName": "Oruk Anam"
+ },
+ {
+   "LocalityID": 100065,
+   "RegionID": "NG-AK",
+   "LocalityName": "Udung Uko"
+ },
+ {
+   "LocalityID": 100066,
+   "RegionID": "NG-AK",
+   "LocalityName": "Ukanafun"
+ },
+ {
+   "LocalityID": 100067,
+   "RegionID": "NG-AK",
+   "LocalityName": "Uruan"
+ },
+ {
+   "LocalityID": 100068,
+   "RegionID": "NG-AK",
+   "LocalityName": "Urue-Offong/Oruko"
+ },
+ {
+   "LocalityID": 100069,
+   "RegionID": "NG-AK",
+   "LocalityName": "Uyo"
+ },
+ {
+   "LocalityID": 100070,
+   "RegionID": "NG-AN",
+   "LocalityName": "Aguata"
+ },
+ {
+   "LocalityID": 100071,
+   "RegionID": "NG-AN",
+   "LocalityName": "Anambra East"
+ },
+ {
+   "LocalityID": 100072,
+   "RegionID": "NG-AN",
+   "LocalityName": "Anambra West"
+ },
+ {
+   "LocalityID": 100073,
+   "RegionID": "NG-AN",
+   "LocalityName": "Anaocha"
+ },
+ {
+   "LocalityID": 100074,
+   "RegionID": "NG-AN",
+   "LocalityName": "Awka North"
+ },
+ {
+   "LocalityID": 100075,
+   "RegionID": "NG-AN",
+   "LocalityName": "Awka South"
+ },
+ {
+   "LocalityID": 100076,
+   "RegionID": "NG-AN",
+   "LocalityName": "Ayamelum"
+ },
+ {
+   "LocalityID": 100077,
+   "RegionID": "NG-AN",
+   "LocalityName": "Dunukofia"
+ },
+ {
+   "LocalityID": 100078,
+   "RegionID": "NG-AN",
+   "LocalityName": "Ekwusigo"
+ },
+ {
+   "LocalityID": 100079,
+   "RegionID": "NG-AN",
+   "LocalityName": "Idemili North"
+ },
+ {
+   "LocalityID": 100080,
+   "RegionID": "NG-AN",
+   "LocalityName": "Idemili South"
+ },
+ {
+   "LocalityID": 100081,
+   "RegionID": "NG-AN",
+   "LocalityName": "Ihiala"
+ },
+ {
+   "LocalityID": 100082,
+   "RegionID": "NG-AN",
+   "LocalityName": "Njikoka"
+ },
+ {
+   "LocalityID": 100083,
+   "RegionID": "NG-AN",
+   "LocalityName": "Nnewi North"
+ },
+ {
+   "LocalityID": 100084,
+   "RegionID": "NG-AN",
+   "LocalityName": "Nnewi South"
+ },
+ {
+   "LocalityID": 100085,
+   "RegionID": "NG-AN",
+   "LocalityName": "Ogbaru"
+ },
+ {
+   "LocalityID": 100086,
+   "RegionID": "NG-AN",
+   "LocalityName": "Onitsha North"
+ },
+ {
+   "LocalityID": 100087,
+   "RegionID": "NG-AN",
+   "LocalityName": "Onitsha South"
+ },
+ {
+   "LocalityID": 100088,
+   "RegionID": "NG-AN",
+   "LocalityName": "Orumba North"
+ },
+ {
+   "LocalityID": 100089,
+   "RegionID": "NG-AN",
+   "LocalityName": "Orumba South"
+ },
+ {
+   "LocalityID": 100090,
+   "RegionID": "NG-AN",
+   "LocalityName": "Oyi"
+ },
+ {
+   "LocalityID": 100091,
+   "RegionID": "NG-BA",
+   "LocalityName": "Alkaleri"
+ },
+ {
+   "LocalityID": 100092,
+   "RegionID": "NG-BA",
+   "LocalityName": "Bauchi"
+ },
+ {
+   "LocalityID": 100093,
+   "RegionID": "NG-BA",
+   "LocalityName": "Bogoro"
+ },
+ {
+   "LocalityID": 100094,
+   "RegionID": "NG-BA",
+   "LocalityName": "Damban"
+ },
+ {
+   "LocalityID": 100095,
+   "RegionID": "NG-BA",
+   "LocalityName": "Darazo"
+ },
+ {
+   "LocalityID": 100096,
+   "RegionID": "NG-BA",
+   "LocalityName": "Dass"
+ },
+ {
+   "LocalityID": 100097,
+   "RegionID": "NG-BA",
+   "LocalityName": "Gamawa"
+ },
+ {
+   "LocalityID": 100098,
+   "RegionID": "NG-BA",
+   "LocalityName": "Ganjuwa"
+ },
+ {
+   "LocalityID": 100099,
+   "RegionID": "NG-BA",
+   "LocalityName": "Giade"
+ },
+ {
+   "LocalityID": 100100,
+   "RegionID": "NG-BA",
+   "LocalityName": "Itas/Gadau"
+ },
+ {
+   "LocalityID": 100101,
+   "RegionID": "NG-BA",
+   "LocalityName": "Jama'are"
+ },
+ {
+   "LocalityID": 100102,
+   "RegionID": "NG-BA",
+   "LocalityName": "Katagum"
+ },
+ {
+   "LocalityID": 100103,
+   "RegionID": "NG-BA",
+   "LocalityName": "Kirfi"
+ },
+ {
+   "LocalityID": 100104,
+   "RegionID": "NG-BA",
+   "LocalityName": "Misau"
+ },
+ {
+   "LocalityID": 100105,
+   "RegionID": "NG-BA",
+   "LocalityName": "Ningi"
+ },
+ {
+   "LocalityID": 100106,
+   "RegionID": "NG-BA",
+   "LocalityName": "Shira"
+ },
+ {
+   "LocalityID": 100107,
+   "RegionID": "NG-BA",
+   "LocalityName": "Tafawa-Balewa"
+ },
+ {
+   "LocalityID": 100108,
+   "RegionID": "NG-BA",
+   "LocalityName": "Toro"
+ },
+ {
+   "LocalityID": 100109,
+   "RegionID": "NG-BA",
+   "LocalityName": "Warji"
+ },
+ {
+   "LocalityID": 100110,
+   "RegionID": "NG-BA",
+   "LocalityName": "Zaki"
+ },
+ {
+   "LocalityID": 100111,
+   "RegionID": "NG-BY",
+   "LocalityName": "Brass"
+ },
+ {
+   "LocalityID": 100112,
+   "RegionID": "NG-BY",
+   "LocalityName": "Ekeremor"
+ },
+ {
+   "LocalityID": 100113,
+   "RegionID": "NG-BY",
+   "LocalityName": "Kolokuma/Opokuma"
+ },
+ {
+   "LocalityID": 100114,
+   "RegionID": "NG-BY",
+   "LocalityName": "Nembe"
+ },
+ {
+   "LocalityID": 100115,
+   "RegionID": "NG-BY",
+   "LocalityName": "Ogbia"
+ },
+ {
+   "LocalityID": 100116,
+   "RegionID": "NG-BY",
+   "LocalityName": "Sagbama"
+ },
+ {
+   "LocalityID": 100117,
+   "RegionID": "NG-BY",
+   "LocalityName": "Southern Ijaw"
+ },
+ {
+   "LocalityID": 100118,
+   "RegionID": "NG-BY",
+   "LocalityName": "Yenagoa"
+ },
+ {
+   "LocalityID": 100119,
+   "RegionID": "NG-BE",
+   "LocalityName": "Ado"
+ },
+ {
+   "LocalityID": 100120,
+   "RegionID": "NG-BE",
+   "LocalityName": "Agatu"
+ },
+ {
+   "LocalityID": 100121,
+   "RegionID": "NG-BE",
+   "LocalityName": "Apa"
+ },
+ {
+   "LocalityID": 100122,
+   "RegionID": "NG-BE",
+   "LocalityName": "Buruku"
+ },
+ {
+   "LocalityID": 100123,
+   "RegionID": "NG-BE",
+   "LocalityName": "Gboko"
+ },
+ {
+   "LocalityID": 100124,
+   "RegionID": "NG-BE",
+   "LocalityName": "Guma"
+ },
+ {
+   "LocalityID": 100125,
+   "RegionID": "NG-BE",
+   "LocalityName": "Gwer East"
+ },
+ {
+   "LocalityID": 100126,
+   "RegionID": "NG-BE",
+   "LocalityName": "Gwer West"
+ },
+ {
+   "LocalityID": 100127,
+   "RegionID": "NG-BE",
+   "LocalityName": "Katsina-Ala"
+ },
+ {
+   "LocalityID": 100128,
+   "RegionID": "NG-BE",
+   "LocalityName": "Konshisha"
+ },
+ {
+   "LocalityID": 100129,
+   "RegionID": "NG-BE",
+   "LocalityName": "Kwande"
+ },
+ {
+   "LocalityID": 100130,
+   "RegionID": "NG-BE",
+   "LocalityName": "Logo"
+ },
+ {
+   "LocalityID": 100131,
+   "RegionID": "NG-BE",
+   "LocalityName": "Makurdi"
+ },
+ {
+   "LocalityID": 100132,
+   "RegionID": "NG-BE",
+   "LocalityName": "Obi"
+ },
+ {
+   "LocalityID": 100133,
+   "RegionID": "NG-BE",
+   "LocalityName": "Ogbadibo"
+ },
+ {
+   "LocalityID": 100134,
+   "RegionID": "NG-BE",
+   "LocalityName": "Ohimini"
+ },
+ {
+   "LocalityID": 100135,
+   "RegionID": "NG-BE",
+   "LocalityName": "Oju"
+ },
+ {
+   "LocalityID": 100136,
+   "RegionID": "NG-BE",
+   "LocalityName": "Okpokwu"
+ },
+ {
+   "LocalityID": 100137,
+   "RegionID": "NG-BE",
+   "LocalityName": "Oturkpo"
+ },
+ {
+   "LocalityID": 100138,
+   "RegionID": "NG-BE",
+   "LocalityName": "Tarka"
+ },
+ {
+   "LocalityID": 100139,
+   "RegionID": "NG-BE",
+   "LocalityName": "Ukum"
+ },
+ {
+   "LocalityID": 100140,
+   "RegionID": "NG-BE",
+   "LocalityName": "Ushongo"
+ },
+ {
+   "LocalityID": 100141,
+   "RegionID": "NG-BE",
+   "LocalityName": "Vandeikya"
+ },
+ {
+   "LocalityID": 100142,
+   "RegionID": "NG-BO",
+   "LocalityName": "Abadam"
+ },
+ {
+   "LocalityID": 100143,
+   "RegionID": "NG-BO",
+   "LocalityName": "Askira/Uba"
+ },
+ {
+   "LocalityID": 100144,
+   "RegionID": "NG-BO",
+   "LocalityName": "Bama"
+ },
+ {
+   "LocalityID": 100145,
+   "RegionID": "NG-BO",
+   "LocalityName": "Bayo"
+ },
+ {
+   "LocalityID": 100146,
+   "RegionID": "NG-BO",
+   "LocalityName": "Biu"
+ },
+ {
+   "LocalityID": 100147,
+   "RegionID": "NG-BO",
+   "LocalityName": "Chibok"
+ },
+ {
+   "LocalityID": 100148,
+   "RegionID": "NG-BO",
+   "LocalityName": "Damboa"
+ },
+ {
+   "LocalityID": 100149,
+   "RegionID": "NG-BO",
+   "LocalityName": "Dikwa"
+ },
+ {
+   "LocalityID": 100150,
+   "RegionID": "NG-BO",
+   "LocalityName": "Gubio"
+ },
+ {
+   "LocalityID": 100151,
+   "RegionID": "NG-BO",
+   "LocalityName": "Guzamala"
+ },
+ {
+   "LocalityID": 100152,
+   "RegionID": "NG-BO",
+   "LocalityName": "Gwoza"
+ },
+ {
+   "LocalityID": 100153,
+   "RegionID": "NG-BO",
+   "LocalityName": "Hawul"
+ },
+ {
+   "LocalityID": 100154,
+   "RegionID": "NG-BO",
+   "LocalityName": "Jere"
+ },
+ {
+   "LocalityID": 100155,
+   "RegionID": "NG-BO",
+   "LocalityName": "Kaga"
+ },
+ {
+   "LocalityID": 100156,
+   "RegionID": "NG-BO",
+   "LocalityName": "Kala/Balge"
+ },
+ {
+   "LocalityID": 100157,
+   "RegionID": "NG-BO",
+   "LocalityName": "Konduga"
+ },
+ {
+   "LocalityID": 100158,
+   "RegionID": "NG-BO",
+   "LocalityName": "Kukawa"
+ },
+ {
+   "LocalityID": 100159,
+   "RegionID": "NG-BO",
+   "LocalityName": "Kwaya Kusar"
+ },
+ {
+   "LocalityID": 100160,
+   "RegionID": "NG-BO",
+   "LocalityName": "Mafa"
+ },
+ {
+   "LocalityID": 100161,
+   "RegionID": "NG-BO",
+   "LocalityName": "Magumeri"
+ },
+ {
+   "LocalityID": 100162,
+   "RegionID": "NG-BO",
+   "LocalityName": "Maiduguri"
+ },
+ {
+   "LocalityID": 100163,
+   "RegionID": "NG-BO",
+   "LocalityName": "Marte"
+ },
+ {
+   "LocalityID": 100164,
+   "RegionID": "NG-BO",
+   "LocalityName": "Mobbar"
+ },
+ {
+   "LocalityID": 100165,
+   "RegionID": "NG-BO",
+   "LocalityName": "Monguno"
+ },
+ {
+   "LocalityID": 100166,
+   "RegionID": "NG-BO",
+   "LocalityName": "Ngala"
+ },
+ {
+   "LocalityID": 100167,
+   "RegionID": "NG-BO",
+   "LocalityName": "Nganzai"
+ },
+ {
+   "LocalityID": 100168,
+   "RegionID": "NG-BO",
+   "LocalityName": "Shani"
+ },
+ {
+   "LocalityID": 100169,
+   "RegionID": "NG-CR",
+   "LocalityName": "Abi"
+ },
+ {
+   "LocalityID": 100170,
+   "RegionID": "NG-CR",
+   "LocalityName": "Akamkpa"
+ },
+ {
+   "LocalityID": 100171,
+   "RegionID": "NG-CR",
+   "LocalityName": "Akpabuyo"
+ },
+ {
+   "LocalityID": 100173,
+   "RegionID": "NG-CR",
+   "LocalityName": "Bekwara"
+ },
+ {
+   "LocalityID": 100174,
+   "RegionID": "NG-CR",
+   "LocalityName": "Biase"
+ },
+ {
+   "LocalityID": 100175,
+   "RegionID": "NG-CR",
+   "LocalityName": "Boki"
+ },
+ {
+   "LocalityID": 100176,
+   "RegionID": "NG-CR",
+   "LocalityName": "Calabar Municipal"
+ },
+ {
+   "LocalityID": 100177,
+   "RegionID": "NG-CR",
+   "LocalityName": "Calabar South"
+ },
+ {
+   "LocalityID": 100178,
+   "RegionID": "NG-CR",
+   "LocalityName": "Etung"
+ },
+ {
+   "LocalityID": 100179,
+   "RegionID": "NG-CR",
+   "LocalityName": "Ikom"
+ },
+ {
+   "LocalityID": 100180,
+   "RegionID": "NG-CR",
+   "LocalityName": "Obanliku"
+ },
+ {
+   "LocalityID": 100181,
+   "RegionID": "NG-CR",
+   "LocalityName": "Obubra"
+ },
+ {
+   "LocalityID": 100182,
+   "RegionID": "NG-CR",
+   "LocalityName": "Obudu"
+ },
+ {
+   "LocalityID": 100183,
+   "RegionID": "NG-CR",
+   "LocalityName": "Odukpani"
+ },
+ {
+   "LocalityID": 100184,
+   "RegionID": "NG-CR",
+   "LocalityName": "Ogoja"
+ },
+ {
+   "LocalityID": 100185,
+   "RegionID": "NG-CR",
+   "LocalityName": "Yakurr"
+ },
+ {
+   "LocalityID": 100186,
+   "RegionID": "NG-CR",
+   "LocalityName": "Yala"
+ },
+ {
+   "LocalityID": 100187,
+   "RegionID": "NG-DE",
+   "LocalityName": "Aniocha North"
+ },
+ {
+   "LocalityID": 100188,
+   "RegionID": "NG-DE",
+   "LocalityName": "Aniocha South"
+ },
+ {
+   "LocalityID": 100189,
+   "RegionID": "NG-DE",
+   "LocalityName": "Bomadi"
+ },
+ {
+   "LocalityID": 100190,
+   "RegionID": "NG-DE",
+   "LocalityName": "Burutu"
+ },
+ {
+   "LocalityID": 100191,
+   "RegionID": "NG-DE",
+   "LocalityName": "Ethiope East"
+ },
+ {
+   "LocalityID": 100192,
+   "RegionID": "NG-DE",
+   "LocalityName": "Ethiope West"
+ },
+ {
+   "LocalityID": 100193,
+   "RegionID": "NG-DE",
+   "LocalityName": "Ika North East"
+ },
+ {
+   "LocalityID": 100194,
+   "RegionID": "NG-DE",
+   "LocalityName": "Ika South"
+ },
+ {
+   "LocalityID": 100195,
+   "RegionID": "NG-DE",
+   "LocalityName": "Isoko North"
+ },
+ {
+   "LocalityID": 100196,
+   "RegionID": "NG-DE",
+   "LocalityName": "Isoko South"
+ },
+ {
+   "LocalityID": 100197,
+   "RegionID": "NG-DE",
+   "LocalityName": "Ndokwa East"
+ },
+ {
+   "LocalityID": 100198,
+   "RegionID": "NG-DE",
+   "LocalityName": "Ndokwa West"
+ },
+ {
+   "LocalityID": 100199,
+   "RegionID": "NG-DE",
+   "LocalityName": "Okpe"
+ },
+ {
+   "LocalityID": 100200,
+   "RegionID": "NG-DE",
+   "LocalityName": "Oshimili North"
+ },
+ {
+   "LocalityID": 100201,
+   "RegionID": "NG-DE",
+   "LocalityName": "Oshimili South"
+ },
+ {
+   "LocalityID": 100202,
+   "RegionID": "NG-DE",
+   "LocalityName": "Patani"
+ },
+ {
+   "LocalityID": 100203,
+   "RegionID": "NG-DE",
+   "LocalityName": "Sapele"
+ },
+ {
+   "LocalityID": 100204,
+   "RegionID": "NG-DE",
+   "LocalityName": "Udu"
+ },
+ {
+   "LocalityID": 100205,
+   "RegionID": "NG-DE",
+   "LocalityName": "Ughelli North"
+ },
+ {
+   "LocalityID": 100206,
+   "RegionID": "NG-DE",
+   "LocalityName": "Ughelli South"
+ },
+ {
+   "LocalityID": 100207,
+   "RegionID": "NG-DE",
+   "LocalityName": "Ukwuani"
+ },
+ {
+   "LocalityID": 100208,
+   "RegionID": "NG-DE",
+   "LocalityName": "Uvwie"
+ },
+ {
+   "LocalityID": 100209,
+   "RegionID": "NG-DE",
+   "LocalityName": "Warri North"
+ },
+ {
+   "LocalityID": 100210,
+   "RegionID": "NG-DE",
+   "LocalityName": "Warri South"
+ },
+ {
+   "LocalityID": 100211,
+   "RegionID": "NG-DE",
+   "LocalityName": "Warri South West"
+ },
+ {
+   "LocalityID": 100212,
+   "RegionID": "NG-EB",
+   "LocalityName": "Abakaliki"
+ },
+ {
+   "LocalityID": 100213,
+   "RegionID": "NG-EB",
+   "LocalityName": "Afikpo North"
+ },
+ {
+   "LocalityID": 100214,
+   "RegionID": "NG-EB",
+   "LocalityName": "Afikpo South"
+ },
+ {
+   "LocalityID": 100215,
+   "RegionID": "NG-EB",
+   "LocalityName": "Ebonyi"
+ },
+ {
+   "LocalityID": 100216,
+   "RegionID": "NG-EB",
+   "LocalityName": "Ezza North"
+ },
+ {
+   "LocalityID": 100217,
+   "RegionID": "NG-EB",
+   "LocalityName": "Ezza South"
+ },
+ {
+   "LocalityID": 100218,
+   "RegionID": "NG-EB",
+   "LocalityName": "Ikwo"
+ },
+ {
+   "LocalityID": 100219,
+   "RegionID": "NG-EB",
+   "LocalityName": "Ishielu"
+ },
+ {
+   "LocalityID": 100220,
+   "RegionID": "NG-EB",
+   "LocalityName": "Ivo"
+ },
+ {
+   "LocalityID": 100221,
+   "RegionID": "NG-EB",
+   "LocalityName": "Izzi"
+ },
+ {
+   "LocalityID": 100222,
+   "RegionID": "NG-EB",
+   "LocalityName": "Ohaozara"
+ },
+ {
+   "LocalityID": 100223,
+   "RegionID": "NG-EB",
+   "LocalityName": "Ohaukwu"
+ },
+ {
+   "LocalityID": 100224,
+   "RegionID": "NG-EB",
+   "LocalityName": "Onicha"
+ },
+ {
+   "LocalityID": 100225,
+   "RegionID": "NG-ED",
+   "LocalityName": "Akoko-Edo"
+ },
+ {
+   "LocalityID": 100226,
+   "RegionID": "NG-ED",
+   "LocalityName": "Egor"
+ },
+ {
+   "LocalityID": 100227,
+   "RegionID": "NG-ED",
+   "LocalityName": "Esan Central"
+ },
+ {
+   "LocalityID": 100228,
+   "RegionID": "NG-ED",
+   "LocalityName": "Esan North East"
+ },
+ {
+   "LocalityID": 100229,
+   "RegionID": "NG-ED",
+   "LocalityName": "Esan South East"
+ },
+ {
+   "LocalityID": 100230,
+   "RegionID": "NG-ED",
+   "LocalityName": "Esan West"
+ },
+ {
+   "LocalityID": 100231,
+   "RegionID": "NG-ED",
+   "LocalityName": "Etsako Central"
+ },
+ {
+   "LocalityID": 100232,
+   "RegionID": "NG-ED",
+   "LocalityName": "Etsako East"
+ },
+ {
+   "LocalityID": 100233,
+   "RegionID": "NG-ED",
+   "LocalityName": "Etsako West"
+ },
+ {
+   "LocalityID": 100234,
+   "RegionID": "NG-ED",
+   "LocalityName": "Igueben"
+ },
+ {
+   "LocalityID": 100235,
+   "RegionID": "NG-ED",
+   "LocalityName": "Ikpoba-Okha"
+ },
+ {
+   "LocalityID": 100236,
+   "RegionID": "NG-ED",
+   "LocalityName": "Oredo"
+ },
+ {
+   "LocalityID": 100237,
+   "RegionID": "NG-ED",
+   "LocalityName": "Orhionmwon"
+ },
+ {
+   "LocalityID": 100238,
+   "RegionID": "NG-ED",
+   "LocalityName": "Ovia North East"
+ },
+ {
+   "LocalityID": 100239,
+   "RegionID": "NG-ED",
+   "LocalityName": "Ovia South West"
+ },
+ {
+   "LocalityID": 100240,
+   "RegionID": "NG-ED",
+   "LocalityName": "Owan East"
+ },
+ {
+   "LocalityID": 100241,
+   "RegionID": "NG-ED",
+   "LocalityName": "Owan West"
+ },
+ {
+   "LocalityID": 100242,
+   "RegionID": "NG-ED",
+   "LocalityName": "Uhunmwonde"
+ },
+ {
+   "LocalityID": 100243,
+   "RegionID": "NG-EK",
+   "LocalityName": "Ado Ekiti"
+ },
+ {
+   "LocalityID": 100244,
+   "RegionID": "NG-EK",
+   "LocalityName": "Aiyekire (Gbonyin)"
+ },
+ {
+   "LocalityID": 100245,
+   "RegionID": "NG-EK",
+   "LocalityName": "Efon"
+ },
+ {
+   "LocalityID": 100246,
+   "RegionID": "NG-EK",
+   "LocalityName": "Ekiti East"
+ },
+ {
+   "LocalityID": 100247,
+   "RegionID": "NG-EK",
+   "LocalityName": "Ekiti South"
+ },
+ {
+   "LocalityID": 100248,
+   "RegionID": "NG-EK",
+   "LocalityName": "Ekiti West"
+ },
+ {
+   "LocalityID": 100249,
+   "RegionID": "NG-EK",
+   "LocalityName": "Emure"
+ },
+ {
+   "LocalityID": 100250,
+   "RegionID": "NG-EK",
+   "LocalityName": "Ido-Osi"
+ },
+ {
+   "LocalityID": 100251,
+   "RegionID": "NG-EK",
+   "LocalityName": "Ijero"
+ },
+ {
+   "LocalityID": 100252,
+   "RegionID": "NG-EK",
+   "LocalityName": "Ikere"
+ },
+ {
+   "LocalityID": 100253,
+   "RegionID": "NG-EK",
+   "LocalityName": "Ikole"
+ },
+ {
+   "LocalityID": 100254,
+   "RegionID": "NG-EK",
+   "LocalityName": "Ilejemeje"
+ },
+ {
+   "LocalityID": 100255,
+   "RegionID": "NG-EK",
+   "LocalityName": "Irepodun/Ifelodun"
+ },
+ {
+   "LocalityID": 100256,
+   "RegionID": "NG-EK",
+   "LocalityName": "Ise/Orun"
+ },
+ {
+   "LocalityID": 100257,
+   "RegionID": "NG-EK",
+   "LocalityName": "Moba"
+ },
+ {
+   "LocalityID": 100258,
+   "RegionID": "NG-EK",
+   "LocalityName": "Oye"
+ },
+ {
+   "LocalityID": 100259,
+   "RegionID": "NG-EN",
+   "LocalityName": "Aninri"
+ },
+ {
+   "LocalityID": 100260,
+   "RegionID": "NG-EN",
+   "LocalityName": "Awgu"
+ },
+ {
+   "LocalityID": 100261,
+   "RegionID": "NG-EN",
+   "LocalityName": "Enugu East"
+ },
+ {
+   "LocalityID": 100262,
+   "RegionID": "NG-EN",
+   "LocalityName": "Enugu North"
+ },
+ {
+   "LocalityID": 100263,
+   "RegionID": "NG-EN",
+   "LocalityName": "Enugu South"
+ },
+ {
+   "LocalityID": 100264,
+   "RegionID": "NG-EN",
+   "LocalityName": "Ezeagu"
+ },
+ {
+   "LocalityID": 100265,
+   "RegionID": "NG-EN",
+   "LocalityName": "Igbo-Etiti"
+ },
+ {
+   "LocalityID": 100266,
+   "RegionID": "NG-EN",
+   "LocalityName": "Igbo-Eze North"
+ },
+ {
+   "LocalityID": 100267,
+   "RegionID": "NG-EN",
+   "LocalityName": "Igbo-Eze South"
+ },
+ {
+   "LocalityID": 100268,
+   "RegionID": "NG-EN",
+   "LocalityName": "Isi-Uzo"
+ },
+ {
+   "LocalityID": 100269,
+   "RegionID": "NG-EN",
+   "LocalityName": "Nkanu East"
+ },
+ {
+   "LocalityID": 100270,
+   "RegionID": "NG-EN",
+   "LocalityName": "Nkanu West"
+ },
+ {
+   "LocalityID": 100271,
+   "RegionID": "NG-EN",
+   "LocalityName": "Nsukka"
+ },
+ {
+   "LocalityID": 100272,
+   "RegionID": "NG-EN",
+   "LocalityName": "Oji-River"
+ },
+ {
+   "LocalityID": 100273,
+   "RegionID": "NG-EN",
+   "LocalityName": "Udenu"
+ },
+ {
+   "LocalityID": 100274,
+   "RegionID": "NG-EN",
+   "LocalityName": "Udi"
+ },
+ {
+   "LocalityID": 100275,
+   "RegionID": "NG-EN",
+   "LocalityName": "Uzo-Uwani"
+ },
+ {
+   "LocalityID": 100276,
+   "RegionID": "NG-FC",
+   "LocalityName": "Abaji"
+ },
+ {
+   "LocalityID": 100277,
+   "RegionID": "NG-FC",
+   "LocalityName": "Abuja Municipal Area Council"
+ },
+ {
+   "LocalityID": 100278,
+   "RegionID": "NG-FC",
+   "LocalityName": "Bwari"
+ },
+ {
+   "LocalityID": 100279,
+   "RegionID": "NG-FC",
+   "LocalityName": "Gwagwalada"
+ },
+ {
+   "LocalityID": 100280,
+   "RegionID": "NG-FC",
+   "LocalityName": "Kuje"
+ },
+ {
+   "LocalityID": 100281,
+   "RegionID": "NG-FC",
+   "LocalityName": "Kwali"
+ },
+ {
+   "LocalityID": 100282,
+   "RegionID": "NG-GO",
+   "LocalityName": "Akko"
+ },
+ {
+   "LocalityID": 100283,
+   "RegionID": "NG-GO",
+   "LocalityName": "Balanga"
+ },
+ {
+   "LocalityID": 100284,
+   "RegionID": "NG-GO",
+   "LocalityName": "Billiri"
+ },
+ {
+   "LocalityID": 100285,
+   "RegionID": "NG-GO",
+   "LocalityName": "Dukku"
+ },
+ {
+   "LocalityID": 100286,
+   "RegionID": "NG-GO",
+   "LocalityName": "Funakaye"
+ },
+ {
+   "LocalityID": 100287,
+   "RegionID": "NG-GO",
+   "LocalityName": "Gombe"
+ },
+ {
+   "LocalityID": 100288,
+   "RegionID": "NG-GO",
+   "LocalityName": "Kaltungo"
+ },
+ {
+   "LocalityID": 100289,
+   "RegionID": "NG-GO",
+   "LocalityName": "Kwami"
+ },
+ {
+   "LocalityID": 100290,
+   "RegionID": "NG-GO",
+   "LocalityName": "Nafada"
+ },
+ {
+   "LocalityID": 100291,
+   "RegionID": "NG-GO",
+   "LocalityName": "Shomgom"
+ },
+ {
+   "LocalityID": 100292,
+   "RegionID": "NG-GO",
+   "LocalityName": "Yamaltu/Deba"
+ },
+ {
+   "LocalityID": 100293,
+   "RegionID": "NG-IM",
+   "LocalityName": "Abo-Mbaise"
+ },
+ {
+   "LocalityID": 100294,
+   "RegionID": "NG-IM",
+   "LocalityName": "Ahiazu-Mbaise"
+ },
+ {
+   "LocalityID": 100295,
+   "RegionID": "NG-IM",
+   "LocalityName": "Ehime-Mbano"
+ },
+ {
+   "LocalityID": 100296,
+   "RegionID": "NG-IM",
+   "LocalityName": "Ezinihitte"
+ },
+ {
+   "LocalityID": 100297,
+   "RegionID": "NG-IM",
+   "LocalityName": "Ideato North"
+ },
+ {
+   "LocalityID": 100298,
+   "RegionID": "NG-IM",
+   "LocalityName": "Ideato South"
+ },
+ {
+   "LocalityID": 100299,
+   "RegionID": "NG-IM",
+   "LocalityName": "Ihitte/Uboma"
+ },
+ {
+   "LocalityID": 100300,
+   "RegionID": "NG-IM",
+   "LocalityName": "Ikeduru"
+ },
+ {
+   "LocalityID": 100301,
+   "RegionID": "NG-IM",
+   "LocalityName": "Isiala-Mbano"
+ },
+ {
+   "LocalityID": 100302,
+   "RegionID": "NG-IM",
+   "LocalityName": "Isu"
+ },
+ {
+   "LocalityID": 100303,
+   "RegionID": "NG-IM",
+   "LocalityName": "Mbaitoli"
+ },
+ {
+   "LocalityID": 100304,
+   "RegionID": "NG-IM",
+   "LocalityName": "Ngor-Okpala"
+ },
+ {
+   "LocalityID": 100305,
+   "RegionID": "NG-IM",
+   "LocalityName": "Njaba"
+ },
+ {
+   "LocalityID": 100306,
+   "RegionID": "NG-IM",
+   "LocalityName": "Nkwerre"
+ },
+ {
+   "LocalityID": 100307,
+   "RegionID": "NG-IM",
+   "LocalityName": "Nwangele"
+ },
+ {
+   "LocalityID": 100308,
+   "RegionID": "NG-IM",
+   "LocalityName": "Obowo"
+ },
+ {
+   "LocalityID": 100309,
+   "RegionID": "NG-IM",
+   "LocalityName": "Oguta"
+ },
+ {
+   "LocalityID": 100310,
+   "RegionID": "NG-IM",
+   "LocalityName": "Ohaji/Egbema"
+ },
+ {
+   "LocalityID": 100311,
+   "RegionID": "NG-IM",
+   "LocalityName": "Okigwe"
+ },
+ {
+   "LocalityID": 100312,
+   "RegionID": "NG-IM",
+   "LocalityName": "Orlu"
+ },
+ {
+   "LocalityID": 100313,
+   "RegionID": "NG-IM",
+   "LocalityName": "Orsu"
+ },
+ {
+   "LocalityID": 100314,
+   "RegionID": "NG-IM",
+   "LocalityName": "Oru East"
+ },
+ {
+   "LocalityID": 100315,
+   "RegionID": "NG-IM",
+   "LocalityName": "Oru West"
+ },
+ {
+   "LocalityID": 100316,
+   "RegionID": "NG-IM",
+   "LocalityName": "Owerri Municipal"
+ },
+ {
+   "LocalityID": 100317,
+   "RegionID": "NG-IM",
+   "LocalityName": "Owerri North"
+ },
+ {
+   "LocalityID": 100318,
+   "RegionID": "NG-IM",
+   "LocalityName": "Owerri West"
+ },
+ {
+   "LocalityID": 100319,
+   "RegionID": "NG-IM",
+   "LocalityName": "Unuimo"
+ },
+ {
+   "LocalityID": 100320,
+   "RegionID": "NG-JI",
+   "LocalityName": "Auyo"
+ },
+ {
+   "LocalityID": 100321,
+   "RegionID": "NG-JI",
+   "LocalityName": "Babura"
+ },
+ {
+   "LocalityID": 100322,
+   "RegionID": "NG-JI",
+   "LocalityName": "Biriniwa"
+ },
+ {
+   "LocalityID": 100323,
+   "RegionID": "NG-JI",
+   "LocalityName": "Birnin Kudu"
+ },
+ {
+   "LocalityID": 100324,
+   "RegionID": "NG-JI",
+   "LocalityName": "Buji"
+ },
+ {
+   "LocalityID": 100325,
+   "RegionID": "NG-JI",
+   "LocalityName": "Dutse"
+ },
+ {
+   "LocalityID": 100326,
+   "RegionID": "NG-JI",
+   "LocalityName": "Gagarawa"
+ },
+ {
+   "LocalityID": 100327,
+   "RegionID": "NG-JI",
+   "LocalityName": "Garki"
+ },
+ {
+   "LocalityID": 100328,
+   "RegionID": "NG-JI",
+   "LocalityName": "Gumel"
+ },
+ {
+   "LocalityID": 100329,
+   "RegionID": "NG-JI",
+   "LocalityName": "Guri"
+ },
+ {
+   "LocalityID": 100330,
+   "RegionID": "NG-JI",
+   "LocalityName": "Gwaram"
+ },
+ {
+   "LocalityID": 100331,
+   "RegionID": "NG-JI",
+   "LocalityName": "Gwiwa"
+ },
+ {
+   "LocalityID": 100332,
+   "RegionID": "NG-JI",
+   "LocalityName": "Hadejia"
+ },
+ {
+   "LocalityID": 100333,
+   "RegionID": "NG-JI",
+   "LocalityName": "Jahun"
+ },
+ {
+   "LocalityID": 100334,
+   "RegionID": "NG-JI",
+   "LocalityName": "Kafin Hausa"
+ },
+ {
+   "LocalityID": 100335,
+   "RegionID": "NG-JI",
+   "LocalityName": "Kaugama"
+ },
+ {
+   "LocalityID": 100336,
+   "RegionID": "NG-JI",
+   "LocalityName": "Kazaure"
+ },
+ {
+   "LocalityID": 100337,
+   "RegionID": "NG-JI",
+   "LocalityName": "Kiri Kasama"
+ },
+ {
+   "LocalityID": 100338,
+   "RegionID": "NG-JI",
+   "LocalityName": "Kiyawa"
+ },
+ {
+   "LocalityID": 100339,
+   "RegionID": "NG-JI",
+   "LocalityName": "Maigatari"
+ },
+ {
+   "LocalityID": 100340,
+   "RegionID": "NG-JI",
+   "LocalityName": "Malam Madori"
+ },
+ {
+   "LocalityID": 100341,
+   "RegionID": "NG-JI",
+   "LocalityName": "Miga"
+ },
+ {
+   "LocalityID": 100342,
+   "RegionID": "NG-JI",
+   "LocalityName": "Ringim"
+ },
+ {
+   "LocalityID": 100343,
+   "RegionID": "NG-JI",
+   "LocalityName": "Roni"
+ },
+ {
+   "LocalityID": 100344,
+   "RegionID": "NG-JI",
+   "LocalityName": "Sule Tankarkar"
+ },
+ {
+   "LocalityID": 100345,
+   "RegionID": "NG-JI",
+   "LocalityName": "Taura"
+ },
+ {
+   "LocalityID": 100346,
+   "RegionID": "NG-JI",
+   "LocalityName": "Yankwashi"
+ },
+ {
+   "LocalityID": 100347,
+   "RegionID": "NG-KD",
+   "LocalityName": "Birnin-Gwari"
+ },
+ {
+   "LocalityID": 100348,
+   "RegionID": "NG-KD",
+   "LocalityName": "Chikun"
+ },
+ {
+   "LocalityID": 100349,
+   "RegionID": "NG-KD",
+   "LocalityName": "Giwa"
+ },
+ {
+   "LocalityID": 100350,
+   "RegionID": "NG-KD",
+   "LocalityName": "Igabi"
+ },
+ {
+   "LocalityID": 100351,
+   "RegionID": "NG-KD",
+   "LocalityName": "Ikara"
+ },
+ {
+   "LocalityID": 100352,
+   "RegionID": "NG-KD",
+   "LocalityName": "Jaba"
+ },
+ {
+   "LocalityID": 100353,
+   "RegionID": "NG-KD",
+   "LocalityName": "Jema'a"
+ },
+ {
+   "LocalityID": 100354,
+   "RegionID": "NG-KD",
+   "LocalityName": "Kachia"
+ },
+ {
+   "LocalityID": 100355,
+   "RegionID": "NG-KD",
+   "LocalityName": "Kaduna North"
+ },
+ {
+   "LocalityID": 100356,
+   "RegionID": "NG-KD",
+   "LocalityName": "Kaduna South"
+ },
+ {
+   "LocalityID": 100357,
+   "RegionID": "NG-KD",
+   "LocalityName": "Kagarko"
+ },
+ {
+   "LocalityID": 100358,
+   "RegionID": "NG-KD",
+   "LocalityName": "Kajuru"
+ },
+ {
+   "LocalityID": 100359,
+   "RegionID": "NG-KD",
+   "LocalityName": "Kaura"
+ },
+ {
+   "LocalityID": 100360,
+   "RegionID": "NG-KD",
+   "LocalityName": "Kauru"
+ },
+ {
+   "LocalityID": 100361,
+   "RegionID": "NG-KD",
+   "LocalityName": "Kubau"
+ },
+ {
+   "LocalityID": 100362,
+   "RegionID": "NG-KD",
+   "LocalityName": "Kudan"
+ },
+ {
+   "LocalityID": 100363,
+   "RegionID": "NG-KD",
+   "LocalityName": "Lere"
+ },
+ {
+   "LocalityID": 100364,
+   "RegionID": "NG-KD",
+   "LocalityName": "Makarfi"
+ },
+ {
+   "LocalityID": 100365,
+   "RegionID": "NG-KD",
+   "LocalityName": "Sabon-Gari"
+ },
+ {
+   "LocalityID": 100366,
+   "RegionID": "NG-KD",
+   "LocalityName": "Sanga"
+ },
+ {
+   "LocalityID": 100367,
+   "RegionID": "NG-KD",
+   "LocalityName": "Soba"
+ },
+ {
+   "LocalityID": 100368,
+   "RegionID": "NG-KD",
+   "LocalityName": "Zangon-Kataf"
+ },
+ {
+   "LocalityID": 100369,
+   "RegionID": "NG-KD",
+   "LocalityName": "Zaria"
+ },
+ {
+   "LocalityID": 100370,
+   "RegionID": "NG-KN",
+   "LocalityName": "Ajingi"
+ },
+ {
+   "LocalityID": 100371,
+   "RegionID": "NG-KN",
+   "LocalityName": "Albasu"
+ },
+ {
+   "LocalityID": 100372,
+   "RegionID": "NG-KN",
+   "LocalityName": "Bagwai"
+ },
+ {
+   "LocalityID": 100373,
+   "RegionID": "NG-KN",
+   "LocalityName": "Bebeji"
+ },
+ {
+   "LocalityID": 100374,
+   "RegionID": "NG-KN",
+   "LocalityName": "Bichi"
+ },
+ {
+   "LocalityID": 100375,
+   "RegionID": "NG-KN",
+   "LocalityName": "Bunkure"
+ },
+ {
+   "LocalityID": 100376,
+   "RegionID": "NG-KN",
+   "LocalityName": "Dala"
+ },
+ {
+   "LocalityID": 100377,
+   "RegionID": "NG-KN",
+   "LocalityName": "Dambatta"
+ },
+ {
+   "LocalityID": 100378,
+   "RegionID": "NG-KN",
+   "LocalityName": "Dawakin Kudu"
+ },
+ {
+   "LocalityID": 100379,
+   "RegionID": "NG-KN",
+   "LocalityName": "Dawakin Tofa"
+ },
+ {
+   "LocalityID": 100380,
+   "RegionID": "NG-KN",
+   "LocalityName": "Doguwa"
+ },
+ {
+   "LocalityID": 100381,
+   "RegionID": "NG-KN",
+   "LocalityName": "Fagge"
+ },
+ {
+   "LocalityID": 100382,
+   "RegionID": "NG-KN",
+   "LocalityName": "Gabasawa"
+ },
+ {
+   "LocalityID": 100383,
+   "RegionID": "NG-KN",
+   "LocalityName": "Garko"
+ },
+ {
+   "LocalityID": 100384,
+   "RegionID": "NG-KN",
+   "LocalityName": "Garum Mallam"
+ },
+ {
+   "LocalityID": 100385,
+   "RegionID": "NG-KN",
+   "LocalityName": "Gaya"
+ },
+ {
+   "LocalityID": 100386,
+   "RegionID": "NG-KN",
+   "LocalityName": "Gezawa"
+ },
+ {
+   "LocalityID": 100387,
+   "RegionID": "NG-KN",
+   "LocalityName": "Gwale"
+ },
+ {
+   "LocalityID": 100388,
+   "RegionID": "NG-KN",
+   "LocalityName": "Gwarzo"
+ },
+ {
+   "LocalityID": 100389,
+   "RegionID": "NG-KN",
+   "LocalityName": "Kabo"
+ },
+ {
+   "LocalityID": 100390,
+   "RegionID": "NG-KN",
+   "LocalityName": "Kano Municipal"
+ },
+ {
+   "LocalityID": 100391,
+   "RegionID": "NG-KN",
+   "LocalityName": "Karaye"
+ },
+ {
+   "LocalityID": 100392,
+   "RegionID": "NG-KN",
+   "LocalityName": "Kibiya"
+ },
+ {
+   "LocalityID": 100393,
+   "RegionID": "NG-KN",
+   "LocalityName": "Kiru"
+ },
+ {
+   "LocalityID": 100394,
+   "RegionID": "NG-KN",
+   "LocalityName": "Kumbotso"
+ },
+ {
+   "LocalityID": 100395,
+   "RegionID": "NG-KN",
+   "LocalityName": "Kunchi"
+ },
+ {
+   "LocalityID": 100396,
+   "RegionID": "NG-KN",
+   "LocalityName": "Kura"
+ },
+ {
+   "LocalityID": 100397,
+   "RegionID": "NG-KN",
+   "LocalityName": "Madobi"
+ },
+ {
+   "LocalityID": 100398,
+   "RegionID": "NG-KN",
+   "LocalityName": "Makoda"
+ },
+ {
+   "LocalityID": 100399,
+   "RegionID": "NG-KN",
+   "LocalityName": "Minjibir"
+ },
+ {
+   "LocalityID": 100400,
+   "RegionID": "NG-KN",
+   "LocalityName": "Nasarawa"
+ },
+ {
+   "LocalityID": 100401,
+   "RegionID": "NG-KN",
+   "LocalityName": "Rano"
+ },
+ {
+   "LocalityID": 100402,
+   "RegionID": "NG-KN",
+   "LocalityName": "Rimin Gado"
+ },
+ {
+   "LocalityID": 100403,
+   "RegionID": "NG-KN",
+   "LocalityName": "Rogo"
+ },
+ {
+   "LocalityID": 100404,
+   "RegionID": "NG-KN",
+   "LocalityName": "Shanono"
+ },
+ {
+   "LocalityID": 100405,
+   "RegionID": "NG-KN",
+   "LocalityName": "Sumaila"
+ },
+ {
+   "LocalityID": 100406,
+   "RegionID": "NG-KN",
+   "LocalityName": "Takai"
+ },
+ {
+   "LocalityID": 100407,
+   "RegionID": "NG-KN",
+   "LocalityName": "Tarauni"
+ },
+ {
+   "LocalityID": 100408,
+   "RegionID": "NG-KN",
+   "LocalityName": "Tofa"
+ },
+ {
+   "LocalityID": 100409,
+   "RegionID": "NG-KN",
+   "LocalityName": "Tsanyawa"
+ },
+ {
+   "LocalityID": 100410,
+   "RegionID": "NG-KN",
+   "LocalityName": "Tudun Wada"
+ },
+ {
+   "LocalityID": 100411,
+   "RegionID": "NG-KN",
+   "LocalityName": "Ungogo"
+ },
+ {
+   "LocalityID": 100412,
+   "RegionID": "NG-KN",
+   "LocalityName": "Warawa"
+ },
+ {
+   "LocalityID": 100413,
+   "RegionID": "NG-KN",
+   "LocalityName": "Wudil"
+ },
+ {
+   "LocalityID": 100414,
+   "RegionID": "NG-KT",
+   "LocalityName": "Bakori"
+ },
+ {
+   "LocalityID": 100415,
+   "RegionID": "NG-KT",
+   "LocalityName": "Batagarawa"
+ },
+ {
+   "LocalityID": 100416,
+   "RegionID": "NG-KT",
+   "LocalityName": "Batsari"
+ },
+ {
+   "LocalityID": 100417,
+   "RegionID": "NG-KT",
+   "LocalityName": "Baure"
+ },
+ {
+   "LocalityID": 100418,
+   "RegionID": "NG-KT",
+   "LocalityName": "Bindawa"
+ },
+ {
+   "LocalityID": 100419,
+   "RegionID": "NG-KT",
+   "LocalityName": "Charanchi"
+ },
+ {
+   "LocalityID": 100420,
+   "RegionID": "NG-KT",
+   "LocalityName": "Dandume"
+ },
+ {
+   "LocalityID": 100421,
+   "RegionID": "NG-KT",
+   "LocalityName": "Danja"
+ },
+ {
+   "LocalityID": 100422,
+   "RegionID": "NG-KT",
+   "LocalityName": "Dan Musa"
+ },
+ {
+   "LocalityID": 100423,
+   "RegionID": "NG-KT",
+   "LocalityName": "Daura"
+ },
+ {
+   "LocalityID": 100424,
+   "RegionID": "NG-KT",
+   "LocalityName": "Dutsi"
+ },
+ {
+   "LocalityID": 100425,
+   "RegionID": "NG-KT",
+   "LocalityName": "Dutsin-Ma"
+ },
+ {
+   "LocalityID": 100426,
+   "RegionID": "NG-KT",
+   "LocalityName": "Faskari"
+ },
+ {
+   "LocalityID": 100427,
+   "RegionID": "NG-KT",
+   "LocalityName": "Funtua"
+ },
+ {
+   "LocalityID": 100428,
+   "RegionID": "NG-KT",
+   "LocalityName": "Ingawa"
+ },
+ {
+   "LocalityID": 100429,
+   "RegionID": "NG-KT",
+   "LocalityName": "Jibia"
+ },
+ {
+   "LocalityID": 100430,
+   "RegionID": "NG-KT",
+   "LocalityName": "Kafur"
+ },
+ {
+   "LocalityID": 100431,
+   "RegionID": "NG-KT",
+   "LocalityName": "Kaita"
+ },
+ {
+   "LocalityID": 100432,
+   "RegionID": "NG-KT",
+   "LocalityName": "Kankara"
+ },
+ {
+   "LocalityID": 100433,
+   "RegionID": "NG-KT",
+   "LocalityName": "Kankia"
+ },
+ {
+   "LocalityID": 100434,
+   "RegionID": "NG-KT",
+   "LocalityName": "Katsina"
+ },
+ {
+   "LocalityID": 100435,
+   "RegionID": "NG-KT",
+   "LocalityName": "Kurfi"
+ },
+ {
+   "LocalityID": 100436,
+   "RegionID": "NG-KT",
+   "LocalityName": "Kusada"
+ },
+ {
+   "LocalityID": 100437,
+   "RegionID": "NG-KT",
+   "LocalityName": "Mai'adua"
+ },
+ {
+   "LocalityID": 100438,
+   "RegionID": "NG-KT",
+   "LocalityName": "Malumfashi"
+ },
+ {
+   "LocalityID": 100439,
+   "RegionID": "NG-KT",
+   "LocalityName": "Mani"
+ },
+ {
+   "LocalityID": 100440,
+   "RegionID": "NG-KT",
+   "LocalityName": "Mashi"
+ },
+ {
+   "LocalityID": 100441,
+   "RegionID": "NG-KT",
+   "LocalityName": "Matazu"
+ },
+ {
+   "LocalityID": 100442,
+   "RegionID": "NG-KT",
+   "LocalityName": "Musawa"
+ },
+ {
+   "LocalityID": 100443,
+   "RegionID": "NG-KT",
+   "LocalityName": "Rimi"
+ },
+ {
+   "LocalityID": 100444,
+   "RegionID": "NG-KT",
+   "LocalityName": "Sabuwa"
+ },
+ {
+   "LocalityID": 100445,
+   "RegionID": "NG-KT",
+   "LocalityName": "Safana"
+ },
+ {
+   "LocalityID": 100446,
+   "RegionID": "NG-KT",
+   "LocalityName": "Sandamu"
+ },
+ {
+   "LocalityID": 100447,
+   "RegionID": "NG-KT",
+   "LocalityName": "Zango"
+ },
+ {
+   "LocalityID": 100448,
+   "RegionID": "NG-KE",
+   "LocalityName": "Aleiro"
+ },
+ {
+   "LocalityID": 100449,
+   "RegionID": "NG-KE",
+   "LocalityName": "Arewa-Dandi"
+ },
+ {
+   "LocalityID": 100450,
+   "RegionID": "NG-KE",
+   "LocalityName": "Argungu"
+ },
+ {
+   "LocalityID": 100451,
+   "RegionID": "NG-KE",
+   "LocalityName": "Augie"
+ },
+ {
+   "LocalityID": 100452,
+   "RegionID": "NG-KE",
+   "LocalityName": "Bagudo"
+ },
+ {
+   "LocalityID": 100453,
+   "RegionID": "NG-KE",
+   "LocalityName": "Birnin Kebbi"
+ },
+ {
+   "LocalityID": 100454,
+   "RegionID": "NG-KE",
+   "LocalityName": "Bunza"
+ },
+ {
+   "LocalityID": 100455,
+   "RegionID": "NG-KE",
+   "LocalityName": "Dandi"
+ },
+ {
+   "LocalityID": 100456,
+   "RegionID": "NG-KE",
+   "LocalityName": "Fakai"
+ },
+ {
+   "LocalityID": 100457,
+   "RegionID": "NG-KE",
+   "LocalityName": "Gwandu"
+ },
+ {
+   "LocalityID": 100458,
+   "RegionID": "NG-KE",
+   "LocalityName": "Jega"
+ },
+ {
+   "LocalityID": 100459,
+   "RegionID": "NG-KE",
+   "LocalityName": "Kalgo"
+ },
+ {
+   "LocalityID": 100460,
+   "RegionID": "NG-KE",
+   "LocalityName": "Koko/Besse"
+ },
+ {
+   "LocalityID": 100461,
+   "RegionID": "NG-KE",
+   "LocalityName": "Maiyama"
+ },
+ {
+   "LocalityID": 100462,
+   "RegionID": "NG-KE",
+   "LocalityName": "Ngaski"
+ },
+ {
+   "LocalityID": 100463,
+   "RegionID": "NG-KE",
+   "LocalityName": "Sakaba"
+ },
+ {
+   "LocalityID": 100464,
+   "RegionID": "NG-KE",
+   "LocalityName": "Shanga"
+ },
+ {
+   "LocalityID": 100465,
+   "RegionID": "NG-KE",
+   "LocalityName": "Suru"
+ },
+ {
+   "LocalityID": 100466,
+   "RegionID": "NG-KE",
+   "LocalityName": "Wasagu/Danko"
+ },
+ {
+   "LocalityID": 100467,
+   "RegionID": "NG-KE",
+   "LocalityName": "Yauri"
+ },
+ {
+   "LocalityID": 100468,
+   "RegionID": "NG-KE",
+   "LocalityName": "Zuru"
+ },
+ {
+   "LocalityID": 100469,
+   "RegionID": "NG-KO",
+   "LocalityName": "Adavi"
+ },
+ {
+   "LocalityID": 100470,
+   "RegionID": "NG-KO",
+   "LocalityName": "Ajaokuta"
+ },
+ {
+   "LocalityID": 100471,
+   "RegionID": "NG-KO",
+   "LocalityName": "Ankpa"
+ },
+ {
+   "LocalityID": 100472,
+   "RegionID": "NG-KO",
+   "LocalityName": "Bassa"
+ },
+ {
+   "LocalityID": 100473,
+   "RegionID": "NG-KO",
+   "LocalityName": "Dekina"
+ },
+ {
+   "LocalityID": 100474,
+   "RegionID": "NG-KO",
+   "LocalityName": "Ibaji"
+ },
+ {
+   "LocalityID": 100475,
+   "RegionID": "NG-KO",
+   "LocalityName": "Idah"
+ },
+ {
+   "LocalityID": 100476,
+   "RegionID": "NG-KO",
+   "LocalityName": "Igalamela-Odolu"
+ },
+ {
+   "LocalityID": 100477,
+   "RegionID": "NG-KO",
+   "LocalityName": "Ijumu"
+ },
+ {
+   "LocalityID": 100478,
+   "RegionID": "NG-KO",
+   "LocalityName": "Kabba/Bunu"
+ },
+ {
+   "LocalityID": 100479,
+   "RegionID": "NG-KO",
+   "LocalityName": "Kogi"
+ },
+ {
+   "LocalityID": 100480,
+   "RegionID": "NG-KO",
+   "LocalityName": "Lokoja"
+ },
+ {
+   "LocalityID": 100481,
+   "RegionID": "NG-KO",
+   "LocalityName": "Mopa-Muro"
+ },
+ {
+   "LocalityID": 100482,
+   "RegionID": "NG-KO",
+   "LocalityName": "Ofu"
+ },
+ {
+   "LocalityID": 100483,
+   "RegionID": "NG-KO",
+   "LocalityName": "Ogori/Magongo"
+ },
+ {
+   "LocalityID": 100484,
+   "RegionID": "NG-KO",
+   "LocalityName": "Okehi"
+ },
+ {
+   "LocalityID": 100485,
+   "RegionID": "NG-KO",
+   "LocalityName": "Okene"
+ },
+ {
+   "LocalityID": 100486,
+   "RegionID": "NG-KO",
+   "LocalityName": "Olamaboro"
+ },
+ {
+   "LocalityID": 100487,
+   "RegionID": "NG-KO",
+   "LocalityName": "Omala"
+ },
+ {
+   "LocalityID": 100488,
+   "RegionID": "NG-KO",
+   "LocalityName": "Yagba East"
+ },
+ {
+   "LocalityID": 100489,
+   "RegionID": "NG-KO",
+   "LocalityName": "Yagba West"
+ },
+ {
+   "LocalityID": 100490,
+   "RegionID": "NG-KW",
+   "LocalityName": "Asa"
+ },
+ {
+   "LocalityID": 100491,
+   "RegionID": "NG-KW",
+   "LocalityName": "Baruten"
+ },
+ {
+   "LocalityID": 100492,
+   "RegionID": "NG-KW",
+   "LocalityName": "Edu"
+ },
+ {
+   "LocalityID": 100493,
+   "RegionID": "NG-KW",
+   "LocalityName": "Ekiti"
+ },
+ {
+   "LocalityID": 100494,
+   "RegionID": "NG-KW",
+   "LocalityName": "Ifelodun"
+ },
+ {
+   "LocalityID": 100495,
+   "RegionID": "NG-KW",
+   "LocalityName": "Ilorin East"
+ },
+ {
+   "LocalityID": 100496,
+   "RegionID": "NG-KW",
+   "LocalityName": "Ilorin South"
+ },
+ {
+   "LocalityID": 100497,
+   "RegionID": "NG-KW",
+   "LocalityName": "Ilorin West"
+ },
+ {
+   "LocalityID": 100498,
+   "RegionID": "NG-KW",
+   "LocalityName": "Irepodun"
+ },
+ {
+   "LocalityID": 100499,
+   "RegionID": "NG-KW",
+   "LocalityName": "Isin"
+ },
+ {
+   "LocalityID": 100500,
+   "RegionID": "NG-KW",
+   "LocalityName": "Kaiama"
+ },
+ {
+   "LocalityID": 100501,
+   "RegionID": "NG-KW",
+   "LocalityName": "Moro"
+ },
+ {
+   "LocalityID": 100502,
+   "RegionID": "NG-KW",
+   "LocalityName": "Offa"
+ },
+ {
+   "LocalityID": 100503,
+   "RegionID": "NG-KW",
+   "LocalityName": "Oke-Ero"
+ },
+ {
+   "LocalityID": 100504,
+   "RegionID": "NG-KW",
+   "LocalityName": "Oyun"
+ },
+ {
+   "LocalityID": 100505,
+   "RegionID": "NG-KW",
+   "LocalityName": "Pategi"
+ },
+ {
+   "LocalityID": 100506,
+   "RegionID": "NG-LA",
+   "LocalityName": "Agege"
+ },
+ {
+   "LocalityID": 100507,
+   "RegionID": "NG-LA",
+   "LocalityName": "Ajeromi-Ifelodun"
+ },
+ {
+   "LocalityID": 100508,
+   "RegionID": "NG-LA",
+   "LocalityName": "Alimosho"
+ },
+ {
+   "LocalityID": 100509,
+   "RegionID": "NG-LA",
+   "LocalityName": "Amuwo-Odofin"
+ },
+ {
+   "LocalityID": 100510,
+   "RegionID": "NG-LA",
+   "LocalityName": "Apapa"
+ },
+ {
+   "LocalityID": 100511,
+   "RegionID": "NG-LA",
+   "LocalityName": "Badagry"
+ },
+ {
+   "LocalityID": 100512,
+   "RegionID": "NG-LA",
+   "LocalityName": "Epe"
+ },
+ {
+   "LocalityID": 100513,
+   "RegionID": "NG-LA",
+   "LocalityName": "Eti Osa"
+ },
+ {
+   "LocalityID": 100514,
+   "RegionID": "NG-LA",
+   "LocalityName": "Ibeju/Lekki"
+ },
+ {
+   "LocalityID": 100515,
+   "RegionID": "NG-LA",
+   "LocalityName": "Ifako-Ijaye"
+ },
+ {
+   "LocalityID": 100516,
+   "RegionID": "NG-LA",
+   "LocalityName": "Ikeja"
+ },
+ {
+   "LocalityID": 100517,
+   "RegionID": "NG-LA",
+   "LocalityName": "Ikorodu"
+ },
+ {
+   "LocalityID": 100518,
+   "RegionID": "NG-LA",
+   "LocalityName": "Kosofe"
+ },
+ {
+   "LocalityID": 100519,
+   "RegionID": "NG-LA",
+   "LocalityName": "Lagos Island"
+ },
+ {
+   "LocalityID": 100520,
+   "RegionID": "NG-LA",
+   "LocalityName": "Lagos Mainland"
+ },
+ {
+   "LocalityID": 100521,
+   "RegionID": "NG-LA",
+   "LocalityName": "Mushin"
+ },
+ {
+   "LocalityID": 100522,
+   "RegionID": "NG-LA",
+   "LocalityName": "Ojo"
+ },
+ {
+   "LocalityID": 100523,
+   "RegionID": "NG-LA",
+   "LocalityName": "Oshodi-Isolo"
+ },
+ {
+   "LocalityID": 100524,
+   "RegionID": "NG-LA",
+   "LocalityName": "Shomolu"
+ },
+ {
+   "LocalityID": 100525,
+   "RegionID": "NG-LA",
+   "LocalityName": "Surulere"
+ },
+ {
+   "LocalityID": 100526,
+   "RegionID": "NG-NA",
+   "LocalityName": "Akwanga"
+ },
+ {
+   "LocalityID": 100527,
+   "RegionID": "NG-NA",
+   "LocalityName": "Awe"
+ },
+ {
+   "LocalityID": 100528,
+   "RegionID": "NG-NA",
+   "LocalityName": "Doma"
+ },
+ {
+   "LocalityID": 100529,
+   "RegionID": "NG-NA",
+   "LocalityName": "Karu"
+ },
+ {
+   "LocalityID": 100530,
+   "RegionID": "NG-NA",
+   "LocalityName": "Keana"
+ },
+ {
+   "LocalityID": 100531,
+   "RegionID": "NG-NA",
+   "LocalityName": "Keffi"
+ },
+ {
+   "LocalityID": 100532,
+   "RegionID": "NG-NA",
+   "LocalityName": "Kokona"
+ },
+ {
+   "LocalityID": 100533,
+   "RegionID": "NG-NA",
+   "LocalityName": "Lafia"
+ },
+ {
+   "LocalityID": 100534,
+   "RegionID": "NG-NA",
+   "LocalityName": "Nasarawa"
+ },
+ {
+   "LocalityID": 100535,
+   "RegionID": "NG-NA",
+   "LocalityName": "Nasarawa-Eggon"
+ },
+ {
+   "LocalityID": 100536,
+   "RegionID": "NG-NA",
+   "LocalityName": "Obi"
+ },
+ {
+   "LocalityID": 100537,
+   "RegionID": "NG-NA",
+   "LocalityName": "Toto"
+ },
+ {
+   "LocalityID": 100538,
+   "RegionID": "NG-NA",
+   "LocalityName": "Wamba"
+ },
+ {
+   "LocalityID": 100539,
+   "RegionID": "NG-NI",
+   "LocalityName": "Agaie"
+ },
+ {
+   "LocalityID": 100540,
+   "RegionID": "NG-NI",
+   "LocalityName": "Agwara"
+ },
+ {
+   "LocalityID": 100541,
+   "RegionID": "NG-NI",
+   "LocalityName": "Bida"
+ },
+ {
+   "LocalityID": 100542,
+   "RegionID": "NG-NI",
+   "LocalityName": "Borgu"
+ },
+ {
+   "LocalityID": 100543,
+   "RegionID": "NG-NI",
+   "LocalityName": "Bosso"
+ },
+ {
+   "LocalityID": 100544,
+   "RegionID": "NG-NI",
+   "LocalityName": "Chanchaga"
+ },
+ {
+   "LocalityID": 100545,
+   "RegionID": "NG-NI",
+   "LocalityName": "Edati"
+ },
+ {
+   "LocalityID": 100546,
+   "RegionID": "NG-NI",
+   "LocalityName": "Gbako"
+ },
+ {
+   "LocalityID": 100547,
+   "RegionID": "NG-NI",
+   "LocalityName": "Gurara"
+ },
+ {
+   "LocalityID": 100548,
+   "RegionID": "NG-NI",
+   "LocalityName": "Katcha"
+ },
+ {
+   "LocalityID": 100549,
+   "RegionID": "NG-NI",
+   "LocalityName": "Kontagora"
+ },
+ {
+   "LocalityID": 100550,
+   "RegionID": "NG-NI",
+   "LocalityName": "Lapai"
+ },
+ {
+   "LocalityID": 100551,
+   "RegionID": "NG-NI",
+   "LocalityName": "Lavun"
+ },
+ {
+   "LocalityID": 100552,
+   "RegionID": "NG-NI",
+   "LocalityName": "Magama"
+ },
+ {
+   "LocalityID": 100553,
+   "RegionID": "NG-NI",
+   "LocalityName": "Mariga"
+ },
+ {
+   "LocalityID": 100554,
+   "RegionID": "NG-NI",
+   "LocalityName": "Mashegu"
+ },
+ {
+   "LocalityID": 100555,
+   "RegionID": "NG-NI",
+   "LocalityName": "Mokwa"
+ },
+ {
+   "LocalityID": 100556,
+   "RegionID": "NG-NI",
+   "LocalityName": "Muya"
+ },
+ {
+   "LocalityID": 100557,
+   "RegionID": "NG-NI",
+   "LocalityName": "Paikoro"
+ },
+ {
+   "LocalityID": 100558,
+   "RegionID": "NG-NI",
+   "LocalityName": "Rafi"
+ },
+ {
+   "LocalityID": 100559,
+   "RegionID": "NG-NI",
+   "LocalityName": "Rijau"
+ },
+ {
+   "LocalityID": 100560,
+   "RegionID": "NG-NI",
+   "LocalityName": "Shiroro"
+ },
+ {
+   "LocalityID": 100561,
+   "RegionID": "NG-NI",
+   "LocalityName": "Suleja"
+ },
+ {
+   "LocalityID": 100562,
+   "RegionID": "NG-NI",
+   "LocalityName": "Tafa"
+ },
+ {
+   "LocalityID": 100563,
+   "RegionID": "NG-NI",
+   "LocalityName": "Wushishi"
+ },
+ {
+   "LocalityID": 100564,
+   "RegionID": "NG-OG",
+   "LocalityName": "Abeokuta Nor"
+ },
+ {
+   "LocalityID": 100565,
+   "RegionID": "NG-OG",
+   "LocalityName": "Abeokuta Sou"
+ },
+ {
+   "LocalityID": 100566,
+   "RegionID": "NG-OG",
+   "LocalityName": "Ado-Odo/Ota"
+ },
+ {
+   "LocalityID": 100567,
+   "RegionID": "NG-OG",
+   "LocalityName": "Ewekoro"
+ },
+ {
+   "LocalityID": 100568,
+   "RegionID": "NG-OG",
+   "LocalityName": "Ifo"
+ },
+ {
+   "LocalityID": 100569,
+   "RegionID": "NG-OG",
+   "LocalityName": "Ijebu East"
+ },
+ {
+   "LocalityID": 100570,
+   "RegionID": "NG-OG",
+   "LocalityName": "Ijebu North"
+ },
+ {
+   "LocalityID": 100571,
+   "RegionID": "NG-OG",
+   "LocalityName": "Ijebu North East"
+ },
+ {
+   "LocalityID": 100572,
+   "RegionID": "NG-OG",
+   "LocalityName": "Ijebu Ode"
+ },
+ {
+   "LocalityID": 100573,
+   "RegionID": "NG-OG",
+   "LocalityName": "Ikenne"
+ },
+ {
+   "LocalityID": 100574,
+   "RegionID": "NG-OG",
+   "LocalityName": "Imeko Afon"
+ },
+ {
+   "LocalityID": 100575,
+   "RegionID": "NG-OG",
+   "LocalityName": "Ipokia"
+ },
+ {
+   "LocalityID": 100576,
+   "RegionID": "NG-OG",
+   "LocalityName": "Obafemi Owode"
+ },
+ {
+   "LocalityID": 100577,
+   "RegionID": "NG-OG",
+   "LocalityName": "Odeda"
+ },
+ {
+   "LocalityID": 100578,
+   "RegionID": "NG-OG",
+   "LocalityName": "Odogbolu"
+ },
+ {
+   "LocalityID": 100579,
+   "RegionID": "NG-OG",
+   "LocalityName": "Ogun Waterside"
+ },
+ {
+   "LocalityID": 100580,
+   "RegionID": "NG-OG",
+   "LocalityName": "Remo North"
+ },
+ {
+   "LocalityID": 100581,
+   "RegionID": "NG-OG",
+   "LocalityName": "Sagamu"
+ },
+ {
+   "LocalityID": 100582,
+   "RegionID": "NG-OG",
+   "LocalityName": "Yewa North (Egbado North)"
+ },
+ {
+   "LocalityID": 100583,
+   "RegionID": "NG-OG",
+   "LocalityName": "Yewa South (Egbado South)"
+ },
+ {
+   "LocalityID": 100584,
+   "RegionID": "NG-ON",
+   "LocalityName": "Akoko North East"
+ },
+ {
+   "LocalityID": 100585,
+   "RegionID": "NG-ON",
+   "LocalityName": "Akoko North West"
+ },
+ {
+   "LocalityID": 100586,
+   "RegionID": "NG-ON",
+   "LocalityName": "Akoko South East"
+ },
+ {
+   "LocalityID": 100587,
+   "RegionID": "NG-ON",
+   "LocalityName": "Akoko South West"
+ },
+ {
+   "LocalityID": 100588,
+   "RegionID": "NG-ON",
+   "LocalityName": "Akure North"
+ },
+ {
+   "LocalityID": 100589,
+   "RegionID": "NG-ON",
+   "LocalityName": "Akure South"
+ },
+ {
+   "LocalityID": 100590,
+   "RegionID": "NG-ON",
+   "LocalityName": "Ese-Odo"
+ },
+ {
+   "LocalityID": 100591,
+   "RegionID": "NG-ON",
+   "LocalityName": "Idanre"
+ },
+ {
+   "LocalityID": 100592,
+   "RegionID": "NG-ON",
+   "LocalityName": "Ifedore"
+ },
+ {
+   "LocalityID": 100593,
+   "RegionID": "NG-ON",
+   "LocalityName": "Ilaje"
+ },
+ {
+   "LocalityID": 100594,
+   "RegionID": "NG-ON",
+   "LocalityName": "Ile-Oluji-Okeigbo"
+ },
+ {
+   "LocalityID": 100595,
+   "RegionID": "NG-ON",
+   "LocalityName": "Irele"
+ },
+ {
+   "LocalityID": 100596,
+   "RegionID": "NG-ON",
+   "LocalityName": "Odigbo"
+ },
+ {
+   "LocalityID": 100597,
+   "RegionID": "NG-ON",
+   "LocalityName": "Okitipupa"
+ },
+ {
+   "LocalityID": 100598,
+   "RegionID": "NG-ON",
+   "LocalityName": "Ondo East"
+ },
+ {
+   "LocalityID": 100599,
+   "RegionID": "NG-ON",
+   "LocalityName": "Ondo West"
+ },
+ {
+   "LocalityID": 100600,
+   "RegionID": "NG-ON",
+   "LocalityName": "Ose"
+ },
+ {
+   "LocalityID": 100601,
+   "RegionID": "NG-ON",
+   "LocalityName": "Owo"
+ },
+ {
+   "LocalityID": 100602,
+   "RegionID": "NG-OS",
+   "LocalityName": "Aiyedaade"
+ },
+ {
+   "LocalityID": 100603,
+   "RegionID": "NG-OS",
+   "LocalityName": "Aiyedire"
+ },
+ {
+   "LocalityID": 100604,
+   "RegionID": "NG-OS",
+   "LocalityName": "Atakunmosa East"
+ },
+ {
+   "LocalityID": 100605,
+   "RegionID": "NG-OS",
+   "LocalityName": "Atakunmosa West"
+ },
+ {
+   "LocalityID": 100606,
+   "RegionID": "NG-OS",
+   "LocalityName": "Boluwaduro"
+ },
+ {
+   "LocalityID": 100607,
+   "RegionID": "NG-OS",
+   "LocalityName": "Boripe"
+ },
+ {
+   "LocalityID": 100608,
+   "RegionID": "NG-OS",
+   "LocalityName": "Ede North"
+ },
+ {
+   "LocalityID": 100609,
+   "RegionID": "NG-OS",
+   "LocalityName": "Ede South"
+ },
+ {
+   "LocalityID": 100610,
+   "RegionID": "NG-OS",
+   "LocalityName": "Egbedore"
+ },
+ {
+   "LocalityID": 100611,
+   "RegionID": "NG-OS",
+   "LocalityName": "Ejigbo"
+ },
+ {
+   "LocalityID": 100612,
+   "RegionID": "NG-OS",
+   "LocalityName": "Ife Central"
+ },
+ {
+   "LocalityID": 100613,
+   "RegionID": "NG-OS",
+   "LocalityName": "Ifedayo"
+ },
+ {
+   "LocalityID": 100614,
+   "RegionID": "NG-OS",
+   "LocalityName": "Ife East"
+ },
+ {
+   "LocalityID": 100615,
+   "RegionID": "NG-OS",
+   "LocalityName": "Ifelodun"
+ },
+ {
+   "LocalityID": 100616,
+   "RegionID": "NG-OS",
+   "LocalityName": "Ife North"
+ },
+ {
+   "LocalityID": 100617,
+   "RegionID": "NG-OS",
+   "LocalityName": "Ife South"
+ },
+ {
+   "LocalityID": 100618,
+   "RegionID": "NG-OS",
+   "LocalityName": "Ila"
+ },
+ {
+   "LocalityID": 100619,
+   "RegionID": "NG-OS",
+   "LocalityName": "Ilesha East"
+ },
+ {
+   "LocalityID": 100620,
+   "RegionID": "NG-OS",
+   "LocalityName": "Ilesha West"
+ },
+ {
+   "LocalityID": 100621,
+   "RegionID": "NG-OS",
+   "LocalityName": "Irepodun"
+ },
+ {
+   "LocalityID": 100622,
+   "RegionID": "NG-OS",
+   "LocalityName": "Irewole"
+ },
+ {
+   "LocalityID": 100623,
+   "RegionID": "NG-OS",
+   "LocalityName": "Isokan"
+ },
+ {
+   "LocalityID": 100624,
+   "RegionID": "NG-OS",
+   "LocalityName": "Iwo"
+ },
+ {
+   "LocalityID": 100625,
+   "RegionID": "NG-OS",
+   "LocalityName": "Obokun"
+ },
+ {
+   "LocalityID": 100626,
+   "RegionID": "NG-OS",
+   "LocalityName": "Odo-Otin"
+ },
+ {
+   "LocalityID": 100627,
+   "RegionID": "NG-OS",
+   "LocalityName": "Ola-Oluwa"
+ },
+ {
+   "LocalityID": 100628,
+   "RegionID": "NG-OS",
+   "LocalityName": "Olorunda"
+ },
+ {
+   "LocalityID": 100629,
+   "RegionID": "NG-OS",
+   "LocalityName": "Oriade"
+ },
+ {
+   "LocalityID": 100630,
+   "RegionID": "NG-OS",
+   "LocalityName": "Orolu"
+ },
+ {
+   "LocalityID": 100631,
+   "RegionID": "NG-OS",
+   "LocalityName": "Osogbo"
+ },
+ {
+   "LocalityID": 100632,
+   "RegionID": "NG-OY",
+   "LocalityName": "Afijio"
+ },
+ {
+   "LocalityID": 100633,
+   "RegionID": "NG-OY",
+   "LocalityName": "Akinyele"
+ },
+ {
+   "LocalityID": 100634,
+   "RegionID": "NG-OY",
+   "LocalityName": "Atiba"
+ },
+ {
+   "LocalityID": 100635,
+   "RegionID": "NG-OY",
+   "LocalityName": "Atisbo"
+ },
+ {
+   "LocalityID": 100636,
+   "RegionID": "NG-OY",
+   "LocalityName": "Egbeda"
+ },
+ {
+   "LocalityID": 100637,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ibadan North"
+ },
+ {
+   "LocalityID": 100638,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ibadan North East"
+ },
+ {
+   "LocalityID": 100639,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ibadan North West"
+ },
+ {
+   "LocalityID": 100640,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ibadan South East"
+ },
+ {
+   "LocalityID": 100641,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ibadan South West"
+ },
+ {
+   "LocalityID": 100642,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ibarapa Central"
+ },
+ {
+   "LocalityID": 100643,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ibarapa East"
+ },
+ {
+   "LocalityID": 100644,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ibarapa North"
+ },
+ {
+   "LocalityID": 100645,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ido"
+ },
+ {
+   "LocalityID": 100646,
+   "RegionID": "NG-OY",
+   "LocalityName": "Irepo"
+ },
+ {
+   "LocalityID": 100647,
+   "RegionID": "NG-OY",
+   "LocalityName": "Iseyin"
+ },
+ {
+   "LocalityID": 100648,
+   "RegionID": "NG-OY",
+   "LocalityName": "Itesiwaju"
+ },
+ {
+   "LocalityID": 100649,
+   "RegionID": "NG-OY",
+   "LocalityName": "Iwajowa"
+ },
+ {
+   "LocalityID": 100650,
+   "RegionID": "NG-OY",
+   "LocalityName": "Kajola"
+ },
+ {
+   "LocalityID": 100651,
+   "RegionID": "NG-OY",
+   "LocalityName": "Lagelu"
+ },
+ {
+   "LocalityID": 100652,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ogbomosho North"
+ },
+ {
+   "LocalityID": 100653,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ogbomosho South"
+ },
+ {
+   "LocalityID": 100654,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ogo Oluwa"
+ },
+ {
+   "LocalityID": 100655,
+   "RegionID": "NG-OY",
+   "LocalityName": "Olorunsogo"
+ },
+ {
+   "LocalityID": 100656,
+   "RegionID": "NG-OY",
+   "LocalityName": "Oluyole"
+ },
+ {
+   "LocalityID": 100657,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ona-Ara"
+ },
+ {
+   "LocalityID": 100658,
+   "RegionID": "NG-OY",
+   "LocalityName": "Orelope"
+ },
+ {
+   "LocalityID": 100659,
+   "RegionID": "NG-OY",
+   "LocalityName": "Ori Ire"
+ },
+ {
+   "LocalityID": 100660,
+   "RegionID": "NG-OY",
+   "LocalityName": "Oyo East"
+ },
+ {
+   "LocalityID": 100661,
+   "RegionID": "NG-OY",
+   "LocalityName": "Oyo West"
+ },
+ {
+   "LocalityID": 100662,
+   "RegionID": "NG-OY",
+   "LocalityName": "Saki East"
+ },
+ {
+   "LocalityID": 100663,
+   "RegionID": "NG-OY",
+   "LocalityName": "Saki West"
+ },
+ {
+   "LocalityID": 100664,
+   "RegionID": "NG-OY",
+   "LocalityName": "Surulere"
+ },
+ {
+   "LocalityID": 100665,
+   "RegionID": "NG-PL",
+   "LocalityName": "Barkin Ladi"
+ },
+ {
+   "LocalityID": 100666,
+   "RegionID": "NG-PL",
+   "LocalityName": "Bassa"
+ },
+ {
+   "LocalityID": 100667,
+   "RegionID": "NG-PL",
+   "LocalityName": "Bokkos"
+ },
+ {
+   "LocalityID": 100668,
+   "RegionID": "NG-PL",
+   "LocalityName": "Jos East"
+ },
+ {
+   "LocalityID": 100669,
+   "RegionID": "NG-PL",
+   "LocalityName": "Jos North"
+ },
+ {
+   "LocalityID": 100670,
+   "RegionID": "NG-PL",
+   "LocalityName": "Jos South"
+ },
+ {
+   "LocalityID": 100671,
+   "RegionID": "NG-PL",
+   "LocalityName": "Kanam"
+ },
+ {
+   "LocalityID": 100672,
+   "RegionID": "NG-PL",
+   "LocalityName": "Kanke"
+ },
+ {
+   "LocalityID": 100673,
+   "RegionID": "NG-PL",
+   "LocalityName": "Langtang North"
+ },
+ {
+   "LocalityID": 100674,
+   "RegionID": "NG-PL",
+   "LocalityName": "Langtang South"
+ },
+ {
+   "LocalityID": 100675,
+   "RegionID": "NG-PL",
+   "LocalityName": "Mangu"
+ },
+ {
+   "LocalityID": 100676,
+   "RegionID": "NG-PL",
+   "LocalityName": "Mikang"
+ },
+ {
+   "LocalityID": 100677,
+   "RegionID": "NG-PL",
+   "LocalityName": "Pankshin"
+ },
+ {
+   "LocalityID": 100678,
+   "RegionID": "NG-PL",
+   "LocalityName": "Qua'an Pan"
+ },
+ {
+   "LocalityID": 100679,
+   "RegionID": "NG-PL",
+   "LocalityName": "Riyom"
+ },
+ {
+   "LocalityID": 100680,
+   "RegionID": "NG-PL",
+   "LocalityName": "Shendam"
+ },
+ {
+   "LocalityID": 100681,
+   "RegionID": "NG-PL",
+   "LocalityName": "Wase"
+ },
+ {
+   "LocalityID": 100682,
+   "RegionID": "NG-RI",
+   "LocalityName": "Abua - Odual"
+ },
+ {
+   "LocalityID": 100683,
+   "RegionID": "NG-RI",
+   "LocalityName": "Ahoada East"
+ },
+ {
+   "LocalityID": 100684,
+   "RegionID": "NG-RI",
+   "LocalityName": "Ahoada West"
+ },
+ {
+   "LocalityID": 100685,
+   "RegionID": "NG-RI",
+   "LocalityName": "Akuku Toru"
+ },
+ {
+   "LocalityID": 100686,
+   "RegionID": "NG-RI",
+   "LocalityName": "Andoni"
+ },
+ {
+   "LocalityID": 100687,
+   "RegionID": "NG-RI",
+   "LocalityName": "Asari-Toru"
+ },
+ {
+   "LocalityID": 100688,
+   "RegionID": "NG-RI",
+   "LocalityName": "Bonny"
+ },
+ {
+   "LocalityID": 100689,
+   "RegionID": "NG-RI",
+   "LocalityName": "Degema"
+ },
+ {
+   "LocalityID": 100690,
+   "RegionID": "NG-RI",
+   "LocalityName": "Eleme"
+ },
+ {
+   "LocalityID": 100691,
+   "RegionID": "NG-RI",
+   "LocalityName": "Emuoha"
+ },
+ {
+   "LocalityID": 100692,
+   "RegionID": "NG-RI",
+   "LocalityName": "Etche"
+ },
+ {
+   "LocalityID": 100693,
+   "RegionID": "NG-RI",
+   "LocalityName": "Gokana"
+ },
+ {
+   "LocalityID": 100694,
+   "RegionID": "NG-RI",
+   "LocalityName": "Ikwerre"
+ },
+ {
+   "LocalityID": 100695,
+   "RegionID": "NG-RI",
+   "LocalityName": "Khana"
+ },
+ {
+   "LocalityID": 100696,
+   "RegionID": "NG-RI",
+   "LocalityName": "Obio/Akpor"
+ },
+ {
+   "LocalityID": 100697,
+   "RegionID": "NG-RI",
+   "LocalityName": "Ogba - Egbema - Ndoni"
+ },
+ {
+   "LocalityID": 100698,
+   "RegionID": "NG-RI",
+   "LocalityName": "Ogu - Bolo"
+ },
+ {
+   "LocalityID": 100699,
+   "RegionID": "NG-RI",
+   "LocalityName": "Okrika"
+ },
+ {
+   "LocalityID": 100700,
+   "RegionID": "NG-RI",
+   "LocalityName": "Omumma"
+ },
+ {
+   "LocalityID": 100701,
+   "RegionID": "NG-RI",
+   "LocalityName": "Opobo - Nkoro"
+ },
+ {
+   "LocalityID": 100702,
+   "RegionID": "NG-RI",
+   "LocalityName": "Oyigbo"
+ },
+ {
+   "LocalityID": 100703,
+   "RegionID": "NG-RI",
+   "LocalityName": "Port-Harcourt"
+ },
+ {
+   "LocalityID": 100704,
+   "RegionID": "NG-RI",
+   "LocalityName": "Tai"
+ },
+ {
+   "LocalityID": 100705,
+   "RegionID": "NG-SO",
+   "LocalityName": "Binji"
+ },
+ {
+   "LocalityID": 100706,
+   "RegionID": "NG-SO",
+   "LocalityName": "Bodinga"
+ },
+ {
+   "LocalityID": 100707,
+   "RegionID": "NG-SO",
+   "LocalityName": "Dange Shuni"
+ },
+ {
+   "LocalityID": 100708,
+   "RegionID": "NG-SO",
+   "LocalityName": "Gada"
+ },
+ {
+   "LocalityID": 100709,
+   "RegionID": "NG-SO",
+   "LocalityName": "Goronyo"
+ },
+ {
+   "LocalityID": 100710,
+   "RegionID": "NG-SO",
+   "LocalityName": "Gudu"
+ },
+ {
+   "LocalityID": 100711,
+   "RegionID": "NG-SO",
+   "LocalityName": "Gwadabawa"
+ },
+ {
+   "LocalityID": 100712,
+   "RegionID": "NG-SO",
+   "LocalityName": "Illela"
+ },
+ {
+   "LocalityID": 100713,
+   "RegionID": "NG-SO",
+   "LocalityName": "Isa"
+ },
+ {
+   "LocalityID": 100714,
+   "RegionID": "NG-SO",
+   "LocalityName": "Kebbe"
+ },
+ {
+   "LocalityID": 100715,
+   "RegionID": "NG-SO",
+   "LocalityName": "Kware"
+ },
+ {
+   "LocalityID": 100716,
+   "RegionID": "NG-SO",
+   "LocalityName": "Rabah"
+ },
+ {
+   "LocalityID": 100717,
+   "RegionID": "NG-SO",
+   "LocalityName": "Sabon Birni"
+ },
+ {
+   "LocalityID": 100718,
+   "RegionID": "NG-SO",
+   "LocalityName": "Shagari"
+ },
+ {
+   "LocalityID": 100719,
+   "RegionID": "NG-SO",
+   "LocalityName": "Silame"
+ },
+ {
+   "LocalityID": 100720,
+   "RegionID": "NG-SO",
+   "LocalityName": "Sokoto North"
+ },
+ {
+   "LocalityID": 100721,
+   "RegionID": "NG-SO",
+   "LocalityName": "Sokoto South"
+ },
+ {
+   "LocalityID": 100722,
+   "RegionID": "NG-SO",
+   "LocalityName": "Tambuwal"
+ },
+ {
+   "LocalityID": 100723,
+   "RegionID": "NG-SO",
+   "LocalityName": "Tangaza"
+ },
+ {
+   "LocalityID": 100724,
+   "RegionID": "NG-SO",
+   "LocalityName": "Tureta"
+ },
+ {
+   "LocalityID": 100725,
+   "RegionID": "NG-SO",
+   "LocalityName": "Wamakko"
+ },
+ {
+   "LocalityID": 100726,
+   "RegionID": "NG-SO",
+   "LocalityName": "Wurno"
+ },
+ {
+   "LocalityID": 100727,
+   "RegionID": "NG-SO",
+   "LocalityName": "Yabo"
+ },
+ {
+   "LocalityID": 100728,
+   "RegionID": "NG-TA",
+   "LocalityName": "Ardo-Kola"
+ },
+ {
+   "LocalityID": 100729,
+   "RegionID": "NG-TA",
+   "LocalityName": "Bali"
+ },
+ {
+   "LocalityID": 100730,
+   "RegionID": "NG-TA",
+   "LocalityName": "Disputed Areas"
+ },
+ {
+   "LocalityID": 100731,
+   "RegionID": "NG-TA",
+   "LocalityName": "Donga"
+ },
+ {
+   "LocalityID": 100732,
+   "RegionID": "NG-TA",
+   "LocalityName": "Gashaka"
+ },
+ {
+   "LocalityID": 100733,
+   "RegionID": "NG-TA",
+   "LocalityName": "Gassol"
+ },
+ {
+   "LocalityID": 100734,
+   "RegionID": "NG-TA",
+   "LocalityName": "Ibi"
+ },
+ {
+   "LocalityID": 100735,
+   "RegionID": "NG-TA",
+   "LocalityName": "Jalingo"
+ },
+ {
+   "LocalityID": 100736,
+   "RegionID": "NG-TA",
+   "LocalityName": "Karim-Lamido"
+ },
+ {
+   "LocalityID": 100737,
+   "RegionID": "NG-TA",
+   "LocalityName": "Kurmi"
+ },
+ {
+   "LocalityID": 100738,
+   "RegionID": "NG-TA",
+   "LocalityName": "Lau"
+ },
+ {
+   "LocalityID": 100739,
+   "RegionID": "NG-TA",
+   "LocalityName": "Sardauna"
+ },
+ {
+   "LocalityID": 100740,
+   "RegionID": "NG-TA",
+   "LocalityName": "Takum"
+ },
+ {
+   "LocalityID": 100741,
+   "RegionID": "NG-TA",
+   "LocalityName": "Ussa"
+ },
+ {
+   "LocalityID": 100742,
+   "RegionID": "NG-TA",
+   "LocalityName": "Wukari"
+ },
+ {
+   "LocalityID": 100743,
+   "RegionID": "NG-TA",
+   "LocalityName": "Yorro"
+ },
+ {
+   "LocalityID": 100744,
+   "RegionID": "NG-TA",
+   "LocalityName": "Zing"
+ },
+ {
+   "LocalityID": 100745,
+   "RegionID": "NG-YO",
+   "LocalityName": "Bade"
+ },
+ {
+   "LocalityID": 100746,
+   "RegionID": "NG-YO",
+   "LocalityName": "Bursari"
+ },
+ {
+   "LocalityID": 100747,
+   "RegionID": "NG-YO",
+   "LocalityName": "Damaturu"
+ },
+ {
+   "LocalityID": 100748,
+   "RegionID": "NG-YO",
+   "LocalityName": "Fika"
+ },
+ {
+   "LocalityID": 100749,
+   "RegionID": "NG-YO",
+   "LocalityName": "Fune"
+ },
+ {
+   "LocalityID": 100750,
+   "RegionID": "NG-YO",
+   "LocalityName": "Geidam"
+ },
+ {
+   "LocalityID": 100751,
+   "RegionID": "NG-YO",
+   "LocalityName": "Gujba"
+ },
+ {
+   "LocalityID": 100752,
+   "RegionID": "NG-YO",
+   "LocalityName": "Gulani"
+ },
+ {
+   "LocalityID": 100753,
+   "RegionID": "NG-YO",
+   "LocalityName": "Jakusko"
+ },
+ {
+   "LocalityID": 100754,
+   "RegionID": "NG-YO",
+   "LocalityName": "Karasuwa"
+ },
+ {
+   "LocalityID": 100755,
+   "RegionID": "NG-YO",
+   "LocalityName": "Machina"
+ },
+ {
+   "LocalityID": 100756,
+   "RegionID": "NG-YO",
+   "LocalityName": "Nangere"
+ },
+ {
+   "LocalityID": 100757,
+   "RegionID": "NG-YO",
+   "LocalityName": "Nguru"
+ },
+ {
+   "LocalityID": 100758,
+   "RegionID": "NG-YO",
+   "LocalityName": "Potiskum"
+ },
+ {
+   "LocalityID": 100759,
+   "RegionID": "NG-YO",
+   "LocalityName": "Tarmua"
+ },
+ {
+   "LocalityID": 100760,
+   "RegionID": "NG-YO",
+   "LocalityName": "Yunusari"
+ },
+ {
+   "LocalityID": 100761,
+   "RegionID": "NG-YO",
+   "LocalityName": "Yusufari"
+ },
+ {
+   "LocalityID": 100762,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Anka"
+ },
+ {
+   "LocalityID": 100763,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Bakura"
+ },
+ {
+   "LocalityID": 100764,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Birnin Magaji"
+ },
+ {
+   "LocalityID": 100765,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Bukkuyum"
+ },
+ {
+   "LocalityID": 100766,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Bungudu"
+ },
+ {
+   "LocalityID": 100767,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Gummi"
+ },
+ {
+   "LocalityID": 100768,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Gusau"
+ },
+ {
+   "LocalityID": 100769,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Kaura Namoda"
+ },
+ {
+   "LocalityID": 100770,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Maradun"
+ },
+ {
+   "LocalityID": 100771,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Maru"
+ },
+ {
+   "LocalityID": 100772,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Shinkafi"
+ },
+ {
+   "LocalityID": 100773,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Talata Mafara"
+ },
+ {
+   "LocalityID": 100774,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Tsafe"
+ },
+ {
+   "LocalityID": 100775,
+   "RegionID": "NG-ZA",
+   "LocalityName": "Zurmi"
+ }
+]

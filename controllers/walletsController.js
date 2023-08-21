@@ -4,6 +4,7 @@ const { decodeToken } = require('../utils/utils');
 async function getUserWallets(req, res, next) {
     try {
         const token = req.headers.authorization;
+        console.log("TOKEN IS:", token);
         const decodedToken = decodeToken(token);
         const userId = decodedToken.userId;
 
