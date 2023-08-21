@@ -10,7 +10,6 @@ cloudinary.config({
 	api_key: process.env.CLOUDINARY_API_KEY,
 	api_secret: process.env.CLOUDINARY_API_SECRET
 });
-//const request = require('request');
 const axios = require('axios');
 const jwt = require('jsonwebtoken');
 
@@ -62,7 +61,7 @@ function generateJWT(userId, email, role, active, firstname, surname, referralCo
 		firstname,
 		surname,
 		referralCode,
-		internationalPhone : phone
+		internationalPhone: phone
 	}
 	return of(jwt.sign(data, process.env.USERPRIVKEY, signOptions));
 }
@@ -98,38 +97,38 @@ function saveImageToCloudinary$(imageString) {
 //a function that will scan an image using base64.ai and return the text
 function scanImage(imageString, type, res) {
 	let image;
-	if(type == 'b64') {
-		image = JSON.stringify({ image : imageString.dataUrl});
+	if (type == 'b64') {
+		image = JSON.stringify({ image: imageString.dataUrl });
 	}
-	if(type == 'url') {
-		image = JSON.stringify({ url : imageString });
+	if (type == 'url') {
+		image = JSON.stringify({ url: imageString });
 	}
-/*
-	const options = {
-		'method': 'POST',
-		'url': process.env.BASE64URL,
-		'headers': {
-			'Content-Type': 'application/json',
-			'Authorization': process.env.BASE64SECRET
-		},
-		body: JSON.stringify({ url: imageString }),
-		timeout: 10000
-	};
-	console.log('URL:', process.env.BASE64URL.toString());
-	console.log('AUTH', process.env.BASE64SECRET);
-	console.log('IMAGE:', imageString);
-*/
+	/*
+		const options = {
+			'method': 'POST',
+			'url': process.env.BASE64URL,
+			'headers': {
+				'Content-Type': 'application/json',
+				'Authorization': process.env.BASE64SECRET
+			},
+			body: JSON.stringify({ url: imageString }),
+			timeout: 10000
+		};
+		console.log('URL:', process.env.BASE64URL.toString());
+		console.log('AUTH', process.env.BASE64SECRET);
+		console.log('IMAGE:', imageString);
+	*/
 
 	return from(axios({
-		method : 'POST',
-		url : process.env.BASE64URL.toString(),
-		headers : {
-			'Authorization' : process.env.BASE64SECRET,
-			'Content-Type' : 'application/json'
+		method: 'POST',
+		url: process.env.BASE64URL.toString(),
+		headers: {
+			'Authorization': process.env.BASE64SECRET,
+			'Content-Type': 'application/json'
 		},
-		data : {
-			url : imageString,
-			timeout : 10000
+		data: {
+			url: imageString,
+			timeout: 10000
 		}
 	}));
 	/*
@@ -147,10 +146,10 @@ function validateEmail(email) {
 }
 
 function generateEmailContent(mailContent) {
-	const {reminderType, daysRemaining, firstname, type} = mailContent;
+	const { reminderType, daysRemaining, firstname, type } = mailContent;
 	let htmlContent, textContent;
-	switch(reminderType) {
-		case 'WEEKLY' :
+	switch (reminderType) {
+		case 'WEEKLY':
 			htmlContent = `<html>
 				<head>
 					<title>Document Expiry Reminder</title>
@@ -167,7 +166,7 @@ function generateEmailContent(mailContent) {
 				Regards,
 				Inside Team`;
 			break;
-		case 'DAILY' :
+		case 'DAILY':
 			htmlContent = `<html>
 				<head>
 					<title>Document Expiry Reminder</title>
@@ -184,7 +183,7 @@ function generateEmailContent(mailContent) {
 				Regards,
 				Inside Team`;
 			break;
-		case 'DUE' :
+		case 'DUE':
 			htmlContent = `<html>
 				<head>
 					<title>Document Expiry Reminder</title>
@@ -201,7 +200,7 @@ function generateEmailContent(mailContent) {
 				Regards,
 				Inside Team`;
 			break;
-		default :
+		default:
 			htmlContent = `<html>
 				<head>
 					<title>Document Expiry Reminder</title>
@@ -219,7 +218,7 @@ function generateEmailContent(mailContent) {
 				Inside Team`;
 			break;
 	}
-	return {htmlContent, textContent};
+	return { htmlContent, textContent };
 }
 
 //unix timestamp
@@ -232,30 +231,97 @@ function generateLongRandomString() {
 }
 
 function generateReferralCode() {
-	let randChar = String.fromCharCode(65+Math.floor(Math.random() * 26)) + String.fromCharCode(65+Math.floor(Math.random() * 26));
-	let rndNo = Math.random().toString(10).substring(3,7);
+	let randChar = String.fromCharCode(65 + Math.floor(Math.random() * 26)) + String.fromCharCode(65 + Math.floor(Math.random() * 26));
+	let rndNo = Math.random().toString(10).substring(3, 7);
 	return randChar.toUpperCase() + rndNo.toString();
 }
 
 function checkToken(req, res, next) {
-    const token = req.headers.authorization;
-    if (token) {
-        isTokenValid(token, (err, decodedToken) => {
-            if (err) {
-                res.sendStatus(401);
-            } else {
-                req.token = decodedToken;
-                next();
-            }
-        });
-    } else {
-        res.sendStatus(401);
-    }
+	const token = req.headers.authorization;
+	if (token) {
+		isTokenValid(token, (err, decodedToken) => {
+			if (err) {
+				res.sendStatus(401);
+			} else {
+				req.token = decodedToken;
+				next();
+			}
+		});
+	} else {
+		res.sendStatus(401);
+	}
+}
+
+const { Wallet } = require('../models/wallet.model');
+const { User } = require('../models/account.model');
+
+async function checkWalletBalance(walletId, userId) {
+	try {
+		const wallet = await Wallet.findByPk(walletId);
+		if (!wallet) {
+			throw new Error('Wallet not found');
+		}
+
+		if (wallet.userId !== userId && userId !== 0) {
+			throw new Error('Unauthorized');
+		}
+
+		return wallet.activeBalance;
+	} catch (error) {
+		throw new Error(`Failed to check balance: ${error.message}`);
+	}
+}
+
+async function updateWalletBalance(walletId, userId, amount) {
+	try {
+		const wallet = await Wallet.findByPk(walletId);
+		if (!wallet) {
+			throw new Error('Wallet not found');
+		}
+
+		if (wallet.userId !== userId && userId !== 0) {
+			throw new Error('Unauthorized');
+		}
+
+		wallet.activeBalance += amount;
+		await wallet.save();
+
+		return wallet.activeBalance;
+	} catch (error) {
+		throw new Error(`Failed to update balance: ${error.message}`);
+	}
+}
+
+async function createWallet(userId, currency, bankAccountNumber) {
+	try {
+		const account = await User.findByPk(userId);
+		if (!account) {
+			throw new Error('Account not found');
+		}
+
+		if (account.walletId !== null || account.walletId !== 0) {
+			throw new Error('User already has a wallet');
+		}
+
+		const wallet = await Wallet.create({
+			userId,
+			currency,
+			bankAccountNumber,
+		});
+
+		account.walletId = wallet.walletId;
+		await account.save();
+
+		return wallet;
+	} catch (error) {
+		throw new Error(`Failed to create wallet: ${error.message}`);
+	}
 }
 
 module.exports = {
 	sendEmail, generateJWT, logTransaction, saveImageToCloudinary$,
 	scanImage, validateEmail, generateEmailContent, timeNow,
 	generateLongRandomString, isTokenValid, decodeToken,
-	generateReferralCode, checkToken
+	generateReferralCode, checkToken,
+	updateWalletBalance, checkWalletBalance, createWallet
 }

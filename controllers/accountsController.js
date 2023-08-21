@@ -1,6 +1,7 @@
 'use strict';
 const { Op } = require('sequelize');
 const { User, Seller } = require('../models/account.model');
+const { Wallet } = require('../models/wallet.model');
 const Verification = require('../models/verification.model');
 const { from, EMPTY } = require('rxjs');
 const { catchError, switchMap, map } = require('rxjs/operators');
@@ -31,8 +32,14 @@ function registerUserStep1(req, res, next) {
 				res.status(500).send('Unable to create user');
 				return EMPTY;
 			}),
+			//create wallet for user
 			switchMap((user) => {
 				userId = user.dataValues.userId;
+				return from(Wallet.create({ userId: userId, currency : 'UNITE' }));
+			}),
+			switchMap((wallet) => {
+				console.log('Wallet created successfully!', wallet)
+				userId = wallet.dataValues.userId;
 				//generate 5-digit random number
 				const verificationCode = Math.floor(10000 + Math.random() * 90000);
 				return from(Verification.create({ userId: userId, verificationMessage: verificationCode, type: 'REGISTRATION' }));
@@ -245,7 +252,6 @@ function completeLogin(req, res, next) {
 				switchMap((deletedVerification) => {
 					if (deletedVerification) {
 						//generate jwt token for session
-						console.log("GENERATING JWT FROM:", userRecord)
 						return from(utils.generateJWT(userRecord.userId, userRecord.email, userRecord.role, true, userRecord.firstname, userRecord.surname, userRecord.referralCode, userRecord.phone));
 					}
 					else {
