@@ -1,58 +1,58 @@
 [
  {
    "locationId": 1,
-   "lat": 6.46937,
-   "lng": 3.64719,
-   "level3": 10051336,
+   "latitude": 6.46937,
+   "longitude": 3.64719,
+   "level3_id": 10051336,
    "description": "Crown Estate"
  },
  {
    "locationId": 2,
-   "lat": 6.46853,
-   "lng": 3.6536,
-   "level3": 10051336,
+   "latitude": 6.46853,
+   "longitude": 3.6536,
+   "level3_id": 10051336,
    "description": "Fara Park Estate"
  },
  {
    "locationId": 3,
-   "lat": 6.4349,
-   "lng": 3.51492,
-   "level3": 10051326,
+   "latitude": 6.4349,
+   "longitude": 3.51492,
+   "level3_id": 10051326,
    "description": "White Oak Estate"
  },
  {
    "locationId": 4,
-   "lat": 6.47323,
-   "lng": 3.57237,
-   "level3": 10051301,
+   "latitude": 6.47323,
+   "longitude": 3.57237,
+   "level3_id": 10051301,
    "description": "Victory Estate"
  },
  {
    "locationId": 5,
-   "lat": 6.43313,
-   "lng": 3.46888,
-   "level3": 10051316,
+   "latitude": 6.43313,
+   "longitude": 3.46888,
+   "level3_id": 10051316,
    "description": "Mobolaji Johnson Estate, Lekki"
  },
  {
    "locationId": 6,
-   "lat": 6.44462,
-   "lng": 3.45785,
-   "level3": 10051322,
+   "latitude": 6.44462,
+   "longitude": 3.45785,
+   "level3_id": 10051322,
    "description": "Amala Sky Admiralty Way"
  },
  {
    "locationId": 7,
-   "lat": 6.468912,
-   "lng": 3.643321,
-   "level3": 10051336,
+   "latitude": 6.468912,
+   "longitude": 3.643321,
+   "level3_id": 10051336,
    "description": "Emperor Estate"
  },
  {
    "locationId": 8,
-   "lat": 6.462394,
-   "lng": 3.640763,
-   "level3": 10051336,
+   "latitude": 6.462394,
+   "longitude": 3.640763,
+   "level3_id": 10051336,
    "description": "Diamond Estate"
  }
 ]

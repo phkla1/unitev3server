@@ -5,7 +5,6 @@ const CountryLevel4 = dbConnection.define('countrylevel4', {
     locationId: {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
     },
     level3_id: {
         type: Sequelize.INTEGER,
@@ -23,51 +22,48 @@ const CountryLevel4 = dbConnection.define('countrylevel4', {
         type: Sequelize.STRING,
         allowNull: false,
     },
-},{
-        timestamps: true
+}, {
+    timestamps: true
 });
 
 const CountryLevel3 = dbConnection.define('countrylevel3', {
     level3_id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
     },
     localityId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
     },
     level3_name: {
         type: Sequelize.STRING,
         allowNull: false,
     },
-},{
+}, {
     timestamps: true
 });
 
 const CountryLevel2 = dbConnection.define('countrylevel2', {
     localityId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         primaryKey: true,
-        autoIncrement: true,
     },
     regionId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
     },
     localityName: {
         type: Sequelize.STRING,
         allowNull: false,
     },
-},{
+}, {
     timestamps: true
 });
 
 const CountryLevel1 = dbConnection.define('countrylevel1', {
     regionId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         primaryKey: true,
-        autoIncrement: true,
     },
     countryId: {
         type: Sequelize.INTEGER,
@@ -77,7 +73,7 @@ const CountryLevel1 = dbConnection.define('countrylevel1', {
         type: Sequelize.STRING,
         allowNull: false,
     },
-},{
+}, {
     timestamps: true
 });
 
@@ -99,7 +95,7 @@ const Countries = dbConnection.define('countries', {
         type: Sequelize.STRING,
         allowNull: false,
     },
-},{
+}, {
     timestamps: true
 });
 
@@ -129,9 +125,34 @@ const Addresses = dbConnection.define('addresses', {
         type: Sequelize.STRING,
         allowNull: false,
     },
+}, {
+    timestamps: true
+});
+
+const Streets = dbConnection.define('streets', {
+    streetId: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    locationId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: CountryLevel4,
+            key: 'locationId',
+        },
+    },
+    streetName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
 },{
     timestamps: true
 });
+
+Streets.belongsTo(CountryLevel4, { foreignKey: 'locationId' });
+CountryLevel4.hasMany(Streets, { foreignKey: 'locationId' });
 
 Addresses.belongsTo(User, { foreignKey: 'userId' });
 User.hasMany(Addresses, { foreignKey: 'userId' });
@@ -155,4 +176,5 @@ module.exports = {
     CountryLevel1,
     Countries,
     Addresses,
+    Streets
 };
