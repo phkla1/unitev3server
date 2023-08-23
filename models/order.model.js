@@ -1,5 +1,6 @@
 const { Sequelize, dbConnection } = require('./db');
 const { Product } = require('./product.model');
+const { User } = require('./account.model');
 
 // define the Order model
 const Order = dbConnection.define('Order', {
@@ -9,7 +10,7 @@ const Order = dbConnection.define('Order', {
 		autoIncrement: true,
 		allowNull: false
 	},
-	userId: {
+	addressId: {
 		type: Sequelize.INTEGER,
 		allowNull: false
 	},
@@ -25,26 +26,29 @@ const Order = dbConnection.define('Order', {
 		type: Sequelize.ENUM('unpaid', 'paid'),
 		allowNull: false,
 		defaultValue: 'unpaid'
+	},
+	paymentRef: {
+		type: Sequelize.STRING,
+		allowNull: true
+	}}, {
+	hooks: {
+		beforeCreate: (record, options) => {
+			record.dataValues.createdAt = Date.now();
+			record.dataValues.updatedAt = Date.now();
+		},
+		beforeUpdate: (record, options) => {
+			record.dataValues.updatedAt = Date.now();
+		}
 	}
 });
 
 // define the OrderItem model
 const OrderItem = dbConnection.define('OrderItem', {
-	orderId: {
+	itemId: {
 		type: Sequelize.INTEGER,
-		allowNull: false,
-		references: {
-            model: Order,
-            key: 'orderId'
-        }
-	},
-	productId: {
-		type: Sequelize.INTEGER,
-		allowNull: false,
-		references: {
-            model: Product,
-            key: 'productId'
-        }
+		primaryKey: true,
+		autoIncrement: true,
+		allowNull: false
 	},
 	quantity: {
 		type: Sequelize.INTEGER,
@@ -57,8 +61,8 @@ const OrderItem = dbConnection.define('OrderItem', {
 });
 
 // define the associations between the models
-Order.hasMany(OrderItem);
-OrderItem.belongsTo(Order);
-OrderItem.belongsTo(Product);
+OrderItem.belongsTo(Order, { foreignKey: 'orderId' });
+OrderItem.belongsTo(Product, { foreignKey: 'productId' });
+Order.belongsTo(User, { foreignKey: 'userId' });
 
 module.exports = { Order, OrderItem, Product };

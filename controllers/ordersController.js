@@ -7,78 +7,95 @@ const axios = require('axios');
 
 // Create a new order
 exports.createOrder = async (req, res) => {
-    if(req.body.userId) {
+    if (req.body.cart && req.body.addressId) {
         try {
-            const cart = req.body.cart;
+            const { addressId, cart } = req.body;
+            const token = req.headers.authorization;
+            const decodedToken = utils.decodeToken(token);
+            const userId = decodedToken.userId;
+            const orderDate = Math.floor(Date.now() / 1000); // Unix timestamp
             let total = 0;
-            let order;
+
+            // Calculate total
             for (const item of cart) {
-                const product = item.product;
-                const quantity = item.quantity;
-                total += product.price * quantity;
+                total += item.product.price * item.quantity;
             }
-            from(Order.create({
-                userId: req.body.userId,
-                orderDate: utils.timeNow(),
-                total: total,
+
+            // Create order
+            const order = await Order.create({
+                userId,
+                addressId,
+                orderDate,
+                total,
                 status: 'unpaid',
-            })).pipe(
-               //send request to gateway. A redirect link will be returned
-                switchMap((newOrder) => {
-                    order = newOrder;    
-                    let flwaveParams = {
-                        tx_ref : order.orderId,
-                        amount : order.total,
-                        currency : "NGN",
-                        redirect_url : process.env.TESTREDIRECTURL + order.orderId + "/update",
-    //                    redirect_url : process.env.FLWDEALREDIRECTURL + order.orderId + "/update",
-                        payment_options : "card, banktransfer, account, ussd",
-                        customer : {
-                            email : "test@test.com",
-                            phonenumber : "0902620185",
-                            name : "test user"
-                        },
-                        customizations : {
-                            title : "Unite V3",
-                            description : "Payment for test deal",
-                            logo : "https://assets.piedpiper.com/logo.png"
-                        },
-                        meta : {
-                            consumer_id : req.body.userId,
-                            consumer_mac : "92a3-912ba-1192a"
-                        }
-                    };
-                    let header = {
-                        headers: {
-                            Authorization : 'Bearer ' + process.env.FLWSECKEY
-                        }
-                    };
-                    return from( axios.post( process.env.FLWPAYURL.toString(), flwaveParams, header))
-                    .pipe(
-                        map(flwData => {
-                            return flwData.data.data.link;
-                        }),
-                        catchError(err => {
-                            console.log("ERROR FROM FLWAVE:", err);
-                            return throwError(() => new Error(err));
-                        })
-                    );
+            });
+
+            // Create order items
+            for (const item of cart) {
+                await OrderItem.create({
+                    orderId: order.orderId,
+                    productId: item.product.productId,
+                    price: item.product.price,
+                    quantity: item.quantity,
+                });
+            }
+
+            //send request to gateway. A redirect link will be returned
+            let flwaveParams = {
+                tx_ref: order.orderId,
+                amount: order.total,
+                currency: "NGN",
+                redirect_url: process.env.TESTREDIRECTURL + order.orderId + "/update",
+                //                    redirect_url : process.env.FLWDEALREDIRECTURL + order.orderId + "/update",
+                payment_options: "card, banktransfer, account, ussd",
+                customer: {
+                    email: "test@test.com",
+                    phonenumber: "0902620185",
+                    name: "test user"
+                },
+                customizations: {
+                    title: "Unite V3",
+                    description: "Payment for test deal",
+                    logo: "https://assets.piedpiper.com/logo.png"
+                },
+                meta: {
+                    consumer_id: req.body.userId,
+                    consumer_mac: "92a3-912ba-1192a"
+                }
+            };
+            let header = {
+                headers: {
+                    Authorization: 'Bearer ' + process.env.FLWSECKEY
+                }
+            };
+            from(axios.post(process.env.FLWPAYURL.toString(), flwaveParams, header))
+            .pipe(
+                map(flwData => {
+                    return flwData.data.data.link;
+                }),
+                catchError(err => {
+                    console.log("ERROR FROM FLWAVE:", err);
+                    return throwError(() => new Error(err));
                 })
             ).subscribe({
-                next: (link) => {
+                next: (redirectUrl) => {
                     //copy order to new object and add linkdata
-                    let newOrder = {...order.dataValues, link : link}; 
+                    let newOrder = { ...order.dataValues, link: redirectUrl };
                     console.log("NEW ORDER:", newOrder);
                     res.status(201).json(newOrder);
+                },
+                error: (err) => {
+                    console.log("ERROR FROM FLWAVE:", err);
+                    if(!res.headersSent) res.status(500).json({ message: 'Gateway error' });
                 }
             });
         } catch (err) {
             console.error(err);
-            res.status(500).json({ message: 'Server error' });
+            if(!res.headersSent) res.status(500).json({ message: 'Server error' });
         }
     }
     else {
-        res.status(400).json({ message: 'Bad request' });
+        if(!res.headersSent) res.status(400).json({ message: 'Bad request' });
     }
 
 };
