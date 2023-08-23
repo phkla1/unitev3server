@@ -6,7 +6,7 @@ const Verification = require('../models/verification.model');
 const { from, EMPTY } = require('rxjs');
 const { catchError, switchMap, map } = require('rxjs/operators');
 const utils = require('../utils/utils');
-
+const { Addresses } = require('../models/location.model');
 
 
 function registerUserStep1(req, res, next) {
@@ -35,10 +35,10 @@ function registerUserStep1(req, res, next) {
 			//create wallet for user
 			switchMap((user) => {
 				userId = user.dataValues.userId;
-				return from(Wallet.create({ userId: userId, currency : 'UNITE' }));
+				return from(Wallet.create({ userId: userId, currency: 'UNITE' }));
 			}),
 			switchMap((wallet) => {
-				console.log('Wallet created successfully!', wallet)
+//				console.log('Wallet created successfully!', wallet)
 				userId = wallet.dataValues.userId;
 				//generate 5-digit random number
 				const verificationCode = Math.floor(10000 + Math.random() * 90000);
@@ -169,7 +169,7 @@ function startLogin(req, res, next) {
 					map((verification) => {
 						//save verification id
 						verificationId = verification.verificationId;
-						console.log('Verification code created successfully!', verification);
+//						console.log('Verification code created successfully!', verification);
 						//send email with verification code to user
 						const subject = 'Please Complete Your Inside Login';
 						const recipients = [{ email: req.body.email }];
@@ -251,6 +251,36 @@ function completeLogin(req, res, next) {
 				}),
 				switchMap((deletedVerification) => {
 					if (deletedVerification) {
+						// Get all addresses linked to the user
+						return from(Addresses.findAll({
+							where: {
+								userId: userRecord.userId,
+							},
+							raw: true,
+						})).pipe(
+							switchMap((addresses) => {
+								console.log("USER ADDRESSES: ", addresses)
+								return from(utils.generateJWT(
+									userRecord.userId,
+									userRecord.email,
+									userRecord.role,
+									true,
+									userRecord.firstname,
+									userRecord.surname,
+									userRecord.referralCode,
+									userRecord.phone,
+									addresses 
+								));
+							})
+						);
+					} else {
+						if (!res.headersSent) res.sendStatus(500);
+						return EMPTY;
+					}
+				}),
+				/*
+				switchMap((deletedVerification) => {
+					if (deletedVerification) {
 						//generate jwt token for session
 						return from(utils.generateJWT(userRecord.userId, userRecord.email, userRecord.role, true, userRecord.firstname, userRecord.surname, userRecord.referralCode, userRecord.phone));
 					}
@@ -259,6 +289,7 @@ function completeLogin(req, res, next) {
 						return EMPTY;
 					}
 				}),
+				*/
 				catchError((error) => {
 					console.error('Unable to generate JWT token: ', error);
 					if (!res.headersSent) res.sendStatus(500);

@@ -47,7 +47,7 @@ function logTransaction(level, userId, logData, res) {
 }
 
 //generate a jwt token with userId, email, role, and active
-function generateJWT(userId, email, role, active, firstname, surname, referralCode, phone) {
+function generateJWT(userId, email, role, active, firstname, surname, referralCode, phone, deliveryAddresses) {
 	let signOptions = {
 		algorithm: "RS256",
 		expiresIn: parseInt(process.env.TOKENVALIDITYSECONDS),
@@ -61,7 +61,8 @@ function generateJWT(userId, email, role, active, firstname, surname, referralCo
 		firstname,
 		surname,
 		referralCode,
-		internationalPhone: phone
+		internationalPhone: phone,
+		deliveryAddresses
 	}
 	return of(jwt.sign(data, process.env.USERPRIVKEY, signOptions));
 }
