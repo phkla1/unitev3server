@@ -1,6 +1,6 @@
 const { Sequelize, dbConnection } = require('./db');
 const { Product } = require('./product.model');
-const { User } = require('./account.model');
+const { User, Seller } = require('./account.model');
 
 // define the Order model
 const Order = dbConnection.define('Order', {
@@ -85,6 +85,7 @@ const OrderItem = dbConnection.define('OrderItem', {
 // define the associations between the models
 OrderItem.belongsTo(Order, { foreignKey: 'orderId' });
 OrderItem.belongsTo(Product, { foreignKey: 'productId' });
+OrderItem.belongsTo(Seller, { foreignKey: 'sellerId' });
 Order.belongsTo(User, { foreignKey: 'userId' });
 
 module.exports = { Order, OrderItem, Product };

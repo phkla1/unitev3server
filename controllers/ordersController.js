@@ -5,7 +5,8 @@ const utils = require('../utils/utils');
 const { from, throwError } = require('rxjs');
 const { switchMap, map, catchError } = require('rxjs/operators');
 const Flutterwave = require('flutterwave-node-v3');
-//const axios = require('axios');
+const axios = require('axios');
+const ObjectsToCsv = require('objects-to-csv');
 
 // Create a new order
 exports.createOrder = async (req, res) => {
@@ -22,7 +23,7 @@ exports.createOrder = async (req, res) => {
 			for (const item of cart) {
 				total += item.product.price * item.quantity;
 			}
-
+			//order ref
 			const unitePaymentRef = utils.generateLongRandomString();
 			// Create order
 			const order = await Order.create({
@@ -41,6 +42,7 @@ exports.createOrder = async (req, res) => {
 					productId: item.product.productId,
 					price: item.product.price,
 					quantity: item.quantity,
+					sellerId: item.product.sellerId,
 				});
 			}
 
@@ -231,7 +233,7 @@ exports.completeOrder = async (req, res, next) => {
 							},
 							attributes: ['email'],
 						});
-						const buyerEmail = [{email : buyerRecord.getDataValue('email')}];
+						const buyerEmail = [{ email: buyerRecord.getDataValue('email') }];
 
 						// Get seller email
 						const orderItem = await OrderItem.findOne({
@@ -254,14 +256,14 @@ exports.completeOrder = async (req, res, next) => {
 							},
 							attributes: ['userId'],
 						});
-						const sellerUserId = sellerRecord.getDataValue('userId'); 
+						const sellerUserId = sellerRecord.getDataValue('userId');
 						const sellerUserRecord = await User.findOne({
 							where: {
 								userId: sellerUserId,
 							},
 							attributes: ['email'],
 						});
-						const sellerEmail = [{email : sellerUserRecord.getDataValue('email')}];
+						const sellerEmail = [{ email: sellerUserRecord.getDataValue('email') }];
 
 						// Send email to buyer
 						const buyerSubject = 'Your order has been paid';
@@ -308,3 +310,101 @@ exports.completeOrder = async (req, res, next) => {
 		next(error);
 	}
 }
+
+exports.generateReport = async (req, res, next) => {
+	try {
+		const { startDate } = req.body;
+		const token = req.headers.authorization;
+		const decodedToken = utils.decodeToken(token);
+		const userId = decodedToken.userId;
+
+		// Check if user is a seller
+		const seller = await Seller.findOne({
+			where: {
+				userId,
+			},
+			attributes: ['sellerId'],
+		});
+		const sellerId = seller.getDataValue('sellerId');
+		if (!sellerId) {
+			return res.status(403).send('User is not a seller');
+		}
+
+		// Get order items for seller on or after start date
+		const orderItems = await OrderItem.findAll({
+			where: {
+				createdAt: {
+					[Op.gte]: new Date(startDate * 1000),
+				},
+			},
+			attributes: ['orderId', 'productId', 'quantity', 'price'],
+		});
+
+		// Get order details for each order item
+		const orderDetails = await Promise.all(
+			orderItems.map(async (orderItem) => {
+				const { orderId, productId, quantity, price } = orderItem;
+
+				// Get buyer details
+				const order = await Order.findOne({
+					where: {
+						orderId,
+					},
+					attributes: ['userId'],
+				});
+				const buyerId = order.getDataValue('userId');
+				const buyer = await User.findOne({
+					where: {
+						userId: buyerId,
+					},
+					attributes: ['firstname', 'surname', 'email'],
+				});
+
+				// Get product details
+				const product = await Product.findOne({
+					where: {
+						productId,
+					},
+					attributes: ['productName', 'description'],
+				});
+
+				// Get delivery address
+				const deliveryAddress = await Order.findOne({
+					where: {
+						orderId,
+					},
+					attributes: ['deliveryAddress'],
+				});
+
+				return {
+					buyerName: `${buyer.firstname} ${buyer.surname}`,
+					buyerEmail: buyer.email,
+					deliveryAddress: deliveryAddress.deliveryAddress,
+					productName: product.productName,
+					productDescription: product.description,
+					quantity,
+					unitPrice: price,
+				};
+			})
+		);
+
+		// Convert order details to CSV
+		const csv = new ObjectsToCsv(orderDetails);
+		const csvString = await csv.toString();
+
+		// Send CSV file via email
+		const subject = 'Order report';
+		const text = 'Please find attached the order report.';
+		const attachments = [
+			{
+				filename: 'order_report.csv',
+				content: csvString,
+			},
+		];
+		sendEmail(req.user.email, subject, text, null, null, null, attachments, null, null, 'REPORT');
+
+		res.send('Order report sent');
+	} catch (error) {
+		next(error);
+	}
+};
