@@ -27,7 +27,29 @@ const Order = dbConnection.define('Order', {
 		allowNull: false,
 		defaultValue: 'unpaid'
 	},
-	paymentRef: {
+	unitePaymentRef: {
+		type: Sequelize.STRING,
+		allowNull: true,
+		unique: true
+	},
+	gatewayPaymentRef: {
+		type: Sequelize.STRING,
+		allowNull: true,
+		unique: true
+	},
+	chargedAmount: {
+		type: Sequelize.DECIMAL(10, 2),
+		allowNull: true
+	},
+	settledAmount: {
+		type: Sequelize.DECIMAL(10, 2),
+		allowNull: true
+	},
+	gatewayFee: {
+		type: Sequelize.DECIMAL(10, 2),
+		allowNull: true
+	},
+	paymentType: {
 		type: Sequelize.STRING,
 		allowNull: true
 	}}, {
