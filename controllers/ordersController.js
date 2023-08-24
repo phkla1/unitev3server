@@ -1,12 +1,15 @@
 'use strict';
 const { Order, Product, OrderItem } = require('../models/order.model');
 const { User, Seller } = require('../models/account.model');
+const { Addresses } = require('../models/location.model');
 const utils = require('../utils/utils');
 const { from, throwError } = require('rxjs');
 const { switchMap, map, catchError } = require('rxjs/operators');
 const Flutterwave = require('flutterwave-node-v3');
 const axios = require('axios');
 const ObjectsToCsv = require('objects-to-csv');
+const { Op } = require('sequelize');
+const fs = require('fs');
 
 // Create a new order
 exports.createOrder = async (req, res) => {
@@ -311,12 +314,21 @@ exports.completeOrder = async (req, res, next) => {
 	}
 }
 
-exports.generateReport = async (req, res, next) => {
+exports.getOrderReport = async (req, res, next) => {
 	try {
 		const { startDate } = req.body;
 		const token = req.headers.authorization;
 		const decodedToken = utils.decodeToken(token);
 		const userId = decodedToken.userId;
+
+		//Get user's email address
+		const user = await User.findOne({
+			where: {
+				userId,
+			},
+			attributes: ['email'],
+		});
+		const recipient = [{ email: user.getDataValue('email') }];
 
 		// Check if user is a seller
 		const seller = await Seller.findOne({
@@ -336,10 +348,13 @@ exports.generateReport = async (req, res, next) => {
 				createdAt: {
 					[Op.gte]: new Date(startDate * 1000),
 				},
+				sellerId
 			},
+			raw: true,
 			attributes: ['orderId', 'productId', 'quantity', 'price'],
 		});
 
+		console.log("ORDER ITEMS:", orderItems)
 		// Get order details for each order item
 		const orderDetails = await Promise.all(
 			orderItems.map(async (orderItem) => {
@@ -365,23 +380,30 @@ exports.generateReport = async (req, res, next) => {
 					where: {
 						productId,
 					},
-					attributes: ['productName', 'description'],
+					attributes: ['productName', 'productDescription'],
 				});
 
 				// Get delivery address
-				const deliveryAddress = await Order.findOne({
+				const addressData = await Order.findOne({
 					where: {
 						orderId,
 					},
-					attributes: ['deliveryAddress'],
+					attributes: ['addressId'],
+				});
+				const addressId = addressData.getDataValue('addressId');
+				const deliveryAddress = await Addresses.findOne({
+					where: {
+						addressId,
+					},
+					attributes: ['streetAddress'],
 				});
 
 				return {
-					buyerName: `${buyer.firstname} ${buyer.surname}`,
-					buyerEmail: buyer.email,
-					deliveryAddress: deliveryAddress.deliveryAddress,
-					productName: product.productName,
-					productDescription: product.description,
+					buyerName: `${buyer.getDataValue('firstname')} ${buyer.getDataValue('surname')}`,
+					buyerEmail: buyer.getDataValue('email'),
+					deliveryAddress: deliveryAddress.getDataValue('streetAddress'),
+					productName: product.getDataValue('productName'),
+					productDescription: product.getDataValue('productDescription'),
 					quantity,
 					unitPrice: price,
 				};
@@ -393,15 +415,30 @@ exports.generateReport = async (req, res, next) => {
 		const csvString = await csv.toString();
 
 		// Send CSV file via email
-		const subject = 'Order report';
+		const subject = 'Your Unite Order report';
 		const text = 'Please find attached the order report.';
-		const attachments = [
-			{
-				filename: 'order_report.csv',
-				content: csvString,
-			},
-		];
-		sendEmail(req.user.email, subject, text, null, null, null, attachments, null, null, 'REPORT');
+		const textHtml = `
+		<html>
+		  <head>
+			<title>Order report</title>
+		  </head>
+		  <body>
+			<h1>Order report</h1>
+			<p>Please find attached the order report.</p>
+		  </body>
+		</html>
+	  	`;
+		const rawFile = '/tmp/' + utils.generateLongRandomString() + '.txt';
+		await csv.toDisk(rawFile);
+		const filename = 'order_report.csv';
+
+		fs.readFile(rawFile, {encoding : 'base64'}, (err, data) => {
+			if (err) {
+				console.error(err);
+				return;
+			}
+			utils.sendEmail(userId, subject, recipient, null, textHtml, text, filename, data, 'text/plain', 'REPORT');
+		});
 
 		res.send('Order report sent');
 	} catch (error) {
