@@ -7,7 +7,8 @@
         "phone": "1234567890",
         "password": "password123",
         "role": "user",
-        "referralCode" : "AB1234"
+        "referralCode" : "AB1234",
+        "referrer" : "0"
     },
     {
         "userId" : 2,
@@ -17,7 +18,8 @@
         "phone": "0987654321",
         "password": "password456",
         "role": "admin",
-        "referralCode" : "CD1234"
+        "referralCode" : "CD1234",
+        "referrer" : "0"
     },
     {
         "userId" : 3,
@@ -27,7 +29,8 @@
         "phone": "5555555555",
         "password": "password789",
         "role": "seller",
-        "referralCode" : "EF1234"
+        "referralCode" : "EF1234",
+        "referrer" : "AB1234"
     },
     {
         "userId" : 4,
@@ -37,6 +40,7 @@
         "phone": "77777777777",
         "password": "password789",
         "role": "seller",
-        "referralCode" : "GH1234"
+        "referralCode" : "GH1234",
+        "referrer" : "AB1234"
     }
 ]

@@ -11,7 +11,7 @@ const { Addresses } = require('../models/location.model');
 
 function registerUserStep1(req, res, next) {
 	//validate the request body
-	if (req.body.phone && req.body.email && req.body.firstname && req.body.surname && req.body.role) {
+	if (req.body.phone && req.body.email && req.body.firstname && req.body.surname && req.body.role && req.body.upline) {
 		let userId, verificationId, referralCode;
 		//if role is "user" then generate a random alphanumerical referral code
 		if (req.body.role === 'user') {
@@ -23,6 +23,7 @@ function registerUserStep1(req, res, next) {
 			firstname: req.body.firstname,
 			surname: req.body.surname,
 			role: req.body.role,
+			referrer : req.body.upline,
 			referralCode: referralCode,
 			active: false
 		};

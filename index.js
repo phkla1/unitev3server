@@ -12,8 +12,7 @@ const { dbConnection } = require('./models/db');
 
 dbConnection.sync().then(async () => {
     console.log('DB tables created successfully!');
-    // Seed the database with users, sellers, and products
-    /*
+    // Seed the database with users and sellers
     const { User } = require('./models/account.model');
     const { Seller } = require('./models/account.model');
     const userSeed = require('./seed/user.json');
@@ -29,10 +28,8 @@ dbConnection.sync().then(async () => {
     }).catch((error) => {
         console.error('Unable to seed users: ', error);
     });
-    */
 
     // Seed the database with location data
-    /*
     const { Countries, CountryLevel1, CountryLevel2, CountryLevel3, CountryLevel4, Streets } = require('./models/location.model');
     const countries = require('./seed/countries.json');
     const countryLevel1Seed = require('./seed/countryLevel1.json');
@@ -53,7 +50,6 @@ dbConnection.sync().then(async () => {
     console.log('CountryLevel4 seeded successfully!');
     await Streets.bulkCreate(streetSeed);
     console.log('Streets seeded successfully. Seeding complete!');
-    */
 
 }).catch((error) => {
     console.error('Unable to create database: ', error);

@@ -14,6 +14,10 @@ const User = dbConnection.define('user', {
 		type: Sequelize.STRING,
 		allowNull: false,
 	},
+	referrer : {
+		type: Sequelize.STRING,
+		allowNull: false,
+	},
 	referralCode : {
 		type: Sequelize.STRING,
 		allowNull: false,
@@ -36,9 +40,6 @@ const User = dbConnection.define('user', {
 		type: Sequelize.STRING
 	},
 	walletId: {
-		type: Sequelize.STRING
-	},
-	address: {
 		type: Sequelize.STRING
 	},
 	active : {
