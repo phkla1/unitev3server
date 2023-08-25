@@ -62,7 +62,7 @@ function generateJWT(userId, email, role, active, firstname, surname, referralCo
 		surname,
 		referralCode,
 		internationalPhone: phone,
-		deliveryAddresses
+		deliveryAddresses : JSON.stringify(deliveryAddresses)
 	}
 	return of(jwt.sign(data, process.env.USERPRIVKEY, signOptions));
 }

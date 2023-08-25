@@ -355,93 +355,100 @@ exports.getOrderReport = async (req, res, next) => {
 		});
 
 		console.log("ORDER ITEMS:", orderItems)
-		// Get order details for each order item
-		const orderDetails = await Promise.all(
-			orderItems.map(async (orderItem) => {
-				const { orderId, productId, quantity, price } = orderItem;
-
-				// Get buyer details
-				const order = await Order.findOne({
-					where: {
-						orderId,
-					},
-					attributes: ['userId'],
-				});
-				const buyerId = order.getDataValue('userId');
-				const buyer = await User.findOne({
-					where: {
-						userId: buyerId,
-					},
-					attributes: ['firstname', 'surname', 'email'],
-				});
-
-				// Get product details
-				const product = await Product.findOne({
-					where: {
-						productId,
-					},
-					attributes: ['productName', 'productDescription'],
-				});
-
-				// Get delivery address
-				const addressData = await Order.findOne({
-					where: {
-						orderId,
-					},
-					attributes: ['addressId'],
-				});
-				const addressId = addressData.getDataValue('addressId');
-				const deliveryAddress = await Addresses.findOne({
-					where: {
-						addressId,
-					},
-					attributes: ['streetAddress'],
-				});
-
-				return {
-					buyerName: `${buyer.getDataValue('firstname')} ${buyer.getDataValue('surname')}`,
-					buyerEmail: buyer.getDataValue('email'),
-					deliveryAddress: deliveryAddress.getDataValue('streetAddress'),
-					productName: product.getDataValue('productName'),
-					productDescription: product.getDataValue('productDescription'),
-					quantity,
-					unitPrice: price,
-				};
-			})
-		);
-
-		// Convert order details to CSV
-		const csv = new ObjectsToCsv(orderDetails);
-		const csvString = await csv.toString();
-
-		// Send CSV file via email
-		const subject = 'Your Unite Order report';
-		const text = 'Please find attached the order report.';
-		const textHtml = `
-		<html>
-		  <head>
-			<title>Order report</title>
-		  </head>
-		  <body>
-			<h1>Order report</h1>
-			<p>Please find attached the order report.</p>
-		  </body>
-		</html>
-	  	`;
-		const rawFile = '/tmp/' + utils.generateLongRandomString() + '.txt';
-		await csv.toDisk(rawFile);
-		const filename = 'order_report.csv';
-
-		fs.readFile(rawFile, {encoding : 'base64'}, (err, data) => {
-			if (err) {
-				console.error(err);
-				return;
-			}
-			utils.sendEmail(userId, subject, recipient, null, textHtml, text, filename, data, 'text/plain', 'REPORT');
-		});
-
-		res.send('Order report sent');
-	} catch (error) {
+		console.log("ORDER ITEMS LENGTH:", orderItems.length)
+		if(orderItems.length > 0) {
+			// Get order details for each order item
+			const orderDetails = await Promise.all(
+				orderItems.map(async (orderItem) => {
+					const { orderId, productId, quantity, price } = orderItem;
+	
+					// Get buyer details
+					const order = await Order.findOne({
+						where: {
+							orderId,
+						},
+						attributes: ['userId'],
+					});
+					const buyerId = order.getDataValue('userId');
+					const buyer = await User.findOne({
+						where: {
+							userId: buyerId,
+						},
+						attributes: ['firstname', 'surname', 'email'],
+					});
+	
+					// Get product details
+					const product = await Product.findOne({
+						where: {
+							productId,
+						},
+						attributes: ['productName', 'productDescription'],
+					});
+	
+					// Get delivery address
+					const addressData = await Order.findOne({
+						where: {
+							orderId,
+						},
+						attributes: ['addressId'],
+					});
+					const addressId = addressData.getDataValue('addressId');
+					const deliveryAddress = await Addresses.findOne({
+						where: {
+							addressId,
+						},
+						attributes: ['streetAddress'],
+					});
+	
+					return {
+						buyerName: `${buyer.getDataValue('firstname')} ${buyer.getDataValue('surname')}`,
+						buyerEmail: buyer.getDataValue('email'),
+						deliveryAddress: deliveryAddress.getDataValue('streetAddress'),
+						productName: product.getDataValue('productName'),
+						productDescription: product.getDataValue('productDescription'),
+						quantity,
+						unitPrice: price,
+					};
+				})
+			);
+	
+			// Convert order details to CSV
+			const csv = new ObjectsToCsv(orderDetails);
+			const csvString = await csv.toString();
+	
+			// Send CSV file via email
+			const subject = 'Your Unite Order report';
+			const text = 'Please find attached the order report.';
+			const textHtml = `
+			<html>
+			  <head>
+				<title>Order report</title>
+			  </head>
+			  <body>
+				<h1>Order report</h1>
+				<p>Please find attached the order report.</p>
+			  </body>
+			</html>
+		  	`;
+			const rawFile = '/tmp/' + utils.generateLongRandomString() + '.txt';
+			await csv.toDisk(rawFile);
+			const filename = 'order_report.csv';
+	
+			fs.readFile(rawFile, {encoding : 'base64'}, (err, data) => {
+				if (err) {
+					console.error(err);
+					return;
+				}
+				utils.sendEmail(userId, subject, recipient, null, textHtml, text, filename, data, 'text/plain', 'REPORT');
+			});
+	
+			res.send(true);
+		}
+		else {
+			res.send(false);
+		}
+	} 
+	catch (error) {
 		next(error);
 	}
 };

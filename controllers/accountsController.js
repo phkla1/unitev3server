@@ -9,7 +9,7 @@ const utils = require('../utils/utils');
 const { Addresses } = require('../models/location.model');
 
 
-function registerUserStep1(req, res, next) {
+async function registerUserStep1(req, res, next) {
 	//validate the request body
 	if (req.body.phone && req.body.email && req.body.firstname && req.body.surname && req.body.role && req.body.upline) {
 		let userId, verificationId, referralCode;
@@ -23,10 +23,24 @@ function registerUserStep1(req, res, next) {
 			firstname: req.body.firstname,
 			surname: req.body.surname,
 			role: req.body.role,
-			referrer : req.body.upline,
+			referrer: req.body.upline,
 			referralCode: referralCode,
 			active: false
 		};
+
+		// Check if upline is valid
+		const upline = await User.findOne({
+			where: {
+				referralCode : req.body.upline,
+			},
+		});
+			console.log("DB UPLINE IS: ", upline)
+			console.log("UPLINE SENT IS: ", req.body.upline)
+
+		if (!upline) {
+			return res.status(400).send('Invalid upline code');
+		}
+
 		//register the user
 		from(User.create(newUser)).pipe(
 			catchError((error) => {
@@ -39,7 +53,7 @@ function registerUserStep1(req, res, next) {
 				return from(Wallet.create({ userId: userId, currency: 'UNITE' }));
 			}),
 			switchMap((wallet) => {
-//				console.log('Wallet created successfully!', wallet)
+				//				console.log('Wallet created successfully!', wallet)
 				userId = wallet.dataValues.userId;
 				//generate 5-digit random number
 				const verificationCode = Math.floor(10000 + Math.random() * 90000);
@@ -170,7 +184,7 @@ function startLogin(req, res, next) {
 					map((verification) => {
 						//save verification id
 						verificationId = verification.verificationId;
-//						console.log('Verification code created successfully!', verification);
+						//						console.log('Verification code created successfully!', verification);
 						//send email with verification code to user
 						const subject = 'Please Complete Your Inside Login';
 						const recipients = [{ email: req.body.email }];
@@ -270,7 +284,7 @@ function completeLogin(req, res, next) {
 									userRecord.surname,
 									userRecord.referralCode,
 									userRecord.phone,
-									addresses 
+									addresses
 								));
 							})
 						);
