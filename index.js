@@ -32,7 +32,6 @@ dbConnection.sync().then(async () => {
     */
 
     // Seed the database with location data
-    /*
     const { Countries, CountryLevel1, CountryLevel2, CountryLevel3, CountryLevel4, Streets } = require('./models/location.model');
     const countries = require('./seed/countries.json');
     const countryLevel1Seed = require('./seed/countryLevel1.json');
@@ -53,7 +52,6 @@ dbConnection.sync().then(async () => {
     console.log('CountryLevel4 seeded successfully!');
     await Streets.bulkCreate(streetSeed);
     console.log('Streets seeded successfully. Seeding complete!');
-    */
 
 }).catch((error) => {
     console.error('Unable to create database: ', error);
