@@ -20,6 +20,10 @@ const Product = dbConnection.define('product', {
         type: Sequelize.DECIMAL(10, 2),
         allowNull: false
     },
+    marketPrice: {
+        type: Sequelize.DECIMAL(10, 2),
+        allowNull: true
+    },
     primaryImageUrl: {
         type: Sequelize.STRING,
         allowNull: false

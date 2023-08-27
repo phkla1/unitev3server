@@ -354,8 +354,6 @@ exports.getOrderReport = async (req, res, next) => {
 			attributes: ['orderId', 'productId', 'quantity', 'price'],
 		});
 
-		console.log("ORDER ITEMS:", orderItems)
-		console.log("ORDER ITEMS LENGTH:", orderItems.length)
 		if(orderItems.length > 0) {
 			// Get order details for each order item
 			const orderDetails = await Promise.all(

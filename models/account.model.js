@@ -77,7 +77,11 @@ const Seller = dbConnection.define('seller', {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true
-    }
+    },
+	sellerRating: {
+		type: Sequelize.DECIMAL(2,1),
+		allowNull: true
+	}
 });
 
 Seller.belongsTo(User, { foreignKey: 'userId' });
