@@ -44,6 +44,7 @@ async function registerUserStep1(req, res, next) {
 		//register the user
 		from(User.create(newUser)).pipe(
 			catchError((error) => {
+				console.log("ERROR CREATING USER: ", error);
 				res.status(500).send('Unable to create user');
 				return EMPTY;
 			}),
