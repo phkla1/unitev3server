@@ -35,9 +35,9 @@ async function registerUserStep1(req, res, next) {
 			},
 		});
 			console.log("DB UPLINE IS: ", upline)
-			console.log("UPLINE SENT IS: ", req.body.upline)
 
 		if (!upline) {
+			console.log("NO UPLINE. UPLINE IS:", upline);
 			return res.status(400).send('Invalid upline code');
 		}
 

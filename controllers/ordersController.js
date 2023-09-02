@@ -64,7 +64,7 @@ exports.createOrder = async (req, res) => {
 				customizations: {
 					title: "Unite V3",
 					description: "Payment for test deal",
-					logo: "https://assets.piedpiper.com/logo.png"
+					logo: "https://res.cloudinary.com/unitebeta/image/upload/v1693209936/unitev3/icon-384x384_g3saaf.png"
 				},
 				meta: {
 					consumer_id: req.body.userId,
