@@ -14,10 +14,8 @@ async function registerUserStep1(req, res, next) {
 	if (req.body.phone && req.body.email && req.body.firstname && req.body.surname && req.body.role && req.body.upline) {
 		let userId, verificationId, referralCode;
 		//if role is "user" then generate a random alphanumerical referral code
-		if (req.body.role === 'user') {
-			referralCode = utils.generateReferralCode();
-			console.log("REFERRAL CODE IS: ", referralCode)
-		}
+		referralCode = utils.generateReferralCode();
+		console.log("REFERRAL CODE IS: ", referralCode)
 		const newUser = {
 			phone: req.body.phone,
 			email: req.body.email,
