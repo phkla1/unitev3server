@@ -206,8 +206,30 @@ exports.completeOrder = async (req, res, next) => {
 						order.setDataValue('settledAmount', settledAmount);
 						order.setDataValue('gatewayFee', gatewayFee);
 						order.setDataValue('paymentType', paymentType);
-
 						await order.save();
+
+						// Get all order items for the order
+						const orderItems = await OrderItem.findAll({
+							where: {
+								orderId: order.getDataValue('orderId'),
+							},
+						});
+
+						// Update inventory for each product
+						await Promise.all(
+							orderItems.map(async (orderItem) => {
+								const product = await Product.findOne({
+									where: {
+										productId: orderItem.getDataValue('productId'),
+									},
+								});
+
+								// Decrement product inventory by order item quantity
+								let inventory = product.getDataValue('inventory') - orderItem.getDataValue('quantity');
+								product.setDataValue('inventory', inventory);
+								await product.save();
+							})
+						);
 
 						// Generate order fulfilment code
 						const fulfilmentCode = utils.generateLongRandomString().substring(0, 5);
@@ -353,12 +375,12 @@ exports.getOrderReport = async (req, res, next) => {
 			attributes: ['orderId', 'productId', 'quantity', 'price'],
 		});
 
-		if(orderItems.length > 0) {
+		if (orderItems.length > 0) {
 			// Get order details for each order item
 			const orderDetails = await Promise.all(
 				orderItems.map(async (orderItem) => {
 					const { orderId, productId, quantity, price } = orderItem;
-	
+
 					// Get buyer details
 					const order = await Order.findOne({
 						where: {
@@ -373,7 +395,7 @@ exports.getOrderReport = async (req, res, next) => {
 						},
 						attributes: ['firstname', 'surname', 'email'],
 					});
-	
+
 					// Get product details
 					const product = await Product.findOne({
 						where: {
@@ -381,7 +403,7 @@ exports.getOrderReport = async (req, res, next) => {
 						},
 						attributes: ['productName', 'productDescription'],
 					});
-	
+
 					// Get delivery address
 					const addressData = await Order.findOne({
 						where: {
@@ -396,7 +418,7 @@ exports.getOrderReport = async (req, res, next) => {
 						},
 						attributes: ['streetAddress'],
 					});
-	
+
 					return {
 						buyerName: `${buyer.getDataValue('firstname')} ${buyer.getDataValue('surname')}`,
 						buyerEmail: buyer.getDataValue('email'),
@@ -408,11 +430,11 @@ exports.getOrderReport = async (req, res, next) => {
 					};
 				})
 			);
-	
+
 			// Convert order details to CSV
 			const csv = new ObjectsToCsv(orderDetails);
 			const csvString = await csv.toString();
-	
+
 			// Send CSV file via email
 			const subject = 'Your Unite Order report';
 			const text = 'Please find attached the order report.';
@@ -430,21 +452,21 @@ exports.getOrderReport = async (req, res, next) => {
 			const rawFile = '/tmp/' + utils.generateLongRandomString() + '.txt';
 			await csv.toDisk(rawFile);
 			const filename = 'order_report.csv';
-	
-			fs.readFile(rawFile, {encoding : 'base64'}, (err, data) => {
+
+			fs.readFile(rawFile, { encoding: 'base64' }, (err, data) => {
 				if (err) {
 					console.error(err);
 					return;
 				}
 				utils.sendEmail(userId, subject, recipient, null, textHtml, text, filename, data, 'text/plain', 'REPORT');
 			});
-	
+
 			res.send(true);
 		}
 		else {
 			res.send(false);
 		}
-	} 
+	}
 	catch (error) {
 		next(error);
 	}
