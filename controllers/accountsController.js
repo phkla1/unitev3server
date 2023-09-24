@@ -33,7 +33,6 @@ async function registerUserStep1(req, res, next) {
 				referralCode : req.body.upline,
 			},
 		});
-			console.log("DB UPLINE IS: ", upline)
 
 		if (!upline) {
 			console.log("NO UPLINE. UPLINE IS:", upline);
@@ -65,13 +64,12 @@ async function registerUserStep1(req, res, next) {
 				if (!res.headersSent) res.sendStatus(500);
 			}),
 			map((verification) => {
-				console.log('Verification code created successfully!', verification);
 				verificationId = verification.verificationId;
 				//send email with verification code to user
-				const subject = 'Please Complete Your Inside Registration';
+				const subject = 'Please Complete Your Unite Registration';
 				const recipients = [{ email: newUser.email }];
-				const htmlContent = `<p>Your Inside registration code is <b>${verification.verificationMessage}</b></p>. <p>Enter this code in the app to complete your registration.</p>`;
-				const textContent = `Your Inside registration code is ${verification.verificationMessage}. Enter this code in the app to complete your registration.`;
+				const htmlContent = `<p>Your Unite registration code is <b>${verification.verificationMessage}</b></p>. <p>Enter this code in the app to complete your registration.</p>`;
+				const textContent = `Your Unite registration code is ${verification.verificationMessage}. Enter this code in the app to complete your registration.`;
 				utils.sendEmail(userId, subject, recipients, null, htmlContent, textContent, null, null, null, 'REGISTERUSER');
 				return true;
 			})
@@ -115,8 +113,7 @@ function registerUserStep2(req, res, next) {
 				if (!res.headersSent) res.sendStatus(500);
 				return EMPTY;
 			}),
-			map((newUser) => {
-				user = newUser;
+			map((userUpdateStatus) => {
 				//delete the verification code
 				return from(Verification.destroy({ where: { verificationId: req.body.verificationId } }));
 			}),
@@ -126,10 +123,28 @@ function registerUserStep2(req, res, next) {
 				if (!res.headersSent) res.sendStatus(500);
 				return EMPTY;
 			}),
-			switchMap((deletedVerification) => {
-				if (deletedVerification) {
+			//get the user record
+			switchMap(() => {
+				return from(User.findOne({ where: { userId: req.body.userId } }));
+			}),
+			switchMap((newUser) => {
+				console.log("NEW USER IS: ", newUser);
+				let userData = newUser.dataValues;
+				if (userData) {
+					console.log('User record updated successfully!', userData);
 					//generate jwt token for session
-					return from(utils.generateJWT(req.body.userId));
+//					return from(utils.generateJWT(req.body.userId));
+					return from(utils.generateJWT(
+						userData.userId,
+						userData.email,
+						userData.role,
+						true,
+						userData.firstname,
+						userData.surname,
+						userData.referralCode,
+						userData.phone,
+						null 
+					));
 				}
 				else {
 					console.error('Unable to generate jwt: ', error);
@@ -186,10 +201,10 @@ function startLogin(req, res, next) {
 						verificationId = verification.verificationId;
 						//						console.log('Verification code created successfully!', verification);
 						//send email with verification code to user
-						const subject = 'Please Complete Your Inside Login';
+						const subject = 'Please Complete Your Unite Login';
 						const recipients = [{ email: req.body.email }];
-						const htmlContent = `<p>Your Inside login code is <b>${verification.verificationMessage}</b></p>. <p>Enter this code in the app to complete your login.</p>`;
-						const textContent = `Your Inside login code is ${verification.verificationMessage}. Enter this code in the app to complete your login.`;
+						const htmlContent = `<p>Your Unite login code is <b>${verification.verificationMessage}</b></p>. <p>Enter this code in the app to complete your login.</p>`;
+						const textContent = `Your Unite login code is ${verification.verificationMessage}. Enter this code in the app to complete your login.`;
 						utils.sendEmail(verification.userId, subject, recipients, null, htmlContent, textContent, null, null, null, 'LOGINUSER');
 						return true;
 					})
@@ -274,7 +289,6 @@ function completeLogin(req, res, next) {
 							raw: true,
 						})).pipe(
 							switchMap((addresses) => {
-								console.log("USER ADDRESSES: ", addresses)
 								return from(utils.generateJWT(
 									userRecord.userId,
 									userRecord.email,
@@ -312,6 +326,7 @@ function completeLogin(req, res, next) {
 			).subscribe({
 				next: (token) => {
 					if (token) {
+						console.log('TOKEN:', token)
 						//send the token back to the client
 						if (!res.headersSent) res.send({ token });
 					}

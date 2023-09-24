@@ -146,82 +146,6 @@ function validateEmail(email) {
 	return re.test(email);
 }
 
-function generateEmailContent(mailContent) {
-	const { reminderType, daysRemaining, firstname, type } = mailContent;
-	let htmlContent, textContent;
-	switch (reminderType) {
-		case 'WEEKLY':
-			htmlContent = `<html>
-				<head>
-					<title>Document Expiry Reminder</title>
-				</head>
-				<body>
-					<p>Dear ${firstname},</p>
-					<p>Your ${type} document expires in 1 week. Please renew it now. Login to Inside for more details.</p>
-					<p>Regards,</p>
-					<p>Inside Team</p>
-				</body>
-			</html>`;
-			textContent = `Dear ${firstname},
-				Your ${type} document expires in 1 week. Please renew it now. Login to Inside for more details.
-				Regards,
-				Inside Team`;
-			break;
-		case 'DAILY':
-			htmlContent = `<html>
-				<head>
-					<title>Document Expiry Reminder</title>
-				</head>
-				<body>
-					<p>Dear ${firstname},</p>
-					<p>Your ${type} document expires in a few days! Please renew it now. Login to Inside for more details.</p>
-					<p>Regards,</p>
-					<p>Inside Team</p>
-				</body>
-			</html>`;
-			textContent = `Dear ${firstname},
-				Your ${type} document expires in a few days! Please renew it now. Login to Inside for more details.
-				Regards,
-				Inside Team`;
-			break;
-		case 'DUE':
-			htmlContent = `<html>
-				<head>
-					<title>Document Expiry Reminder</title>
-				</head>
-				<body>
-					<p>Dear ${firstname},</p>
-					<p>Your ${type} document expires today! Login to Inside for more details.</p>
-					<p>Regards,</p>
-					<p>Inside Team</p>
-				</body>
-			</html>`;
-			textContent = `Dear ${firstname},
-				Your ${type} document expires today! Login to Inside for more details.
-				Regards,
-				Inside Team`;
-			break;
-		default:
-			htmlContent = `<html>
-				<head>
-					<title>Document Expiry Reminder</title>
-				</head>
-				<body>
-					<p>Dear ${firstname},</p>
-					<p>Your ${type} document expires in ${daysRemaining} days. Please renew it as soon as possible. Login to Inside for more details.</p>
-					<p>Regards,</p>
-					<p>Inside Team</p>
-				</body>
-			</html>`;
-			textContent = `Dear ${firstname},
-				Your ${type} document expires in ${daysRemaining} days. Please renew it as soon as possible.Login to Inside for more details.
-				Regards,
-				Inside Team`;
-			break;
-	}
-	return { htmlContent, textContent };
-}
-
 //unix timestamp
 function timeNow() {
 	return Math.floor(Date.now() / 1000);
@@ -321,7 +245,7 @@ async function createWallet(userId, currency, bankAccountNumber) {
 
 module.exports = {
 	sendEmail, generateJWT, logTransaction, saveImageToCloudinary$,
-	scanImage, validateEmail, generateEmailContent, timeNow,
+	scanImage, validateEmail, timeNow,
 	generateLongRandomString, isTokenValid, decodeToken,
 	generateReferralCode, checkToken,
 	updateWalletBalance, checkWalletBalance, createWallet
