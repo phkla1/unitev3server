@@ -256,7 +256,8 @@ exports.completeOrder = async (req, res, next) => {
 								try {
 								  await navigator.share({
 									title: 'Join me on Unite!',
-									url: 'https://deals.unite.com.ng',
+									text : "I'm shopping on Unite. Let's combine orders to get more cash back!",
+									url: 'https://deals.unite.com.ng?sponsor=${referralCode}',
 								  });
 								} catch (error) {
 								  console.error('Error sharing:', error);
