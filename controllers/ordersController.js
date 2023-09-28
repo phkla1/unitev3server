@@ -200,6 +200,7 @@ exports.completeOrder = async (req, res, next) => {
 								unitePaymentRef: tx_ref,
 							}
 						});
+						const userId = order.getDataValue('userId');
 						order.setDataValue('status', 'paid');
 						order.setDataValue('gatewayPaymentRef', transaction_id);
 						order.setDataValue('chargedAmount', chargedAmount);
@@ -233,6 +234,10 @@ exports.completeOrder = async (req, res, next) => {
 
 						// Generate order fulfilment code
 						const fulfilmentCode = utils.generateLongRandomString().substring(0, 5);
+
+						//get user details so we can extract the user's referral code
+						const user = await User.findByPk(userId);
+						const referralCode = user.getDataValue('referralCode');	
 						// Show HTML response to user
 						const html = `
 						<html>
@@ -242,6 +247,22 @@ exports.completeOrder = async (req, res, next) => {
 						  <body>
 							<h1>Payment successful</h1>
 							<p>Your order has been paid. Your order fulfilment code is ${fulfilmentCode}.</p>
+							<p>You will get cashback on this order and you can share your referral code <b>${referralCode}</b> to earn even more cash.</p>
+							<p></p>
+							<button id="share-button">Share with friends</button>
+							<script>
+							  const shareButton = document.getElementById('share-button');
+							  shareButton.addEventListener('click', async () => {
+								try {
+								  await navigator.share({
+									title: 'Join me on Unite!',
+									url: 'https://deals.unite.com.ng',
+								  });
+								} catch (error) {
+								  console.error('Error sharing:', error);
+								}
+							  });
+							</script>
 						  </body>
 						</html>
 					  	`;

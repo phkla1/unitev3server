@@ -128,7 +128,6 @@ function registerUserStep2(req, res, next) {
 				return from(User.findOne({ where: { userId: req.body.userId } }));
 			}),
 			switchMap((newUser) => {
-				console.log("NEW USER IS: ", newUser);
 				let userData = newUser.dataValues;
 				if (userData) {
 					console.log('User record updated successfully!', userData);
