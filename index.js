@@ -50,8 +50,8 @@ dbConnection.sync().then(async () => {
     // console.log('CountryLevel3 seeded successfully!');
     // await CountryLevel4.bulkCreate(countryLevel4Seed);
     // console.log('CountryLevel4 seeded successfully!');
-    await Streets.bulkCreate(streetSeed);
-    console.log('Streets seeded successfully. Seeding complete!');
+   await Streets.bulkCreate(streetSeed);
+    //console.log('Streets seeded successfully. Seeding complete!');
 
 }).catch((error) => {
     console.error('Unable to create database: ', error);
