@@ -40,16 +40,16 @@ dbConnection.sync().then(async () => {
     const countryLevel4Seed = require('./seed/countryLevel4.json');
     const streetSeed = require('./seed/streets.json');
 
-    await Countries.bulkCreate(countries);
-    console.log('Countries seeded successfully!');
-    await CountryLevel1.bulkCreate(countryLevel1Seed);
-    console.log('CountryLevel1 seeded successfully!');
-    await CountryLevel2.bulkCreate(countryLevel2Seed);
-    console.log('CountryLevel2 seeded successfully!');
-    await CountryLevel3.bulkCreate(countryLevel3Seed);
-    console.log('CountryLevel3 seeded successfully!');
-    await CountryLevel4.bulkCreate(countryLevel4Seed);
-    console.log('CountryLevel4 seeded successfully!');
+    // await Countries.bulkCreate(countries);
+    // console.log('Countries seeded successfully!');
+    // await CountryLevel1.bulkCreate(countryLevel1Seed);
+    // console.log('CountryLevel1 seeded successfully!');
+    // await CountryLevel2.bulkCreate(countryLevel2Seed);
+    // console.log('CountryLevel2 seeded successfully!');
+    // await CountryLevel3.bulkCreate(countryLevel3Seed);
+    // console.log('CountryLevel3 seeded successfully!');
+    // await CountryLevel4.bulkCreate(countryLevel4Seed);
+    // console.log('CountryLevel4 seeded successfully!');
     await Streets.bulkCreate(streetSeed);
     console.log('Streets seeded successfully. Seeding complete!');
 
