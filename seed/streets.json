@@ -49,10 +49,6 @@
 	},
 	{
 		"locationId" : 2,
-		"streetName" : "Dele Giwa"
-	},
-	{
-		"locationId" : 2,
 		"streetName" : "Mary Slessor"
 	},
 	{
@@ -81,7 +77,7 @@
 	},
 	{
 		"locationId" : 2,
-		"streetName" : "Sam Okoyie-Eboh"
+		"streetName" : "Sam Okotie-Eboh"
 	},
 	{
 		"locationId" : 2,
@@ -94,5 +90,21 @@
 	{
 		"locationId" : 2,
 		"streetName" : "Usman Danfodio"
-	}
+	},
+  {"locationId": 1, "streetName": "Realty Road"},
+  {"locationId": 1, "streetName": "Jomo Kenyatta"},
+  {"locationId": 1, "streetName": "Patrice Lumumba"},
+  {"locationId": 1, "streetName": "Nelson Mandela"},
+  {"locationId": 1, "streetName": "Tanganyika Crescent"},
+  {"locationId": 1, "streetName": "Kwame Nkrumah"},
+  {"locationId": 1, "streetName": "Duchess Lane"},
+  {"locationId": 1, "streetName": "Orange Drive"},
+  {"locationId": 1, "streetName": "Zebra Lane"},
+  {"locationId": 1, "streetName": "Victoria Drive"},
+  {"locationId": 1, "streetName": "Nile Road"},
+  {"locationId": 1, "streetName": "Robin Road"},
+  {"locationId": 1, "streetName": "Volta Lane"},
+  {"locationId": 1, "streetName": "Alexandria Road"},
+  {"locationId": 1, "streetName": "Maputo Lane"},
+  {"locationId": 1, "streetName": "Douala Road"}
 ]
