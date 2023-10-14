@@ -169,17 +169,72 @@ exports.deleteOrder = async (req, res) => {
 };
 
 exports.completeOrder = async (req, res, next) => {
+	let order, userId;
 	try {
 		const { tx_ref, transaction_id, status } = req.query;
 		if (transaction_id) {
 			let expectedAmount, expectedCurrency = 'NGN';
 			// Get expected amount from order
-			const order = await Order.findOne({
+			order = await Order.findOne({
 				where: {
 					unitepaymentref: tx_ref,
 				},
 			});
 			expectedAmount = Number(order.getDataValue('total'));
+			userId = order.getDataValue('userId');
+
+			// Generate order fulfilment code
+			const fulfilmentCode = utils.generateLongRandomString().substring(0, 5);
+			//get user details so we can extract the user's referral code
+			const user = await User.findByPk(userId);
+			const referralCode = user.getDataValue('referralCode');	
+			// Show holding HTML response to user
+			const html = `
+			<html>
+			  <head>
+				<title>We are processing your order</title>
+			  </head>
+			  <body>
+				<h1>Thanks! Your order is being processed</h1>
+				<p>We have received your order and we are confirming your order items and details. </p>
+				<p>Once that is done you will receive an email with your receipt and order details.</p>
+				<p>You get cashback on all successful orders and you can share your referral code <b>${referralCode}</b> to earn even more cash.</p>
+				<p></p>
+				<button id="share-button" style="color:#fff; background-color:#dc0b0b; border-radius:20px; padding:10px 15px; font-weight:600">Share with friends</button>
+				<p></p>
+				<button id="back-button" style="color:#fff; background-color:#dc0b0b; border-radius:20px; padding:10px 15px; font-weight:600">Back to Unite</button>
+				<script>
+  				  const backButton = document.getElementById('back-button');
+  				  backButton.addEventListener('click', () => {
+  				    window.location.href = 'https://deals.unite.com.ng/all-deals';
+  				  }); 
+				  const shareButton = document.getElementById('share-button');
+				  shareButton.addEventListener('click', async () => {
+					try {
+					  await navigator.share({
+						title: 'Join me on Unite!',
+						text : "I'm shopping on Unite. Let's combine orders to get more cash back!",
+						url: 'https://deals.unite.com.ng?sponsor=${referralCode}',
+					  });
+					} catch (error) {
+					  console.error('Error sharing:', error);
+					  const shareUrl = "https://deals.unite.com.ng?sponsor=${referralCode}";
+					  const tempInput = document.createElement('input');
+					  tempInput.value = shareUrl;
+					  document.body.appendChild(tempInput);
+					  tempInput.select();
+					  document.execCommand('copy');
+					  document.body.removeChild(tempInput);
+					  alert('The share URL has been copied to your clipboard. You can paste it into WhatsApp or any other app to share with your friends.');
+					}
+				  });
+				</script>
+			  </body>
+			</html>
+		  	`;
+			res.set('Content-Type', 'text/html');
+			res.statusCode = 201;
+			res.send(html);
 
 			const flw = new Flutterwave(process.env.FLWPUBKEY, process.env.FLWSECKEY);
 			// Verify transaction
@@ -194,13 +249,6 @@ exports.completeOrder = async (req, res, next) => {
 						const gatewayFee = verifyResponse.data.app_fee;
 						const paymentType = verifyResponse.data.payment_type;
 
-						// Update order status to "paid"
-						const order = await Order.findOne({
-							where: {
-								unitePaymentRef: tx_ref,
-							}
-						});
-						const userId = order.getDataValue('userId');
 						order.setDataValue('status', 'paid');
 						order.setDataValue('gatewayPaymentRef', transaction_id);
 						order.setDataValue('chargedAmount', chargedAmount);
@@ -232,54 +280,7 @@ exports.completeOrder = async (req, res, next) => {
 							})
 						);
 
-						// Generate order fulfilment code
-						const fulfilmentCode = utils.generateLongRandomString().substring(0, 5);
-
-						//get user details so we can extract the user's referral code
-						const user = await User.findByPk(userId);
-						const referralCode = user.getDataValue('referralCode');	
-						// Show HTML response to user
-						const html = `
-						<html>
-						  <head>
-							<title>Payment successful</title>
-						  </head>
-						  <body>
-							<h1>Payment successful</h1>
-							<p>Your order has been paid. Your order fulfilment code is ${fulfilmentCode}.</p>
-							<p>You will get cashback on this order and you can share your referral code <b>${referralCode}</b> to earn even more cash.</p>
-							<p></p>
-							<button id="share-button">Share with friends</button>
-							<script>
-							  const shareButton = document.getElementById('share-button');
-							  shareButton.addEventListener('click', async () => {
-								try {
-								  await navigator.share({
-									title: 'Join me on Unite!',
-									text : "I'm shopping on Unite. Let's combine orders to get more cash back!",
-									url: 'https://deals.unite.com.ng?sponsor=${referralCode}',
-								  });
-								} catch (error) {
-								  console.error('Error sharing:', error);
-								}
-							  });
-							</script>
-						  </body>
-						</html>
-					  	`;
-						res.set('Content-Type', 'text/html');
-						res.statusCode = 201;
-						res.send(html);
-
-						// Get buyer email
-						const buyerId = order.userId;
-						const buyerRecord = await User.findOne({
-							where: {
-								userId: buyerId,
-							},
-							attributes: ['email'],
-						});
-						const buyerEmail = [{ email: buyerRecord.getDataValue('email') }];
+						const buyerEmail = [{ email: user.getDataValue('email') }];
 
 						// Get seller email
 						const orderItem = await OrderItem.findOne({
@@ -311,9 +312,26 @@ exports.completeOrder = async (req, res, next) => {
 						});
 						const sellerEmail = [{ email: sellerUserRecord.getDataValue('email') }];
 
+						// Create the table of order items
+						let orderItemsTable = '<table><thead><tr><th>Item</th><th>Quantity</th><th>Total Price</th></tr></thead><tbody>';
+						let orderItemsText = '';
+						let totalPrice = 0;
+						for (const orderItem of orderItems) {
+						  const productId = orderItem.getDataValue('productId');
+						  const product = await Product.findByPk(productId);
+						  const itemName = product.getDataValue('productName');
+						  const quantity = orderItem.getDataValue('quantity');
+						  const price = orderItem.getDataValue('price');
+						  const totalItemPrice = quantity * price;
+						  totalPrice += totalItemPrice;
+						  orderItemsTable += `<tr><td>${itemName}</td><td>${quantity}</td><td>${totalItemPrice}</td></tr>`;
+						  orderItemsText += `${itemName} x ${quantity}: ${totalItemPrice}\n`;
+						}
+						orderItemsTable += '</tbody></table>';
+
 						// Send email to buyer
-						const buyerSubject = 'Your order has been paid';
-						const buyerText = `Your order has been paid. Your order fulfilment code is ${fulfilmentCode}.`;
+						const buyerSubject = 'Your order has been confirmed';
+						const buyerText = `Your order has been confirmed. Your order fulfilment code is ${fulfilmentCode}.\n\nOrder items:\n${orderItemsText}\nTotal price: ${totalPrice}`;
 						const buyerHtml = `
 						<html>
 						  <head>
@@ -321,15 +339,21 @@ exports.completeOrder = async (req, res, next) => {
 						  </head>
 						  <body>
 							<h1>Payment successful</h1>
-							<p>Your order has been paid. Your order fulfilment code is ${fulfilmentCode}.</p>
+							<p>Your order has been received. Your order fulfilment code is ${fulfilmentCode}.</p>
+							<p>${orderItemsTable}</p>
+							<p>Total price: ${totalPrice}</p>
 						  </body>
 						</html>
 					  	`;
 						utils.sendEmail(1, buyerSubject, buyerEmail, null, buyerHtml, buyerText, null, null, null, 'ORDER');
 
+						const userFullName = `${user.getDataValue('firstname')} ${user.getDataValue('surname')}`;
+						const userPhone = user.getDataValue('phone');
+						const orderAddress = await Addresses.findByPk(order.addressId);
+						const userAddress = orderAddress.getDataValue('streetAddress');
 						// Send email to seller
 						const sellerSubject = 'You have a new order';
-						const sellerText = `You have a new order. The order fulfilment code is ${fulfilmentCode}.`;
+						const sellerText = `You have a new order. The order fulfilment code is ${fulfilmentCode}.\n\nOrder items:\n${orderItemsText}\nTotal price: ${totalPrice}`;
 						const sellerHtml = `
 						<html>
 						  <head>
@@ -338,6 +362,14 @@ exports.completeOrder = async (req, res, next) => {
 						  <body>
 							<h1>Payment successful</h1>
 							<p>You have a new order. The order fulfilment code is ${fulfilmentCode}.</p>
+							<p>${orderItemsTable}</p>
+							<p>Total price: ${totalPrice}</p>
+							<p><b>Customer details:</b></p>
+							<ul>
+							  <li>Name: ${userFullName}</li>
+							  <li>Phone: ${userPhone}</li>
+							  <li>Address: ${userAddress}</li>
+							</ul>
 						  </body>
 						</html>
 					  	`;
