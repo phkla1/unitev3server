@@ -1,110 +1,16 @@
 [
-	{
-		"locationId" : 2,
-		"streetName" : "Olikoye Ransome Kuti"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Ajayi Crowther"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Obafemi Awolowo"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Alvan Ikoku"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Cyprian Ekwensi"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Bola Ige"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Hogan Bassey"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Tafawa Balewa"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Aminu Kano"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Chike Obi"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Raymond Njoku"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Dele Giwa"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Mary Slessor"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Irein Wangboje"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "King Jaja of Opobo"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Ernest Ikoli"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Modupe Johnson"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Lord Lugard"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Mbonu Ojike"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Sam Okotie-Eboh"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Hubert Ogunde"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Oba Akenzua"
-	},
-	{
-		"locationId" : 2,
-		"streetName" : "Usman Danfodio"
-	},
-  {"locationId": 1, "streetName": "Realty Road"},
-  {"locationId": 1, "streetName": "Jomo Kenyatta"},
-  {"locationId": 1, "streetName": "Patrice Lumumba"},
-  {"locationId": 1, "streetName": "Nelson Mandela"},
-  {"locationId": 1, "streetName": "Tanganyika Crescent"},
-  {"locationId": 1, "streetName": "Kwame Nkrumah"},
-  {"locationId": 1, "streetName": "Duchess Lane"},
-  {"locationId": 1, "streetName": "Orange Drive"},
-  {"locationId": 1, "streetName": "Zebra Lane"},
-  {"locationId": 1, "streetName": "Victoria Drive"},
-  {"locationId": 1, "streetName": "Nile Road"},
-  {"locationId": 1, "streetName": "Robin Road"},
-  {"locationId": 1, "streetName": "Volta Lane"},
-  {"locationId": 1, "streetName": "Alexandria Road"},
-  {"locationId": 1, "streetName": "Maputo Lane"},
-  {"locationId": 1, "streetName": "Douala Road"}
+{"locationId": 8, "streetName": "Emerald Avenue"},
+{"locationId": 8, "streetName": "Pearl Close"},
+{"locationId": 8, "streetName": "Aquamarine Road"},
+{"locationId": 8, "streetName": "Topaz Avenue"},
+{"locationId": 8, "streetName": "Diamond Drive"},
+{"locationId": 8, "streetName": "Garnet Close"},
+{"locationId": 8, "streetName": "Lilac Close"},
+{"locationId": 8, "streetName": "Crystal Close"},
+{"locationId": 8, "streetName": "Jasper Close"},
+{"locationId": 8, "streetName": "Tourmaline Road"},
+{"locationId": 8, "streetName": "Chrysolite Close"},
+{"locationId": 8, "streetName": "Agate Road"},
+{"locationId": 8, "streetName": "Sapphire Avenue"},
+{"locationId": 8, "streetName": "Onyx Close"}
 ]
