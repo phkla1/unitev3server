@@ -19,6 +19,9 @@ exports.createOrder = async (req, res) => {
 			const token = req.headers.authorization;
 			const decodedToken = utils.decodeToken(token);
 			const userId = decodedToken.userId;
+			const email = decodedToken.email;
+			const username = decodedToken.firstname + ' ' + decodedToken.surname;
+			const phone = decodedToken.phone;
 			const orderDate = Math.floor(Date.now() / 1000); // Unix timestamp
 			let total = 0;
 
@@ -57,13 +60,13 @@ exports.createOrder = async (req, res) => {
 				redirect_url: process.env.FLWDEALREDIRECTURL + "/update",
 				payment_options: "banktransfer, account, ussd",
 				customer: {
-					email: "test@test.com",
-					phonenumber: "0902620185",
-					name: "test user"
+					email: email,
+					phonenumber: phone,
+					name: username
 				},
 				customizations: {
 					title: "Unite V3",
-					description: "Payment for test deal",
+					description: `Payment for order # ${order.orderId}`,
 					logo: "https://res.cloudinary.com/unitebeta/image/upload/v1693209936/unitev3/icon-384x384_g3saaf.png"
 				},
 				meta: {
