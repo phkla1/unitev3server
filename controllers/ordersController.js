@@ -245,8 +245,7 @@ exports.completeOrder = async (req, res, next) => {
 			// Verify transaction
 			flw.Transaction.verify({ id: transaction_id })
 				.then(async (verifyResponse) => {
-					console.log("VERIFY RESPONSE IS:", verifyResponse )
-					if (verifyResponse.data.status === 'successful'
+					if (verifyResponse.data && verifyResponse.data.status === 'successful'
 						&& Number(verifyResponse.data.amount) === expectedAmount
 						&& verifyResponse.data.currency === expectedCurrency) {
 						// Get order details from verification response
@@ -382,7 +381,7 @@ exports.completeOrder = async (req, res, next) => {
 						utils.sendEmail(1, sellerSubject, sellerEmail, null, sellerHtml, sellerText, null, null, null, 'ORDER');
 					}
 					else {
-						res.send('Payment verification failed. Please contact support.');
+						res.send('Payment verification failed (no information from Flutterwave). Please contact support.');
 					}
 				})
 		}
