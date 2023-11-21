@@ -173,7 +173,7 @@ exports.deleteOrder = async (req, res) => {
 };
 
 exports.completeOrder = async (req, res, next) => {
-	console.log("COMPLETE ORDER CALLED")
+	//typically url like GET unite.com.ng:<PORT>/api/v3/orders/update?tx_ref=5vmnctqqxr6islc6k15nec&transaction_id=26747774&status=successful 
 	let order, userId;
 	try {
 		const { tx_ref, transaction_id, status } = req.query;
@@ -381,7 +381,7 @@ exports.completeOrder = async (req, res, next) => {
 						utils.sendEmail(1, sellerSubject, sellerEmail, null, sellerHtml, sellerText, null, null, null, 'ORDER');
 					}
 					else {
-						res.send('Payment verification failed (no information from Flutterwave). Please contact support.');
+						if(!res.headersSent) res.send('Payment verification failed (no information from Flutterwave). Please contact support.');
 					}
 				})
 		}
