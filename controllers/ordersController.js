@@ -174,6 +174,7 @@ exports.deleteOrder = async (req, res) => {
 
 exports.completeOrder = async (req, res, next) => {
 	//typically url like GET unite.com.ng:<PORT>/api/v3/orders/update?tx_ref=5vmnctqqxr6islc6k15nec&transaction_id=26747774&status=successful 
+	//note that flutterwave records store "transaction_id" as txid
 	let order, userId;
 	try {
 		const { tx_ref, transaction_id, status } = req.query;

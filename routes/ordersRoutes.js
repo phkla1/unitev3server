@@ -4,6 +4,7 @@ const ordersController = require('../controllers/ordersController');
 const { checkToken } = require('../utils/utils');
 
 router.get('/update', ordersController.completeOrder);
+router.post('/update', ordersController.completeOrder);
 router.post('/', checkToken, ordersController.createOrder);
 router.get('/', checkToken, ordersController.getAllOrders);
 router.get('/report', checkToken, ordersController.getOrderReport);
