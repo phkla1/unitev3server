@@ -139,6 +139,7 @@ exports.getOrderById = async (req, res) => {
 
 // Update an order
 exports.updateOrder = async (req, res) => {
+	console.log("UPDATE ORDER CALLED")
 	try {
 		const order = await Order.findByPk(req.params.id);
 		if (!order) {
@@ -172,6 +173,7 @@ exports.deleteOrder = async (req, res) => {
 };
 
 exports.completeOrder = async (req, res, next) => {
+	console.log("COMPLETE ORDER CALLED")
 	let order, userId;
 	try {
 		const { tx_ref, transaction_id, status } = req.query;
@@ -243,6 +245,7 @@ exports.completeOrder = async (req, res, next) => {
 			// Verify transaction
 			flw.Transaction.verify({ id: transaction_id })
 				.then(async (verifyResponse) => {
+					console.log("VERIFY RESPONSE IS:", verifyResponse )
 					if (verifyResponse.data.status === 'successful'
 						&& Number(verifyResponse.data.amount) === expectedAmount
 						&& verifyResponse.data.currency === expectedCurrency) {
