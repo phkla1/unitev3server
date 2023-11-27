@@ -229,7 +229,7 @@ function startLogin(req, res, next) {
 function completeLogin(req, res, next) {
 	//get the userId and validation code, confirm that the userId is valid using the User model, and then confirm that the validation code is valid using the Verification model
 	let userRecord;
-	if (req.body.userId && req.body.verificationMessage) {
+	if ((req.body.userId !== null && req.body.userId !== undefined) && req.body.verificationMessage) {
 		//check if the user exists
 		from(User.findOne({ where: { userId: req.body.userId } }))
 			.pipe(

@@ -175,6 +175,7 @@ exports.deleteOrder = async (req, res) => {
 exports.completeOrder = async (req, res, next) => {
 	//typically url like GET unite.com.ng:<PORT>/api/v3/orders/update?tx_ref=5vmnctqqxr6islc6k15nec&transaction_id=26747774&status=successful 
 	//note that flutterwave records store "transaction_id" as txid
+	//flutterwave is not consistent. I have had status "successful" and status "completed"
 	let order, userId;
 	try {
 		const { tx_ref, transaction_id, status } = req.query;
@@ -239,14 +240,15 @@ exports.completeOrder = async (req, res, next) => {
 			</html>
 		  	`;
 			res.set('Content-Type', 'text/html');
-			res.statusCode = 201;
+			res.statusCode = 200;
 			res.send(html);
 
 			const flw = new Flutterwave(process.env.FLWPUBKEY, process.env.FLWSECKEY);
 			// Verify transaction
 			flw.Transaction.verify({ id: transaction_id })
 				.then(async (verifyResponse) => {
-					if (verifyResponse.data && verifyResponse.data.status === 'successful'
+					if (verifyResponse.data 
+						&& (verifyResponse.data.status === 'successful' || verifyResponse.data.status === 'completed')
 						&& Number(verifyResponse.data.amount) === expectedAmount
 						&& verifyResponse.data.currency === expectedCurrency) {
 						// Get order details from verification response

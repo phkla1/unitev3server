@@ -16,7 +16,7 @@ const jwt = require('jsonwebtoken');
 function sendEmail(userId, subject, recipients, ccs = null, htmlContent, textContent, attachmentName = null, attachmentData = null, attachmentType = null, logData) {
 	//try sib first. If that fails, try mailchimp
 	const completeHtml = htmlContent + `<p>********************************<p>`;
-	if (userId && subject && recipients.length > 0 && (htmlContent || textContent) && logData) {
+	if ((userId !== null && userId !== undefined) && subject && recipients.length > 0 && (htmlContent || textContent) && logData) {
 		const sibEmail = {
 			sender: { email: process.env.EMAILSENDEREMAIL, name: process.env.EMAILSENDERNAME },
 			replyTo: { email: process.env.EMAILSENDEREMAIL, name: process.env.EMAILSENDERNAME },
@@ -39,7 +39,7 @@ function sendEmail(userId, subject, recipients, ccs = null, htmlContent, textCon
 			})
 	}
 	else {
-		console.log('Missing parameters for sendEmail2', arguments);
+		console.log('Missing parameters for sendEmail', arguments);
 	}
 }
 

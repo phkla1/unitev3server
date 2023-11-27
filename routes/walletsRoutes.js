@@ -9,4 +9,7 @@ router.get('/', walletsController.getUserWallets);
 //get wallet by id
 router.get('/:walletId', checkToken, walletsController.getWallet);
 
+//update wallet balance
+router.put('/:walletId', checkToken, walletsController.updateWalletBalance);
+
 module.exports = router;
