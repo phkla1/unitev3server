@@ -46,7 +46,7 @@ async function updateWalletBalance(req, res, next) {
         const walletId = req.params.walletId;
         const wallet = await Wallet.findByPk(walletId);
         if (!wallet) {
-            throw new Error('Wallet not found');
+            return res.status(400).json({ message: 'Bad request' });
         }
 
         const token = req.headers.authorization;
