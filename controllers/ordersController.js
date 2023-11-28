@@ -193,8 +193,6 @@ exports.completeOrder = async (req, res, next) => {
 			expectedAmount = Number(order.getDataValue('total'));
 			userId = order.getDataValue('userId');
 
-			console.log("ORDER FOUND:", order)
-
 			// Generate order fulfilment code
 			const fulfilmentCode = utils.generateLongRandomString().substring(0, 5);
 			//get user details so we can extract the user's referral code
@@ -248,7 +246,6 @@ exports.completeOrder = async (req, res, next) => {
 			res.statusCode = 200;
 			res.send(html);
 
-			console.log("VERIFYING WITH ID:", transaction_id)
 			const flw = new Flutterwave(process.env.FLWPUBKEY, process.env.FLWSECKEY);
 			// Verify transaction
 			flw.Transaction.verify({ id: transaction_id })
@@ -390,8 +387,6 @@ exports.completeOrder = async (req, res, next) => {
 						utils.sendEmail(1, sellerSubject, sellerEmail, null, sellerHtml, sellerText, null, null, null, 'ORDER');
 					}
 					else {
-						console.log("BAD VERIFICATION RESPONSE:", verifyResponse)	
-
 						if(!res.headersSent) res.send('Payment verification failed (no information from Flutterwave). Please contact support.');
 					}
 				})
