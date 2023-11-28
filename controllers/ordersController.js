@@ -57,7 +57,7 @@ exports.createOrder = async (req, res) => {
 				tx_ref: unitePaymentRef,
 				amount: order.total,
 				currency: "NGN",
-				redirect_url: process.env.FLWDEALREDIRECTURL + "/update",
+				redirect_url: process.env.FLWDEALREDIRECTURL,
 				payment_options: "banktransfer, account, ussd",
 				customer: {
 					email: email,
