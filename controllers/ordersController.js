@@ -139,7 +139,6 @@ exports.getOrderById = async (req, res) => {
 
 // Update an order
 exports.updateOrder = async (req, res) => {
-	console.log("UPDATE ORDER CALLED")
 	try {
 		const order = await Order.findByPk(req.params.id);
 		if (!order) {
@@ -179,7 +178,11 @@ exports.completeOrder = async (req, res, next) => {
 	let order, userId;
 	try {
 		const { tx_ref, transaction_id, status } = req.query;
+		console.log("COMPLETE ORDER CALLED WITH PARAMS:", req.query)
+
 		if (transaction_id) {
+			console.log("TRANSACTION ID FOUND")
+
 			let expectedAmount, expectedCurrency = 'NGN';
 			// Get expected amount from order
 			order = await Order.findOne({
@@ -189,6 +192,8 @@ exports.completeOrder = async (req, res, next) => {
 			});
 			expectedAmount = Number(order.getDataValue('total'));
 			userId = order.getDataValue('userId');
+
+			console.log("ORDER FOUND:", order)
 
 			// Generate order fulfilment code
 			const fulfilmentCode = utils.generateLongRandomString().substring(0, 5);
@@ -243,6 +248,7 @@ exports.completeOrder = async (req, res, next) => {
 			res.statusCode = 200;
 			res.send(html);
 
+			console.log("VERIFYING WITH ID:", transaction_id)
 			const flw = new Flutterwave(process.env.FLWPUBKEY, process.env.FLWSECKEY);
 			// Verify transaction
 			flw.Transaction.verify({ id: transaction_id })
@@ -384,6 +390,8 @@ exports.completeOrder = async (req, res, next) => {
 						utils.sendEmail(1, sellerSubject, sellerEmail, null, sellerHtml, sellerText, null, null, null, 'ORDER');
 					}
 					else {
+						console.log("BAD VERIFICATION RESPONSE:", verifyResponse)	
+
 						if(!res.headersSent) res.send('Payment verification failed (no information from Flutterwave). Please contact support.');
 					}
 				})
