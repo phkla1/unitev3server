@@ -25,14 +25,6 @@ exports.createOrder = async (req, res) => {
 			const phone = decodedToken.phone;
 			const orderDate = Math.floor(Date.now() / 1000); // Unix timestamp
 
-			/*
-			let total = 0;
-			// Calculate total
-			for (const item of cart) {
-				total += item.product.price * item.quantity;
-			}
-			*/
-
 			//order ref
 			const unitePaymentRef = utils.generateLongRandomString();
 
@@ -57,68 +49,67 @@ exports.createOrder = async (req, res) => {
 				unitePaymentRef,
 				total,
 				status: 'unpaid',
-			});
-
-			// Create order items
-			for (const item of cart) {
-				await OrderItem.create({
-					orderId: order.orderId,
-					productId: item.product.productId,
-					price: item.product.price,
-					quantity: item.quantity,
-					sellerId: item.product.sellerId,
-				});
-			}
-
-			//send request to gateway. A redirect link will be returned
-			let flwaveParams = {
-				tx_ref: unitePaymentRef,
-				amount: order.total,
-				currency: "NGN",
-				redirect_url: process.env.FLWDEALREDIRECTURL,
-				payment_options: "banktransfer, account, ussd",
-				customer: {
-					email: email,
-					phonenumber: phone,
-					name: username
-				},
-				customizations: {
-					title: "Unite V3",
-					description: `Payment for order # ${order.orderId}`,
-					logo: "https://res.cloudinary.com/unitebeta/image/upload/v1693209936/unitev3/icon-384x384_g3saaf.png"
-				},
-				meta: {
-					consumer_id: req.body.userId,
-					consumer_mac: "92a3-912ba-1192a"
+			}).then(async (order) => {
+				// Create order items
+				for (const item of cart) {
+					await OrderItem.create({
+						orderId: order.orderId,
+						productId: item.product.productId,
+						price: item.product.price,
+						quantity: item.quantity,
+						sellerId: item.product.sellerId,
+					});
 				}
-			};
-			let header = {
-				headers: {
-					Authorization: 'Bearer ' + process.env.FLWSECKEY
-				}
-			};
-
-			from(axios.post(process.env.FLWPAYURL.toString(), flwaveParams, header))
-				.pipe(
-					map(flwData => {
-						return flwData.data.data.link;
-					}),
-					catchError(err => {
-						console.log("ERROR FROM FLWAVE:", err);
-						return throwError(() => new Error(err));
-					})
-				).subscribe({
-					next: (redirectUrl) => {
-						//copy order to new object and add linkdata
-						let newOrder = { ...order.dataValues, link: redirectUrl };
-						res.status(201).json(newOrder);
+				//send request to gateway. A redirect link will be returned
+				let flwaveParams = {
+					tx_ref: unitePaymentRef,
+					amount: order.total,
+					currency: "NGN",
+					redirect_url: process.env.FLWDEALREDIRECTURL,
+					payment_options: "banktransfer, account, ussd",
+					customer: {
+						email: email,
+						phonenumber: phone,
+						name: username
 					},
-					error: (err) => {
-						console.log("ERROR FROM FLWAVE:", err);
-						if (!res.headersSent) res.status(500).json({ message: 'Gateway error' });
+					customizations: {
+						title: "Unite V3",
+						description: `Payment for order # ${order.orderId}`,
+						logo: "https://res.cloudinary.com/unitebeta/image/upload/v1693209936/unitev3/icon-384x384_g3saaf.png"
+					},
+					meta: {
+						consumer_id: req.body.userId,
+						consumer_mac: "92a3-912ba-1192a"
 					}
-				}
-			);
+				};
+				let header = {
+					headers: {
+						Authorization: 'Bearer ' + process.env.FLWSECKEY
+					}
+				};
+	
+				from(axios.post(process.env.FLWPAYURL.toString(), flwaveParams, header))
+					.pipe(
+						map(flwData => {
+							return flwData.data.data.link;
+						}),
+						catchError(err => {
+							console.log("ERROR FROM FLWAVE:", err);
+							return throwError(() => new Error(err));
+						})
+					).subscribe({
+						next: (redirectUrl) => {
+							//copy order to new object and add linkdata
+							let newOrder = { ...order.dataValues, link: redirectUrl };
+							res.status(201).json(newOrder);
+						},
+						error: (err) => {
+							console.log("ERROR FROM FLWAVE:", err);
+							if (!res.headersSent) res.status(500).json({ message: 'Gateway error' });
+						}
+					}
+				);
+			});
 		} 
 		catch (err) {
 			console.error(err);
