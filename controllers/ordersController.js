@@ -2,6 +2,7 @@
 const { Order, Product, OrderItem } = require('../models/order.model');
 const { User, Seller } = require('../models/account.model');
 const { Addresses } = require('../models/location.model');
+const { Wallet } = require('../models/wallet.model');
 const utils = require('../utils/utils');
 const { from, throwError } = require('rxjs');
 const { switchMap, map, catchError } = require('rxjs/operators');
@@ -15,7 +16,7 @@ const fs = require('fs');
 exports.createOrder = async (req, res) => {
 	if (req.body.cart && req.body.addressId) {
 		try {
-			const { addressId, cart } = req.body;
+			const { addressId, cart, walletDeduction, walletId, total } = req.body;
 			const token = req.headers.authorization;
 			const decodedToken = utils.decodeToken(token);
 			const userId = decodedToken.userId;
@@ -23,14 +24,31 @@ exports.createOrder = async (req, res) => {
 			const username = decodedToken.firstname + ' ' + decodedToken.surname;
 			const phone = decodedToken.phone;
 			const orderDate = Math.floor(Date.now() / 1000); // Unix timestamp
-			let total = 0;
 
+			/*
+			let total = 0;
 			// Calculate total
 			for (const item of cart) {
 				total += item.product.price * item.quantity;
 			}
+			*/
+
 			//order ref
 			const unitePaymentRef = utils.generateLongRandomString();
+
+			//if walletDeduction is not null, deduct from wallet
+			if (walletDeduction) {
+				//get user's wallet
+				const wallet = await Wallet.findOne({
+					where: {
+						walletId
+					},
+				});
+				//deduct from active balance
+				wallet.setDataValue('activeBalance', wallet.getDataValue('activeBalance') - walletDeduction);
+				await wallet.save();
+			}
+
 			// Create order
 			const order = await Order.create({
 				userId,
@@ -79,6 +97,7 @@ exports.createOrder = async (req, res) => {
 					Authorization: 'Bearer ' + process.env.FLWSECKEY
 				}
 			};
+
 			from(axios.post(process.env.FLWPAYURL.toString(), flwaveParams, header))
 				.pipe(
 					map(flwData => {
@@ -92,15 +111,16 @@ exports.createOrder = async (req, res) => {
 					next: (redirectUrl) => {
 						//copy order to new object and add linkdata
 						let newOrder = { ...order.dataValues, link: redirectUrl };
-						console.log("NEW ORDER:", newOrder);
 						res.status(201).json(newOrder);
 					},
 					error: (err) => {
 						console.log("ERROR FROM FLWAVE:", err);
 						if (!res.headersSent) res.status(500).json({ message: 'Gateway error' });
 					}
-				});
-		} catch (err) {
+				}
+			);
+		} 
+		catch (err) {
 			console.error(err);
 			if (!res.headersSent) res.status(500).json({ message: 'Server error' });
 		}
@@ -178,11 +198,8 @@ exports.completeOrder = async (req, res, next) => {
 	let order, userId;
 	try {
 		const { tx_ref, transaction_id, status } = req.query;
-		console.log("COMPLETE ORDER CALLED WITH PARAMS:", req.query)
 
 		if (transaction_id) {
-			console.log("TRANSACTION ID FOUND")
-
 			let expectedAmount, expectedCurrency = 'NGN';
 			// Get expected amount from order
 			order = await Order.findOne({

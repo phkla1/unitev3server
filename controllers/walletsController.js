@@ -12,7 +12,6 @@ async function getUserWallets(req, res, next) {
                 userId,
             },
         });
-
         res.json(wallets);
     } catch (error) {
         next(error);
