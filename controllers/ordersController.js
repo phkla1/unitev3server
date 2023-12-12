@@ -2,7 +2,7 @@
 const { Order, Product, OrderItem } = require('../models/order.model');
 const { User, Seller } = require('../models/account.model');
 const { Addresses } = require('../models/location.model');
-const { Wallet } = require('../models/wallet.model');
+const { Wallet, WalletTransaction } = require('../models/wallet.model');
 const utils = require('../utils/utils');
 const { from, throwError } = require('rxjs');
 const { switchMap, map, catchError } = require('rxjs/operators');
@@ -36,9 +36,15 @@ exports.createOrder = async (req, res) => {
 						walletId
 					},
 				});
+				const from = wallet.getDataValue('walletId');
+				const to = 0;
+				const type = 'checkout';
+				const currency = 'NGN';
+				const description = 'User discount @ checkout';
 				//deduct from active balance
 				wallet.setDataValue('activeBalance', wallet.getDataValue('activeBalance') - walletDeduction);
 				await wallet.save();
+				await logWalletTransaction(userId, from, to, type, currency, walletDeduction, description);
 			}
 
 			// Create order
@@ -544,3 +550,15 @@ exports.getOrderReport = async (req, res, next) => {
 		next(error);
 	}
 };
+
+async function logWalletTransaction(userId, from, to, type, currency, amount, description) {
+    await WalletTransaction.create({
+        userId,
+        fromWalletId: from,
+        toWalletId: to,
+        transactionType: type,
+        currency,
+        amount,
+        description
+    });
+}

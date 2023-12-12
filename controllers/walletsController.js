@@ -1,4 +1,4 @@
-const { Wallet } = require('../models/wallet.model');
+const { Wallet, WalletTransaction } = require('../models/wallet.model');
 const { decodeToken } = require('../utils/utils');
 
 async function getUserWallets(req, res, next) {
@@ -50,9 +50,10 @@ async function updateWalletBalance(req, res, next) {
 
         const token = req.headers.authorization;
         const decodedToken = decodeToken(token);
-        const userId = decodedToken.userId;
+        const tokenUserId = decodedToken.userId;
+        const walletUserId = wallet.getDataValue('userId');
 
-        if (userId !== 0) {
+        if (tokenUserId !== 0 || tokenUserId !== walletUserId) {
             //send back a 401 unauthorized response
             return res.status(401).json({ message: 'Unauthorized access' });
         }
@@ -60,7 +61,9 @@ async function updateWalletBalance(req, res, next) {
         const { amount, type } = req.body; // get the amount and type from the request body
 
         if (type === 'addition') {
-            wallet.setDataValue('activeBalance', wallet.getDataValue('activeBalance') + amount); // add the amount to the wallet balance if it's a credit
+            if(tokenUserId == 0) {
+                wallet.setDataValue('activeBalance', wallet.getDataValue('activeBalance') + amount); 
+            }
         } else if (type === 'subtraction') {
             if (wallet.getDataValue('activeBalance') < amount) {
                 return res.status(400).json({ message: 'Insufficient balance' });
@@ -69,15 +72,27 @@ async function updateWalletBalance(req, res, next) {
         } else {
             return res.status(400).json({ message: 'Bad request' });
         }
-        
+
         await wallet.save(); // save the updated wallet balance
-        
+
         res.json(wallet);
-    } 
+    }
     catch (error) {
         next(error);
     }
 
+}
+
+async function logWalletTransaction(userId, from, to, type, currency, amount, description) {
+    await WalletTransaction.create({
+        userId,
+        fromWalletId: from,
+        toWalletId: to,
+        transactionType: type,
+        currency,
+        amount,
+        description
+    });
 }
 
 module.exports = {
