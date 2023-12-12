@@ -83,17 +83,7 @@ async function updateWalletBalance(req, res, next) {
 
 }
 
-async function logWalletTransaction(userId, from, to, type, currency, amount, description) {
-    await WalletTransaction.create({
-        userId,
-        fromWalletId: from,
-        toWalletId: to,
-        transactionType: type,
-        currency,
-        amount,
-        description
-    });
-}
+
 
 module.exports = {
     getUserWallets,
