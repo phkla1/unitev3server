@@ -16,7 +16,7 @@ const fs = require('fs');
 exports.createOrder = async (req, res) => {
 	if (req.body.cart && req.body.addressId) {
 		try {
-			const { addressId, cart, walletDeduction, walletId, total } = req.body;
+			const { addressId, cart, walletDeduction, walletId, productSubTotal, finalTotal } = req.body;
 			const token = req.headers.authorization;
 			const decodedToken = utils.decodeToken(token);
 			const userId = decodedToken.userId;
@@ -53,7 +53,7 @@ exports.createOrder = async (req, res) => {
 				addressId,
 				orderDate,
 				unitePaymentRef,
-				total,
+				total : productSubTotal - walletDeduction,
 				status: 'unpaid',
 			}).then(async (order) => {
 				// Create order items
